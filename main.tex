@@ -1,0 +1,339 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs}
+\usepackage[hidelinks,hyperfootnotes=false]{hyperref}
+\hypersetup{pdftitle={Perfect play in a binary-scoring nonlocal game requires infinite dimension},pdfauthor={Seth Douglas and Nidhal Mghirbi}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{problem}[theorem]{Problem}
+\DeclareMathOperator{\Sch}{Sch}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diag}{diag}
+\newcommand{\FMS}{G_{\mathrm{FMS}}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\sq}{\sqcup}
+\newcommand{\mult}[2]{#1\mathbin{\cdot}#2}
+\title{Perfect play in a binary-scoring nonlocal game\\requires infinite dimension}
+\author{Seth Douglas \and Nidhal Mghirbi}
+\date{Version 1.0.0, October 2026}
+\begin{document}
+\maketitle
+\begingroup\renewcommand{\thefootnote}{}\footnotetext{The authors developed this work with AI models from more than one developer and take responsibility for every claim. How the work was done, and what the machine checks cover, is described at the end of the paper.}\endgroup
+\begin{abstract}
+We construct a finite rational two-player nonlocal game with a binary winning predicate that has a perfect strategy on $\ell^2\otimes\ell^2$ and no perfect finite-dimensional strategy. The game has ten questions for Alice, eleven for Bob, at most six answers per question, and a uniform distribution on fifty-two question pairs. We glue two copies of Man\v{c}inska's Flagged Magic-Square game along complementary labels, adding a boundary answer to the second copy. An inverse-free sector argument forces every perfect strategy to contain a Schmidt-coefficient chain closed under halving, which rules out finite rank. An explicit normalized spatial strategy has twenty coefficients at each geometric level. Its compression to $20K$ dimensions has loss exactly $1/[624(4^K-1)]$, giving $D(\eps)\leq10\log_2(1/\eps)+20$ for general local POVMs and $0<\eps<1$. We prove a weaker algebraic lower bound and state a matching logarithmic lower bound as an open problem. Thus a binary-scoring game distinguishes spatial from finite-dimensional perfect attainment even though both values are one.
+\end{abstract}
+
+\section{The separation}
+A finite nonlocal game is specified by finite question and answer sets, a probability distribution $\pi$ on question pairs, and a predicate $V$ taking values in $\{0,1\}$. A strategy consists of a unit vector $\psi\in H_A\otimes H_B$ and local positive operator-valued measurements (POVMs). It is \emph{perfect} if its winning probability is one. We call it finite-dimensional when both local spaces are finite-dimensional, and spatial when they may be separable infinite-dimensional Hilbert spaces. The associated correlation sets are $C_q$ and $C_{qs}$, respectively. Answer sets may depend on the question; padding by zero effects puts them in the usual fixed-alphabet convention.
+
+Let $D_G(\eps)$ be the least integer $d$ for which a strategy on $\mathbb C^d\otimes\mathbb C^d$ with arbitrary POVMs has loss at most $\eps$. Smaller spaces can be padded. Throughout, dimension refers to this POVM convention.
+
+\begin{theorem}\label{thm:main}
+There is a rational binary-scoring game $\Gamma$ with ten Alice questions, eleven Bob questions, at most six answers per question, and a uniform distribution on fifty-two supported pairs, such that:
+\begin{enumerate}
+\item $\Gamma$ has a normalized perfect strategy on $\ell^2\otimes\ell^2$;
+\item no finite-dimensional strategy is perfect;
+\item for each integer $K\geq1$, an explicit strategy of local dimension $20K$ has loss
+\begin{equation}\label{eq:exactloss}
+\ell^{\mathrm{cmp}}_{20K}=\frac{1}{624(4^K-1)}.
+\end{equation}
+\end{enumerate}
+Both the finite-dimensional supremum and spatial value are one, but only the latter is attained, and
+\begin{equation}\label{eq:dimension}
+D_\Gamma(\eps)\leq20\left\lceil\log_4\left(1+\frac{1}{624\eps}\right)\right\rceil\qquad(\eps>0).
+\end{equation}
+For $0<\eps<1$ one also has $D_\Gamma(\eps)\leq10\log_2(1/\eps)+20$.
+\end{theorem}
+
+\paragraph{Context and credit.}
+Coladangelo and Stark separated finite-dimensional from spatial correlations with finite question and answer sets~\cite{CS18}, using offset decompositions and Schmidt multisets. Beigi obtained such a separation with four binary measurements per party~\cite{Beigi}. These are separations of exact correlations. Here every spatial correlation winning $\Gamma$ perfectly lies outside $C_q$, so a finite game with a $0/1$ winning predicate detects the distinction at perfect attainment. This answers the possibility raised in the second-page remark of Coladangelo--Stark~\cite{CS17} that a binary or integer-valued game score might not witness the separation. Binary scoring refers to the predicate, not to the number of answers.
+
+Slofstra's nonclosure game~\cite{Slofstra} has a perfect approximate correlation but no perfect spatial strategy. His Theorem~3.2 equates finite and spatial perfect existence for linear-system games. Kim--Paulsen--Schafhauser prove $C_q^s(n,m)=C_{qs}^s(n,m)$ for synchronous correlations in their Theorem~3.10~\cite{KPS}. These restricted classes do not include the present construction.
+
+Our building block is Man\v{c}inska's Flagged Magic-Square game~\cite{Mancinska}, including its calibrated frustrated bridge. Her Theorem~11 is a finite-dimensional exact self-test. We prove the sector identity on arbitrary Schmidt supports without appealing to a spatial extension of that theorem. The exact magic-square rigidity used below is Proposition~2 and Appendix~A.2 of that paper, also proved here in the operator form we need. Lalonde's earlier game~\cite{Lalonde} requires nonmaximal entanglement for perfect play, but has a perfect strategy in local dimension six. The additional step here is the offset gluing that rules out every finite dimension.
+
+No earlier example with this perfect-spatial/no-perfect-finite property was found in the bounded literature search underlying this work; absolute historical priority is not established. The mathematical claim is the explicit separation in Theorem~\ref{thm:main}.
+
+\section{The game and its finite building block}\label{sec:game}
+\subsection{The flagged magic square}
+Write $\mathcal R=\{s\in\{\pm1\}^3:s_1s_2s_3=1\}$ and
+$\mathcal C_j=\{t\in\{\pm1\}^3:t_1t_2t_3=\eta_j\}$, where $(\eta_1,\eta_2,\eta_3)=(1,1,-1)$. Alice's questions are $R_1,R_2,R_3,T_0,T_1$; Bob's are $C_1,C_2,C_3,U_0,U_1$. Put
+\[
+c_0=r_0=(1,1,1),\qquad c_1=r_1=(1,-1,-1),\qquad \sigma_{xy}=(-1)^{xy}.
+\]
+The answers to $R_i$ are $\mathcal R\sq\{f\}$, and those to $C_j$ are $\mathcal C_j\sq\{f\}$. The answers to $T_x$ are $\{+,-\}\sq(\mathcal C_1\setminus\{c_x\})$, and those to $U_y$ are $\{+,-\}\sq(\mathcal R\setminus\{r_y\})$. A sign answer is distinct from a sign triple. All twenty-five pairs have equal positive probability. The rules are:
+\begin{enumerate}
+\item At $(R_i,C_j)$, $(f,f)$ wins, a single flag loses, and nonflag answers $(s,t)$ win exactly when $s_j=t_i$.
+\item At $(T_x,C_1)$, a sign wins exactly against $f$ or $c_x$. A triple wins exactly against the identical triple.
+\item At $(R_1,U_y)$, a sign for Bob wins exactly against $f$ or $r_y$. A triple wins exactly against the identical triple.
+\item At $(T_x,U_y)$, two signs $a,b\in\{\pm1\}$ win exactly when $ab=\sigma_{xy}$. If at least one answer is a triple, they win.
+\item All other pairs accept every answer pair.
+\end{enumerate}
+This is $\FMS$, in the conventions of~\cite{Mancinska}.
+
+Here is its ideal strategy. Let $X,Y,Z$ be the Pauli matrices and use the square
+\begin{equation}\label{eq:square}
+(M_{ij})=\begin{pmatrix}
+X\otimes I&I\otimes X&X\otimes X\\
+I\otimes Z&Z\otimes I&Z\otimes Z\\
+X\otimes Z&Z\otimes X&Y\otimes Y
+\end{pmatrix}.
+\end{equation}
+Each row and column commutes; row products are $I$ and column products are $I,I,-I$. Denote the rank-one joint spectral projections by $\pi^{\rm row}_{i,s}$ and $\pi^{\rm col}_{j,t}$. On $\mathbb C f\oplus\mathbb C^4$ take
+\begin{equation}\label{eq:gadgetstate}
+\psi_*=\tfrac13|ff\rangle+\tfrac{\sqrt2}{3}\sum_{z=0}^3|zz\rangle.
+\end{equation}
+The row and column measurements consist of their spectral projections and the flag projection. Choose the distinguished eigenvectors as
+\begin{align*}
+|c_0\rangle&=(1,0,1,0)^T/\sqrt2,& |c_1\rangle&=(0,1,0,1)^T/\sqrt2,\\
+|r_0\rangle&=(1,1,1,1)^T/2,& |r_1\rangle&=(1,-1,1,-1)^T/2.
+\end{align*}
+They satisfy $\langle c_x|r_y\rangle=\sigma_{xy}/\sqrt2$. The sign projections for $T_x$ are onto $(|f\rangle\pm|c_x\rangle)/\sqrt2$, with the other column-one projections as the remaining outcomes. Bob uses $(|f\rangle\pm|r_y\rangle)/\sqrt2$ and the other row-one projections. All these projections are real. The row/column and calibration rules follow from their supports. For two signs the amplitude is proportional to $1+ab\sigma_{xy}$, so the forbidden products vanish. Thus~\eqref{eq:gadgetstate} wins perfectly.
+
+\subsection{Two copies and one label}
+Form $\Gamma$ with Alice questions $(h,q)$ and Bob questions $(h,r)$, $h\in\{1,2\}$, for gadget questions $q,r$. Bob has an additional question $\mathsf{Lab}$ with answers $A,B$. Copy one retains the gadget answers. Add a boundary answer $\bot$ to every question of copy two.
+
+There are twenty-five internal pairs per copy and two label pairs:
+\[
+((1,R_1),\mathsf{Lab}),\qquad ((2,R_1),\mathsf{Lab}).
+\]
+Each of the fifty-two pairs has probability $1/52$. Copy one uses the gadget predicate. In copy two, $(\bot,\bot)$ wins, exactly one boundary answer loses, and otherwise use the gadget predicate. At the links accept exactly when
+\begin{align}\label{eq:links}
+[a\ne f]&=[b=A]&&\text{in copy one},\nonumber\\
+[a\in\{f,\bot\}]&=[b=A]&&\text{in copy two}.
+\end{align}
+The first line concerns $R_1$, so $a\ne f$ means a magic-square answer. Unsupported pairs have probability zero. These rules specify a rational game with ten and eleven questions, five answers in copy one, six in copy two, and two label answers. The ancillary \texttt{game.json} records all supported pairs and forbidden answer pairs.
+
+\section{An inverse-free sector identity}\label{sec:sector}
+Fix bases and identify $\psi$ with its Hilbert--Schmidt coefficient operator $K:H_B\to H_A$. Bob's transposed effects are denoted by $F$. Then
+\begin{equation}\label{eq:zero}
+p(E,F)=\|E^{1/2}KF^{1/2}\|_2^2,\qquad p(E,F)=0\ \Longrightarrow\ EKF=0.
+\end{equation}
+Compress to the supports of the reduced densities. Now $K$ is injective with dense range, and $KK^*,K^*K$ are positive trace-class operators. Compression preserves correlations. No inverse of $K$ will be used.
+
+\begin{lemma}[Checked classes]\label{lem:classes}
+At a supported pair suppose the answers split into matching classes, with different classes always losing. In a perfect full-support strategy their coarse effects $E_c,F_c$ are orthogonal projections, $E_cK=KF_c$, and $E_c$ commutes with $KK^*$.
+\end{lemma}
+\begin{proof}
+The forbidden products and completeness give $E_cK=E_cKF_c=KF_c$. For $c\ne d$, $E_cE_dK=E_cKF_d=0$. Dense range gives $E_cE_d=0$, and completeness gives $E_c^2=E_c$. Apply the same argument to $K^*$ on Bob's side. Finally $E_cKK^*=KF_cK^*$ is self-adjoint, proving commutation.
+\end{proof}
+
+For orthogonal complete sectors satisfying $P_sK=KQ_s$, the compact operator $K$ is the direct sum of its sector maps. Hence
+\begin{equation}\label{eq:multisets}
+\Sch(K)=\bigsqcup_s\Sch(P_sKQ_s).
+\end{equation}
+Here $\Sch$ is the multiset of nonzero singular values with multiplicities. All sector vectors are unnormalized. Formula~\eqref{eq:multisets} holds also for countably infinite square-summable multisets, by the compact spectral theorem.
+
+\begin{lemma}[Exact magic-square algebra]\label{lem:ms}
+Let reflections $O_{ij}$ commute within rows and columns, with row products $I$ and column products $I,I,-I$. There is a unitary identification with $\mathbb C^4\otimes J$ carrying them to $M_{ij}\otimes I_J$ in~\eqref{eq:square}, for an arbitrary multiplicity space $J$.
+\end{lemma}
+\begin{proof}
+This is the operator rigidity underlying~\cite[Proposition~2 and Appendix~A.2]{Mancinska}. Put $a=O_{11}$, $b=O_{12}$, $c=O_{21}$, $d=O_{22}$. The cross commutations are $[a,b]=[a,c]=[b,d]=[c,d]=0$. Parity gives $O_{13}=ab$, $O_{23}=cd$, $O_{31}=ac$, $O_{32}=bd$, and $acbd=O_{33}=-abcd$. Multiplication on the left by $a$ and on the right by $d$ gives $cb=-bc$. Using $[ac,bd]=0$ and the cross commutations then gives $ad=-da$.
+
+An anticommuting reflection pair is unitarily $X,Z$ on $\mathbb C^2$ tensored with a multiplicity space: the second reflection exchanges the first's two eigenspaces. The second pair commutes with the first, so acts on its multiplicity space and permits the same construction. Taking $(a,d)$ as the first-qubit $(X,Z)$ and $(b,c)$ as the second-qubit $(X,Z)$ recovers~\eqref{eq:square}. This works with infinite multiplicity.
+\end{proof}
+
+\begin{proposition}[Flagged sector law]\label{prop:sector}
+In every perfect finite-dimensional or spatial strategy for $\FMS$, the flag and magic-square sector maps satisfy
+\begin{equation}\label{eq:sectorlaw}
+\Sch(K_m)=\mult{4}{\bigl(\sqrt2\,\Sch(K_f)\bigr)}.
+\end{equation}
+Here $\mult{m}{S}$ means $m$ copies of $S$. The two sectors vanish together.
+\end{proposition}
+\begin{proof}
+Flag consistency gives a common flag projection on each side, independent of the row or column, and $K=K_f\oplus K_m$. In the other sector, Lemma~\ref{lem:classes} makes the checked cell classes projections. A joint POVM with projection marginals is their joint spectral measurement: each fine effect is supported in the ranges specified by its marginals, and completeness recovers their products. Thus the cell reflections satisfy the row relations. Intertwining through $K_m$ transfers Bob's column relations to Alice by dense-range cancellation, and conversely by injectivity. Lemma~\ref{lem:ms} on each side yields
+\[
+K_m=I_4\otimes D_m.
+\]
+An intertwiner of the two full $M_4$ actions has this form by comparison of its sixteen matrix blocks. On its multiplicity supports $D_m$ is injective with dense range.
+
+Calibration identifies the sign supports as
+\[
+S_x=P_f\oplus(|c_x\rangle\langle c_x|\otimes I),\qquad
+S'_y=Q_f\oplus(|r_y\rangle\langle r_y|\otimes I).
+\]
+Put $X_x=E_x^+-E_x^-$ and $Y_y=F_y^+-F_y^-$, self-adjoint contractions on their sign supports. Identify each support with flag space direct sum multiplicity space and write
+\begin{equation}\label{eq:bridge}
+W_{xy}=S_xKS'_y=K_f\oplus\frac{\sigma_{xy}}{\sqrt2}D_m,
+\qquad H=K_f\oplus\frac{D_m}{\sqrt2}.
+\end{equation}
+Each $W_{xy}$ is injective with dense range. The two forbidden sign events imply
+\begin{align*}
+(I+X_x)W_{xy}(I-\sigma_{xy}Y_y)&=0,\\
+(I-X_x)W_{xy}(I+\sigma_{xy}Y_y)&=0.
+\end{align*}
+Their sum and difference give both identities
+\begin{equation}\label{eq:twoidentities}
+X_xW_{xy}=\sigma_{xy}W_{xy}Y_y,\qquad
+X_xW_{xy}Y_y=\sigma_{xy}W_{xy}.
+\end{equation}
+Consequently $X_x^2W_{xy}=W_{xy}$ and $W_{xy}Y_y^2=W_{xy}$. Dense range and injectivity give $X_x^2=Y_y^2=I$. This proves projectivity of the unchecked signs with bounded operators alone.
+
+For $y=0$, $W_{00}=W_{10}=H$, so $X_0=X_1=:X$. For $y=1$, $W_{01}=H$ and $W_{11}=\Delta_AH=H\Delta_B$, where $\Delta=I\oplus(-I)$ on each side. The intertwining equations imply $X=-\Delta_AX\Delta_A$. Thus
+\[
+X=\begin{pmatrix}0&\beta^*\\\beta&0\end{pmatrix},\qquad
+\beta^*\beta=I,\quad\beta\beta^*=I.
+\]
+The map $\beta$ is unitary between flag and multiplicity spaces. From $XH=HY_0$ and self-adjointness follows $XHH^*=HH^*X$. Its off-diagonal blocks give
+\[
+\beta K_fK_f^*=\tfrac12D_mD_m^*\beta.
+\]
+Their positive eigenvalues have this ratio. Taking square roots and counting the four copies in $K_m$ proves~\eqref{eq:sectorlaw}. Unitarity of $\beta$ also makes the sectors vanish together.
+\end{proof}
+
+This directly proves the spatial law without extending a finite-dimensional self-test by assumption. It makes no assertion about general commuting-operator strategies.
+
+\section{Gluing and the finite-dimensional obstruction}\label{sec:gluing}
+The support graph has Alice and Bob questions as its two vertex sets and supported pairs as edges; delete unused questions. Its connectedness is the hypothesis needed to propagate a common boundary projection.
+
+\begin{theorem}[Connected-support gluing]\label{thm:gluing}
+Let $G$ be a finite rational game with connected support. At a supported pair $(z,z')$, suppose its answers split into consistent classes $U,L$. Assume every finite-dimensional perfect full-support strategy satisfies
+\begin{equation}\label{eq:generallaw}
+\Sch(K_U)=\mult{m}{\bigl(\kappa\Sch(K_L)\bigr)},\qquad m\in\mathbb N_{\geq1},\quad\kappa>1,
+\end{equation}
+with both sectors nonzero. Suppose $G$ has a perfect strategy with one Schmidt coefficient $l$ in $L$ and $m$ coefficients $\kappa l$ in $U$.
+
+Take two copies of the supported predicate, add the boundary answer to copy two, and link $(1,z),(2,z)$ to one Bob label question by $[a\in U]=[b=A]$ and $[a\in L\text{ or }a=\bot]=[b=A]$. Give all these pairs positive rational probabilities. The resulting game is spatially perfect, never finitely perfect, and has finite-dimensional supremum one. If~\eqref{eq:generallaw} holds spatially, the multiset identities below hold for every perfect spatial strategy.
+\end{theorem}
+\begin{proof}
+In copy two, boundary/nonboundary is a checked decomposition on every edge. Lemma~\ref{lem:classes} and connectedness propagate common projections $P_\bot,Q_\bot$ with $P_\bot K=KQ_\bot$. All other copy-two effects lie in their complements; conditioning on this complement when nonzero gives a perfect strategy for $G$.
+
+Let $S_1=\Sch(K_L^1)$ and $S_2=\Sch(K_L^2)$ be the unnormalized lower sectors, and $T=\Sch(P_\bot K)$. The links give equalities of projections,
+\begin{equation}\label{eq:projectionlinks}
+P_U^1=P_L^2+P_\bot,\qquad P_L^1=P_U^2.
+\end{equation}
+For example both sides of the first equality intertwine $K$ with Bob's label-$A$ projection, so dense range gives equality. Equations~\eqref{eq:multisets} and~\eqref{eq:generallaw} imply
+\begin{equation}\label{eq:generalchain}
+S_1=\mult{m}{(\kappa S_2)},\qquad
+\mult{m^2}{(\kappa^2S_2)}=S_2\sq T.
+\end{equation}
+The nonboundary sector cannot vanish: the second link would kill copy one's lower sector, and its sector law would kill the whole state. Thus $S_2$ is nonempty. In finite dimension its least element $\mu>0$ belongs to the left side of the second identity, so $\mu=\kappa^2s$ for some $s\in S_2$. This contradicts $s=\mu/\kappa^2<\mu$.
+
+For spatial existence use basis vectors $A(i,j,k)$, $1\leq i,j\leq m$, and $B(j,k)$, $1\leq j\leq m$, $k\geq0$. Give them respective Schmidt coefficients $a_k,b_k$, where
+\[
+a_k=\kappa b_k,\qquad b_{k+1}=b_k/\kappa^2,\qquad
+b_0^2=\frac{1-\kappa^{-4}}{m^2\kappa^2+m}.
+\]
+The squared coefficients sum to one. Copy one uses ideal blocks with $B(j,k)$ as $L$ and $A(i,j,k)$ as $U$. Copy two uses $A(1,1,k+1)$ as $L$ and $B(j,k)$ as $U$, since $b_k=\kappa a_{k+1}$. All other $A$ vectors are boundary in copy two. Direct sums of ideal measurements, with the boundary projection, are bounded complete POVMs. Bob's label distinguishes $A$ and $B$. Each internal pair wins on ideal blocks or boundary/boundary, and the two linked Alice projections equal the $A$ projection. The diagonal state therefore wins both links. Finite truncation and compressed measurements give loss tending to zero by Lemma~\ref{lem:tail} below.
+\end{proof}
+
+Connectedness is explicit: on disconnected support, consistency gives one boundary projection per component and does not alone give a global projection. The concrete gadget has full pair support, so this issue does not arise for $\Gamma$.
+
+Apply Theorem~\ref{thm:gluing} with $m=4$, $\kappa=\sqrt2$, $z=R_1$, $z'=C_1$, $U=\mathcal R$, $L=\{f\}$. The sector law is Proposition~\ref{prop:sector} and the ideal strategy is~\eqref{eq:gadgetstate}. In particular
+\begin{equation}\label{eq:chain}
+S_1=\mult{4}{(\sqrt2S_2)},\qquad \mult{16}{(2S_2)}=S_2\sq T.
+\end{equation}
+This proves finite impossibility without assuming positive boundary weight. In fact the weight is forced: copy one's law gives $\|S_1\|_2^2=1/9$, the second link gives $\|S_2\|_2^2=1/72$, and the first gives
+\begin{equation}\label{eq:boundarymass}
+\|T\|_2^2=8/9-1/72=7/8.
+\end{equation}
+This mass calculation does not replace the minimum-coefficient argument.
+
+\section{Perfect spatial play and finite compression}\label{sec:strategy}
+\subsection{The normalized state}
+For the concrete game index $i,j$ by $0,1,2,3$. On each side use the basis $A(i,j,k),B(j,k)$, $k\geq0$, and put
+\begin{align}\label{eq:spatialstate}
+\psi={}&\sum_{k\geq0}\sum_{i,j=0}^3a_k|A(i,j,k)A(i,j,k)\rangle\nonumber\\
+&+\sum_{k\geq0}\sum_{j=0}^3b_k|B(j,k)B(j,k)\rangle,\\
+b_k={}&\frac{2^{-k}}{4\sqrt3},\qquad a_k=\sqrt2b_k.\nonumber
+\end{align}
+The squared mass of level $k$ is $16a_k^2+4b_k^2=(3/4)4^{-k}$, so $\|\psi\|=1$. Each local space is isomorphic to $\ell^2$; there are two Hilbert tensor factors.
+
+Copy one applies the ideal PVMs on each block
+\[
+\bigl(B(j,k),A(0,j,k),A(1,j,k),A(2,j,k),A(3,j,k)\bigr).
+\]
+Copy two applies them on
+\[
+\bigl(A(0,0,k+1),B(0,k),B(1,k),B(2,k),B(3,k)\bigr),
+\]
+and outputs $\bot$ on every remaining $A$ vector. The coefficient ratio in each block is $(1,\sqrt2,\sqrt2,\sqrt2,\sqrt2)$ since $b_k=\sqrt2a_{k+1}$. Bob labels the $A$ and $B$ subspaces. Alice's copy-one nonflag and copy-two flag-plus-boundary projections both equal the $A$ projection; the diagonal state satisfies the links.
+
+This covers all supported pairs. In copy one the nine row/column pairs, four calibration pairs and four sign pairs win by the ideal strategy; the remaining eight are free. In copy two all twenty-five pairs win on ideal blocks or boundary/boundary, with no mixed amplitude. Both links win as just shown. Thus~\eqref{eq:spatialstate} is a normalized perfect spatial strategy.
+
+\subsection{Loss under compression}
+\begin{lemma}[Tail-to-loss bound]\label{lem:tail}
+A perfect spatial strategy with Schmidt tail mass $t$ outside a finite retained set has a normalized truncation with compressed measurements of loss at most $t$.
+\end{lemma}
+\begin{proof}
+Its loss operator satisfies $0\leq L\leq I$ and $L\psi=0$. The normalized truncation $\phi$ has overlap $\sqrt{1-t}$ with $\psi$. For $0<t<1$ write $\phi=\sqrt{1-t}\psi+\sqrt t\eta$ with $\eta\perp\psi$ unit. Then $\langle\phi,L\phi\rangle=t\langle\eta,L\eta\rangle\leq t$. Compression of the local effects preserves this expectation and completeness. The zero-tail case is immediate.
+\end{proof}
+
+Retaining levels $0,\ldots,K-1$ keeps $20K$ coefficients and mass $1-4^{-K}$. Compressed effects are POVMs; the sign effects at the incomplete last block need not be projections. The lemma gives
+\[
+D_\Gamma(\eps)\leq20\lceil\log_4(1/\eps)\rceil
+\leq10\log_2(1/\eps)+20\quad(0<\eps<1).
+\]
+The constant $10$ uses arbitrary POVMs. A PVM-only convention requires a dilation and its dimension cost.
+
+The compressed loss can be calculated exactly. All copy-one blocks remain intact. The only incomplete copy-two block is the last $B$ quadruple, whose next-level flag is removed. Its unnormalized coefficient matrix is $\diag(0,b_{K-1},b_{K-1},b_{K-1},b_{K-1})$. Only the four sign pairs lose. For forbidden answer signs $u,v$, $uv=-\sigma_{xy}$, and the probability is
+\[
+\left|\frac{uv\,b_{K-1}}2\langle c_x|r_y\rangle\right|^2
+=\frac{b_{K-1}^2}{8}.
+\]
+Each of four pairs has two forbidden sign choices, giving total unweighted mass $b_{K-1}^2$. All row/column, calibration, boundary and link events still have zero loss. Dividing by $52$ and the retained mass gives
+\[
+\ell^{\mathrm{cmp}}_{20K}=\frac{b_{K-1}^2}{52(1-4^{-K})}
+=\frac{4^{-(K-1)}}{48\cdot52(1-4^{-K})}
+=\frac{1}{624(4^K-1)}.
+\]
+Solving for $K$ gives~\eqref{eq:dimension} and completes Theorem~\ref{thm:main}. This is the loss of the specified compression; no optimality among all strategies of dimension $20K$ is asserted.
+
+\section{What the chain does and does not imply}\label{sec:profile}
+\begin{proposition}[Exact perfect-state tails]\label{prop:tails}
+Every normalized perfect spatial strategy has a nonempty sector multiset $S_2$ closed under halving. If $s_0=\max S_2$, its Schmidt tail after deleting the $r$ largest coefficients satisfies
+\begin{equation}\label{eq:taillower}
+t_\psi(r)\geq96s_0^2\,4^{-\lceil r/20\rceil}
+\geq24s_0^2\,2^{-r/10}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The spatial sector law gives~\eqref{eq:chain} for compact sector maps. If $s\in S_2$, the second identity puts $s$ in $\mult{16}{(2S_2)}$, hence $s/2\in S_2$. Square summability gives a largest coefficient $s_0>0$ and thus the distinct chain $s_02^{-k}$.
+
+The full Schmidt multiset contains sixteen copies of $2s_02^{-k}$ from copy one's upper sector and four copies of $\sqrt2s_02^{-k}$ from its lower sector, for every $k$. This selected submultiset has squared mass $72s_0^2 4^{-k}$ per level, and tail $96s_0^2 4^{-K}$ after $K$ full levels. Deleting $r$ coefficients from the full multiset cannot leave less squared mass than optimally deleting $r$ from this submultiset. Deleting $20\lceil r/20\rceil$ selected coefficients can only decrease the latter tail. This proves the first inequality; $\lceil r/20\rceil\leq r/20+1$ gives the second.
+\end{proof}
+
+No nonzero finite-rank projection can commute with every Alice effect in a perfect full-support strategy. Projecting the vector onto it preserves all losing zeros and gives a nonzero finite-Schmidt-rank perfect vector. Bob can then be compressed to its finite Schmidt support, contradicting Theorem~\ref{thm:main}.
+
+Proposition~\ref{prop:tails} concerns exact perfect states. It does not compare arbitrary approximate strategies with truncations of perfect states or prove extremality of~\eqref{eq:spatialstate} for truncation. Such a comparison requires a separate argument.
+
+\begin{proposition}[Profile bracket]\label{prop:profile}
+Let $A_\Gamma(n)=\log_2D_\Gamma(2^{-n})$. As $n\to\infty$,
+\begin{equation}\label{eq:profile}
+\tfrac12\log_2\log_2 n-O(1)\leq A_\Gamma(n)\leq\log_2n+O(1).
+\end{equation}
+More precisely its lower bound is
+\[
+A_\Gamma(n)\geq\tfrac12\log_2\log_2 n
+-\tfrac12\log_2(226\log_2 12)-o(1).
+\]
+\end{proposition}
+\begin{proof}
+There are $e=112$ local effects: $25+30$ on Alice's copies and $25+30+2$ on Bob's. Write every effect as $TT^*$ for a complex $d\times d$ matrix $T$, and represent the pure state by a complex $d\times d$ matrix $C$. Real and imaginary parts give $N=2(e+1)d^2=226d^2$ real variables. Completeness and $\|C\|_F^2=1$ are integer quadratic equations. Their feasible set is compact: every effect is at most $I$, bounding its factor's Frobenius norm. These parameters cover all pure-state strategies in dimension $d$. For fixed measurements a mixed state cannot improve the minimum below a pure state.
+
+Multiplying the loss by $52$ gives an integer polynomial of degree at most six. Constraint counts and coefficient heights are polynomially bounded in $d$. The minimum $\ell_d$ is positive by compactness and finite impossibility. Apply Jeronimo--Perrucci--Tsigaridas~\cite[Theorem~1]{JPT} to a compact connected component containing a minimizer, with even degree bound six. Its positive-minimum estimate yields
+\begin{equation}\label{eq:jpt}
+\log_2\log_2(1/\ell_d)\leq226d^2\log_2 12+O(\log d).
+\end{equation}
+The factor $52$ affects only lower-order terms. For $d=D_\Gamma(2^{-n})$, $\ell_d\leq2^{-n}$. Insert this into~\eqref{eq:jpt} and solve for $\log_2d$. Since $D_\Gamma(2^{-n})\to\infty$, this gives the stated lower bound. The upper bound is Theorem~\ref{thm:main}.
+\end{proof}
+
+\begin{problem}\label{prob:logarithmic}
+Does $D_\Gamma(\eps)=\Theta(\log(1/\eps))$ as $\eps\downarrow0$?
+\end{problem}
+Only the upper bound of this asymptotic equivalence is proved here. The missing step is quantitative control of the sector and gluing identities for arbitrary nearly perfect strategies, particularly on Schmidt directions of appreciable weight. The exact chain alone gives no uniform comparison. No universal logarithmic lower bound for games is asserted.
+
+\section*{How this work was done}
+The authors developed the construction and proofs with AI models from more than one developer. The argument was checked against the cited primary statements and by finite symbolic and numerical calculations. Nonexistence in finite dimension follows from the sector-and-minimum proof; numerical optimization is not a certificate of nonexistence.
+
+The ancillary package contains the rational predicate, a deterministic generator, symbolic checks, finite compression checks, recorded outputs, a sequential runner, and SHA-256 checksums. The symbolic checks verify all forbidden gadget products exactly, projectivity, completeness, overlap signs, normalization and the incomplete-block loss. Numerical checks cover every supported pair for the specified compressions and compare their loss with~\eqref{eq:exactloss}. Positivity tolerances are supplemental; positivity follows analytically by compression of projections. The infinite strategy is justified by the normalized direct-sum construction, not extrapolation from finite numerical checks. No proof-assistant certification or exhaustive historical-priority search is claimed.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

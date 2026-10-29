@@ -1,0 +1,56 @@
+\begin{thebibliography}{1}
+
+\bibitem{Beigi}
+Salman Beigi.
+\newblock Separation of quantum, spatial quantum, and approximate quantum
+  correlations.
+\newblock {\em Quantum}, 5:389, 2021.
+\newblock arXiv:2004.11103.
+
+\bibitem{CS17}
+Andrea Coladangelo and Jalex Stark.
+\newblock Separation of finite and infinite-dimensional quantum correlations,
+  with infinite question or answer sets.
+\newblock \url{https://arxiv.org/abs/1708.06522}, 2017.
+\newblock arXiv:1708.06522.
+
+\bibitem{CS18}
+Andrea Coladangelo and Jalex Stark.
+\newblock Unconditional separation of finite and infinite-dimensional quantum
+  correlations.
+\newblock \url{https://arxiv.org/abs/1804.05116}, 2018.
+\newblock arXiv:1804.05116.
+
+\bibitem{JPT}
+Gabriela Jeronimo, Daniel Perrucci, and Elias Tsigaridas.
+\newblock On the minimum of a polynomial function on a basic closed
+  semialgebraic set and applications.
+\newblock \url{https://arxiv.org/abs/1112.0544}, 2011.
+\newblock arXiv:1112.0544.
+
+\bibitem{KPS}
+Se-Jin Kim, Vern~I. Paulsen, and Christopher Schafhauser.
+\newblock A synchronous game for binary constraint systems.
+\newblock \url{https://arxiv.org/abs/1707.01016}, 2017.
+\newblock arXiv:1707.01016.
+
+\bibitem{Lalonde}
+Olivier Lalonde.
+\newblock Maximally entangled states are not complete for pseudo-telepathy.
+\newblock \url{https://arxiv.org/abs/2608.05378}, 2026.
+\newblock arXiv:2608.05378.
+
+\bibitem{Mancinska}
+Laura Man{\v c}inska.
+\newblock The right entanglement for perfect nonlocality and zero-error
+  communication.
+\newblock \url{https://arxiv.org/abs/2610.06512}, 2026.
+\newblock arXiv:2610.06512v1.
+
+\bibitem{Slofstra}
+William Slofstra.
+\newblock The set of quantum correlations is not closed.
+\newblock \url{https://arxiv.org/abs/1703.08618}, 2017.
+\newblock arXiv:1703.08618v2.
+
+\end{thebibliography}
