@@ -1,4 +1,4 @@
-Version 1.1.0, October 2026. A preprint; it has not been peer reviewed.
+Version 2.0.0, October 2026. A preprint; it has not been peer reviewed.
 Finite checks for the game in the accompanying paper
 
 Files:
@@ -23,7 +23,7 @@ Files:
                 Measured runtime and sampled combined memory for each program.
 
 Requirements: Python 3.10 or later, NumPy, SymPy, CVXPY with Clarabel,
-psutil and threadpoolctl.
+psutil, SciPy and threadpoolctl.
 Run from any directory:
   python -B run.py --output <new-results-directory>
 
@@ -54,3 +54,30 @@ All computations here use CPU arrays and the CPU Clarabel solver.
 The infinite strategy, the sector law, gluing and arbitrary-strategy logarithmic
 dimension lower bound require the analytic proofs in the paper. These programs
 are not a proof-assistant formalization or a global optimization oracle.
+
+Resource and operator-algebra checks:
+  energy_checks.py: exact generating-function moments, passive compression
+    energy, entropy and finite entropy-tail examples.
+  field_checks.py: rational game reconstruction, forbidden infinite-matrix
+    entries, cubic storage enumeration, smooth-mode energy inequalities
+    and finite symplectic completion.
+  faithfulness_checks.py: exact classical value, testing inequalities,
+    finite-algebra compression and negative mirror examples.
+  semifinite_checks.py and semifinite_model_checks.py: independent exact
+    gadget products, finite matrix models, trace/entropy sector identities,
+    scalar-boundary equality and comparison with the original compression.
+  fingerprint_checks.py: exact scalar convolution, moments, released-state
+    boundary law and 400 finite boundary-mixture examples.
+The associated JSON and log files are recorded outputs. The runner invokes
+all sixteen scripts sequentially. Every new script uses GAME_CHECK_OUTPUT
+when set, otherwise the current directory, for its output directory.
+See ADAPTATIONS.txt for the portable source and scope adjustments.
+No finite calculation certifies the continuum or universal algebraic claims.
+
+The ladder_checks.py program uses exact rational infinite-tail normalization,
+112485 Ky Fan comparisons on 329 seeded cases, full-tail passive energies,
+positive-order entropy comparisons, and exact capacity gaps through level 12.
+It also checks general finite-factor ladder constants, backward-shift identities
+and the critical identity ladder where a zero boundary has no normalized law.
+Its output is ladder-results.json and ladder_checks.log. The universal results
+and one-sided limiting-price compactness require the written proofs.

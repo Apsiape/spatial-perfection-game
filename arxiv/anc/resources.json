@@ -2,64 +2,113 @@
   {
     "script": "game.py",
     "exit_code": 0,
-    "sampled_peak_combined_rss_MB": 34.98,
-    "seconds": 0.152,
+    "sampled_peak_combined_rss_MB": 34.914,
+    "seconds": 0.134,
     "memory_ceiling_triggered": false
   },
   {
     "script": "checks.py",
     "exit_code": 0,
-    "sampled_peak_combined_rss_MB": 107.508,
-    "seconds": 2.048,
+    "sampled_peak_combined_rss_MB": 107.528,
+    "seconds": 1.947,
     "memory_ceiling_triggered": false
   },
   {
     "script": "fms_core.py",
     "exit_code": 0,
-    "sampled_peak_combined_rss_MB": 46.117,
-    "seconds": 0.36,
+    "sampled_peak_combined_rss_MB": 49.77,
+    "seconds": 0.32,
     "memory_ceiling_triggered": false
   },
   {
     "script": "check_bridge.py",
     "exit_code": 0,
-    "sampled_peak_combined_rss_MB": 298.742,
-    "seconds": 3.465,
+    "sampled_peak_combined_rss_MB": 298.627,
+    "seconds": 2.994,
     "memory_ceiling_triggered": false
   },
   {
     "script": "check_rsl.py",
     "exit_code": 0,
-    "sampled_peak_combined_rss_MB": 323.219,
-    "seconds": 18.832,
+    "sampled_peak_combined_rss_MB": 323.338,
+    "seconds": 15.359,
     "memory_ceiling_triggered": false
   },
   {
     "script": "gamma_chain.py",
     "exit_code": 0,
-    "sampled_peak_combined_rss_MB": 88.31,
-    "seconds": 2.162,
+    "sampled_peak_combined_rss_MB": 105.566,
+    "seconds": 2.024,
     "memory_ceiling_triggered": false
   },
   {
     "script": "exact_checks.py",
     "exit_code": 0,
-    "sampled_peak_combined_rss_MB": 89.158,
-    "seconds": 1.698,
+    "sampled_peak_combined_rss_MB": 89.276,
+    "seconds": 1.506,
     "memory_ceiling_triggered": false
   },
   {
     "script": "check_extraction.py",
     "exit_code": 0,
-    "sampled_peak_combined_rss_MB": 63.369,
-    "seconds": 0.76,
+    "sampled_peak_combined_rss_MB": 65.241,
+    "seconds": 0.644,
     "memory_ceiling_triggered": false
   },
   {
     "script": "check_descent.py",
     "exit_code": 0,
-    "sampled_peak_combined_rss_MB": 49.701,
-    "seconds": 0.368,
+    "sampled_peak_combined_rss_MB": 49.287,
+    "seconds": 0.332,
+    "memory_ceiling_triggered": false
+  },
+  {
+    "script": "energy_checks.py",
+    "exit_code": 0,
+    "sampled_peak_combined_rss_MB": 90.411,
+    "seconds": 1.82,
+    "memory_ceiling_triggered": false
+  },
+  {
+    "script": "field_checks.py",
+    "exit_code": 0,
+    "sampled_peak_combined_rss_MB": 104.837,
+    "seconds": 2.992,
+    "memory_ceiling_triggered": false
+  },
+  {
+    "script": "faithfulness_checks.py",
+    "exit_code": 0,
+    "sampled_peak_combined_rss_MB": 41.447,
+    "seconds": 0.527,
+    "memory_ceiling_triggered": false
+  },
+  {
+    "script": "semifinite_checks.py",
+    "exit_code": 0,
+    "sampled_peak_combined_rss_MB": 127.091,
+    "seconds": 3.662,
+    "memory_ceiling_triggered": false
+  },
+  {
+    "script": "semifinite_model_checks.py",
+    "exit_code": 0,
+    "sampled_peak_combined_rss_MB": 123.154,
+    "seconds": 2.137,
+    "memory_ceiling_triggered": false
+  },
+  {
+    "script": "fingerprint_checks.py",
+    "exit_code": 0,
+    "sampled_peak_combined_rss_MB": 53.637,
+    "seconds": 0.527,
+    "memory_ceiling_triggered": false
+  },
+  {
+    "script": "ladder_checks.py",
+    "exit_code": 0,
+    "sampled_peak_combined_rss_MB": 42.484,
+    "seconds": 2.138,
     "memory_ceiling_triggered": false
   }
 ]

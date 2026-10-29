@@ -1,0 +1,137 @@
+{
+  "status": "PASS",
+  "number_pgf": "(z**19/48 + z**18/48 + z**17/48 + z**16/48 + z**15/24 + z**14/24 + z**13/24 + z**12/24 + z**11/24 + z**10/24 + z**9/24 + z**8/24 + z**7/24 + z**6/24 + z**5/24 + z**4/24 + z**3/24 + z**2/24 + z/24 + 1/24)/(1 - z**20/4)",
+  "number_moments": [
+    "275/18",
+    "23765/54",
+    "512525/27",
+    "177414401/162",
+    "19199189425/243",
+    "3323911232855/486"
+  ],
+  "entropy_bits": 5.362740278498934,
+  "numeric_entropy_bits": 5.362740278498934,
+  "compressions": [
+    {
+      "levels": 1,
+      "rank": 20,
+      "energy": "155/18",
+      "entropy_bits": 4.281036112553423
+    },
+    {
+      "levels": 2,
+      "rank": 40,
+      "energy": "227/18",
+      "entropy_bits": 5.002964207440786
+    },
+    {
+      "levels": 3,
+      "rank": 60,
+      "energy": "1805/126",
+      "entropy_bits": 5.244782106760755
+    },
+    {
+      "levels": 4,
+      "rank": 80,
+      "energy": "4579/306",
+      "entropy_bits": 5.325721166338184
+    },
+    {
+      "levels": 5,
+      "rank": 100,
+      "energy": "93175/6138",
+      "entropy_bits": 5.351555537178769
+    },
+    {
+      "levels": 6,
+      "rank": 120,
+      "energy": "24977/1638",
+      "entropy_bits": 5.359457612096902
+    },
+    {
+      "levels": 7,
+      "rank": 140,
+      "energy": "1500935/98298",
+      "entropy_bits": 5.361797676349607
+    },
+    {
+      "levels": 8,
+      "rank": 160,
+      "energy": "1201283/78642",
+      "entropy_bits": 5.362474120201322
+    },
+    {
+      "levels": 9,
+      "rank": 180,
+      "energy": "2669855/174762",
+      "entropy_bits": 5.362666110230893
+    },
+    {
+      "levels": 10,
+      "rank": 200,
+      "energy": "3844727/251658",
+      "entropy_bits": 5.362719829132553
+    },
+    {
+      "levels": 11,
+      "rank": 220,
+      "energy": "384476455/25165818",
+      "entropy_bits": 5.3627346893236005
+    },
+    {
+      "levels": 12,
+      "rank": 240,
+      "energy": "102527329/6710886",
+      "entropy_bits": 5.362738761996046
+    },
+    {
+      "levels": 13,
+      "rank": 260,
+      "energy": "6151644215/402653178",
+      "entropy_bits": 5.362739869570906
+    },
+    {
+      "levels": 14,
+      "rank": 280,
+      "energy": "4921316339/322122546",
+      "entropy_bits": 5.362740168816347
+    },
+    {
+      "levels": 15,
+      "rank": 300,
+      "energy": "32808777325/2147483646",
+      "entropy_bits": 5.362740249215643
+    },
+    {
+      "levels": 16,
+      "rank": 320,
+      "energy": "78741066691/5153960754",
+      "entropy_bits": 5.36274027071245
+    },
+    {
+      "levels": 17,
+      "rank": 340,
+      "energy": "1574821339735/103079215098",
+      "entropy_bits": 5.362740276435899
+    },
+    {
+      "levels": 18,
+      "rank": 360,
+      "energy": "139984119227/9162596898",
+      "entropy_bits": 5.362740277954072
+    },
+    {
+      "levels": 19,
+      "rank": 380,
+      "energy": "25197141467495/1649267441658",
+      "entropy_bits": 5.362740278355442
+    },
+    {
+      "levels": 20,
+      "rank": 400,
+      "energy": "4031542635079/263882790666",
+      "entropy_bits": 5.362740278461242
+    }
+  ],
+  "scope": "Exact resource identities and finite tests, not certification of infinite-dimensional analytic proofs or global optima."
+}

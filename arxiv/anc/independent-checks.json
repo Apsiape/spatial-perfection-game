@@ -1,0 +1,342 @@
+{
+  "status": "passed",
+  "python": "3.13.12 (tags/v3.13.12:1cbe481, Feb  3 2026, 18:22:25) [MSC v.1944 64 bit (AMD64)]",
+  "events": 1547,
+  "losing_events": 709,
+  "zero_amplitude_entries": 16152,
+  "per_pair": [
+    {
+      "alice": "1:R1",
+      "bob": "1:C1",
+      "forbidden": 16,
+      "zero_matrix_entries": 768
+    },
+    {
+      "alice": "1:R1",
+      "bob": "1:C2",
+      "forbidden": 16,
+      "zero_matrix_entries": 768
+    },
+    {
+      "alice": "1:R1",
+      "bob": "1:C3",
+      "forbidden": 16,
+      "zero_matrix_entries": 768
+    },
+    {
+      "alice": "1:R1",
+      "bob": "1:U0",
+      "forbidden": 18,
+      "zero_matrix_entries": 3168
+    },
+    {
+      "alice": "1:R1",
+      "bob": "1:U1",
+      "forbidden": 18,
+      "zero_matrix_entries": 3168
+    },
+    {
+      "alice": "1:R2",
+      "bob": "1:C1",
+      "forbidden": 16,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "1:R2",
+      "bob": "1:C2",
+      "forbidden": 16,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "1:R2",
+      "bob": "1:C3",
+      "forbidden": 16,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "1:R2",
+      "bob": "1:U0",
+      "forbidden": 0,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "1:R2",
+      "bob": "1:U1",
+      "forbidden": 0,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "1:R3",
+      "bob": "1:C1",
+      "forbidden": 16,
+      "zero_matrix_entries": 768
+    },
+    {
+      "alice": "1:R3",
+      "bob": "1:C2",
+      "forbidden": 16,
+      "zero_matrix_entries": 768
+    },
+    {
+      "alice": "1:R3",
+      "bob": "1:C3",
+      "forbidden": 16,
+      "zero_matrix_entries": 768
+    },
+    {
+      "alice": "1:R3",
+      "bob": "1:U0",
+      "forbidden": 0,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "1:R3",
+      "bob": "1:U1",
+      "forbidden": 0,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "1:T0",
+      "bob": "1:C1",
+      "forbidden": 18,
+      "zero_matrix_entries": 288
+    },
+    {
+      "alice": "1:T0",
+      "bob": "1:C2",
+      "forbidden": 0,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "1:T0",
+      "bob": "1:C3",
+      "forbidden": 0,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "1:T0",
+      "bob": "1:U0",
+      "forbidden": 2,
+      "zero_matrix_entries": 360
+    },
+    {
+      "alice": "1:T0",
+      "bob": "1:U1",
+      "forbidden": 2,
+      "zero_matrix_entries": 360
+    },
+    {
+      "alice": "1:T1",
+      "bob": "1:C1",
+      "forbidden": 18,
+      "zero_matrix_entries": 288
+    },
+    {
+      "alice": "1:T1",
+      "bob": "1:C2",
+      "forbidden": 0,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "1:T1",
+      "bob": "1:C3",
+      "forbidden": 0,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "1:T1",
+      "bob": "1:U0",
+      "forbidden": 2,
+      "zero_matrix_entries": 360
+    },
+    {
+      "alice": "1:T1",
+      "bob": "1:U1",
+      "forbidden": 2,
+      "zero_matrix_entries": 360
+    },
+    {
+      "alice": "1:R1",
+      "bob": "label",
+      "forbidden": 5,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "2:R1",
+      "bob": "2:C1",
+      "forbidden": 26,
+      "zero_matrix_entries": 192
+    },
+    {
+      "alice": "2:R1",
+      "bob": "2:C2",
+      "forbidden": 26,
+      "zero_matrix_entries": 192
+    },
+    {
+      "alice": "2:R1",
+      "bob": "2:C3",
+      "forbidden": 26,
+      "zero_matrix_entries": 192
+    },
+    {
+      "alice": "2:R1",
+      "bob": "2:U0",
+      "forbidden": 28,
+      "zero_matrix_entries": 792
+    },
+    {
+      "alice": "2:R1",
+      "bob": "2:U1",
+      "forbidden": 28,
+      "zero_matrix_entries": 792
+    },
+    {
+      "alice": "2:R2",
+      "bob": "2:C1",
+      "forbidden": 26,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "2:R2",
+      "bob": "2:C2",
+      "forbidden": 26,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "2:R2",
+      "bob": "2:C3",
+      "forbidden": 26,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "2:R2",
+      "bob": "2:U0",
+      "forbidden": 10,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "2:R2",
+      "bob": "2:U1",
+      "forbidden": 10,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "2:R3",
+      "bob": "2:C1",
+      "forbidden": 26,
+      "zero_matrix_entries": 192
+    },
+    {
+      "alice": "2:R3",
+      "bob": "2:C2",
+      "forbidden": 26,
+      "zero_matrix_entries": 192
+    },
+    {
+      "alice": "2:R3",
+      "bob": "2:C3",
+      "forbidden": 26,
+      "zero_matrix_entries": 192
+    },
+    {
+      "alice": "2:R3",
+      "bob": "2:U0",
+      "forbidden": 10,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "2:R3",
+      "bob": "2:U1",
+      "forbidden": 10,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "2:T0",
+      "bob": "2:C1",
+      "forbidden": 28,
+      "zero_matrix_entries": 68
+    },
+    {
+      "alice": "2:T0",
+      "bob": "2:C2",
+      "forbidden": 10,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "2:T0",
+      "bob": "2:C3",
+      "forbidden": 10,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "2:T0",
+      "bob": "2:U0",
+      "forbidden": 12,
+      "zero_matrix_entries": 80
+    },
+    {
+      "alice": "2:T0",
+      "bob": "2:U1",
+      "forbidden": 12,
+      "zero_matrix_entries": 80
+    },
+    {
+      "alice": "2:T1",
+      "bob": "2:C1",
+      "forbidden": 28,
+      "zero_matrix_entries": 68
+    },
+    {
+      "alice": "2:T1",
+      "bob": "2:C2",
+      "forbidden": 10,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "2:T1",
+      "bob": "2:C3",
+      "forbidden": 10,
+      "zero_matrix_entries": 0
+    },
+    {
+      "alice": "2:T1",
+      "bob": "2:U0",
+      "forbidden": 12,
+      "zero_matrix_entries": 80
+    },
+    {
+      "alice": "2:T1",
+      "bob": "2:U1",
+      "forbidden": 12,
+      "zero_matrix_entries": 80
+    },
+    {
+      "alice": "2:R1",
+      "bob": "label",
+      "forbidden": 6,
+      "zero_matrix_entries": 0
+    }
+  ],
+  "storage_triples": 91881,
+  "storage_moments": {
+    "1": "4836077585/576763069",
+    "2": "83406024025/576763069",
+    "3": "1663366066025/576763069",
+    "4": "35487743818825/576763069",
+    "5": "796054640220425/576763069",
+    "6": "18527504025591625/576763069"
+  },
+  "energy_test_max_ratio": 1.0000000000000004,
+  "symplectic_error": 2.220446049250313e-15,
+  "peak_working_set_bytes": 84357120,
+  "peak_commit_bytes": 100241408,
+  "compute_threads": 1,
+  "sha256": {
+    "main.tex": "c8f1a3020a079b3f918f2243d6aaa01845e3958bf70321b6a378ae4f194544a1",
+    "game.json": "4ea2ae1ba2efe228996830d8cef39a62ffe67a2eeb27990d67b20a88a0c2530e",
+    "checks.py": "60f7b316c0e89a5d5c8aff9997efcc22bde41ef73aa506adbba36cb8fe035f53",
+    "field_checks.py": "d1a127ba1e271b848fcfecd8a590bb2d91d0ea70c203faf3dd6e8bf52431ec62"
+  },
+  "limitation": "Finite tests supplement analytic proofs; no continuum discretization is a QFT proof."
+}

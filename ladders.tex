@@ -1,0 +1,90 @@
+\subsection{Modular ladders and the role of the boundary}\label{sec:ladders}
+Let $M$ carry a faithful normal state $\varphi$, with modular automorphisms $\sigma_t$. A modular eigen-operator of eigenvalue $\lambda>0$ satisfies $\sigma_t(u)=\lambda^{it}u$. In the semifinite case write $\varphi=\operatorname{Tr}(h\,\cdot)$, $\operatorname{Tr}h=1$, after compression to the support of $h$. The eigen-operator relation means $hu=\lambda uh$ as an affiliated-operator identity, equivalently $g(h)u=u g(\lambda h)$ for every bounded Borel $g$.
+
+For an integer $n\ge1$, an \emph{$(n,\lambda)$ ladder} consists of a boundary projection $B$ and modular eigen-operators $u_1,\ldots,u_n$ such that
+\begin{equation}\label{eq:ladder-relations}
+ u_i^*u_j=\delta_{ij}(I-B),\qquad \sum_{i=1}^n u_i u_i^*=I.
+\end{equation}
+All source and range projections belong to the centralizer. Put $\rho=n\lambda$. For a semifinite density define the state law $\mu_e(g)=\operatorname{Tr}(he\,g(-\ln h))$ for centralizer projections $e$, and the trace measure $\eta_e(A)=\operatorname{Tr}(e1_A(h))$. Let $S_a$ translate real measures by $a$, and $D_c$ multiply positive spectral values by $c$.
+
+\begin{theorem}[The ladder law]\label{thm:ladder}
+Every ladder satisfies $\varphi(B)=1-1/\rho$, so $\rho\ge1$, with $B=0$ exactly at $\rho=1$. In the semifinite case, if $\rho>1$,
+\begin{equation}\label{eq:general-renewal}
+ \mu_I=\sum_{j\ge0}\rho^{-j}S_{j\ln\lambda}\mu_B,
+ \qquad \eta_I=\sum_{j\ge0}n^{-j}(D_{\lambda^{-j}})_*\eta_B.
+\end{equation}
+Thus the scalar modular law is that of $K_B+(\ln\lambda)J$, with independent variables, normalized boundary law $K_B$, and $\Pr(J=j)=(1-1/\rho)\rho^{-j}$.
+
+No normal semifinite critical ladder exists for $n\ge2$. The exceptional critical case $n=\lambda=1$ has $B=0$ and a centralizer unitary; the boundary series does not apply there. Finite-dimensional ladders require $\lambda=1$. In a type-I factor, $\lambda<1$ is impossible, $\lambda=1$ has finite-rank examples, and $\lambda>1$ forces infinite rank and has examples. Every $\mathrm{II}_1$ factor admits a normal ladder for $n\ge2$, $\rho>1$; its density is unbounded when $\lambda<1$.
+
+In the semifinite case, with finite second modular moment,
+\[
+ \operatorname{Var}K=\operatorname{Var}K_B+
+       (\ln\lambda)^2\frac{\rho}{(\rho-1)^2}.
+\]
+If $T=\operatorname{Tr}I<\infty$ and $n\ge2$, trace entropy may equal $-\infty$, and
+\begin{equation}\label{eq:general-deficit}
+ S_{\operatorname{Tr}}(h)\le\ln T-\Delta(n,\lambda),\qquad
+ \Delta(n,\lambda)=\ln\frac{\rho-1}{\lambda(n-1)}-
+                         \frac{\ln\lambda}{\rho-1}.
+\end{equation}
+Equality holds exactly when $h$ is scalar on $B$, and is attained in every finite type-II factor.
+\end{theorem}
+\begin{proof}
+In the standard representation, $\Delta_\varphi^{it}u\Omega=\lambda^{it}u\Omega$. Tomita's identity $Su\Omega=u^*\Omega$, $S=J_\varphi\Delta_\varphi^{1/2}$, gives $\varphi(uu^*)=\lambda\varphi(u^*u)$. Summing~\eqref{eq:ladder-relations} proves the boundary mass and, by faithfulness, the critical equivalence.
+
+For $a=\ln\lambda$, bounded spectral calculus and trace cyclicity give
+\[
+ \mu_I=\rho S_{-a}\mu_{I-B},\qquad
+ \mu_I=\mu_B+\rho^{-1}S_a\mu_I.
+\]
+After $L$ substitutions the remaining measure has mass $\rho^{-L}$. This proves the first series for $\rho>1$ and its normalized independent-law description. Likewise $\eta_I=\eta_B+n^{-1}(D_{1/\lambda})_*\eta_I$. On a set contained in $[c,\infty)$ its $L$th remainder is at most $1/(c\rho^L)$, because $\eta_I([y,\infty))\le1/y$. This proves the trace series, also when total support trace is infinite.
+
+At $\rho=1$, $n\ge2$, the first identity would make a probability measure invariant under the nonzero translation $\ln\lambda=-\ln n$. An interval shorter than this translation with positive mass would have disjoint translates of infinite total mass. For $n=\lambda=1$, the relations instead say that $u_1$ is a centralizer unitary and $B=0$; for example any faithful matrix density with $u_1=I$ is legal. Its nonzero state law cannot equal a zero-boundary series.
+
+In finite dimension the positive spectrum of $h$ is $\lambda$ times its positive spectrum on $I-B$. The smallest eigenvalue contradicts $\lambda>1$, and the largest contradicts $\lambda<1$. In type I, let $\zeta$ count eigenvalues on $I-B$. Since $\zeta\le n(D_\lambda)_*\zeta$, integer multiplicity forces $y/\lambda^k$ for every $k$ whenever $y$ occurs. For $\lambda<1$ these eigenvalues are unbounded, impossible for a density; for $\lambda>1$ they give infinite rank. To construct the latter, take $\zeta$ with one value $c\lambda^{-k}$ for each $k\ge0$, where $c=(\lambda-1)/(n\lambda^2)$, and let $h$ have $n$ copies of $\lambda\zeta$. Choose one vector of each level after the top as source and map it to the $n$ preceding-level vectors. This gives the relations and eigenvalue $\lambda$. A flat density in dimension $n$ gives the $\lambda=1$ example. These constructions concern the support corner.
+
+For $\mathrm{II}_1$, with normalized trace $\tau$, choose orthogonal projections $E_j$ summing strongly to identity, with
+\[
+ \tau(E_j)=\frac{n-1}{n}n^{-j},\qquad
+ h|_{E_j}=c\lambda^{-j},\qquad c=\frac{\rho-1}{\lambda(n-1)}.
+\]
+The geometric sums give $\tau(h)=1$. Put $B=E_0$, split each $E_j$ into $n$ pieces equivalent to $E_{j+1}$, and sum the corresponding partial isometries strongly along the levels. They have the required common source, orthogonal full ranges and density ratio. If $\lambda<1$, the affiliated density is unbounded but trace integrable and faithful. More generally the renewal law then has arbitrarily negative modular values on sets of positive mass, so no bounded density can realize it.
+
+The independent geometric variable has mean $1/(\rho-1)$ and variance $\rho/(\rho-1)^2$, proving the variance identity. Without a finite second moment we use it only when a finite mean and an extended variance have been specified; normality alone does not supply logarithmic moments.
+
+In finite trace, internal equivalence gives $t_B=\operatorname{Tr}B=T(n-1)/n$, and $w_B=\varphi(B)=(\rho-1)/\rho$. With $g_B=(t_B/w_B)h_B$ and $\tau_B=\operatorname{Tr}/t_B$ on the boundary, the renewal law gives
+\[
+ \ln T-\Delta(n,\lambda)-S_{\operatorname{Tr}}(h)
+       =\tau_B(g_B\ln g_B)\ge0.
+\]
+This is relative entropy against the uniform boundary. The positive part of the modular mean has finite integral in finite trace, so the formula remains meaningful at entropy $-\infty$. Equality is precisely $g_B=B$. The displayed type-II construction has scalar boundary and attains it; trace rescaling gives any finite $T$.
+\end{proof}
+
+The deficit is also the relative entropy of the geometric law of ratio $1/\rho$ against that of ratio $1/n$, so it is nonnegative and vanishes exactly at $\lambda=1$. The scalar renewal uses a standard resolvent mechanism. The one-vertex specialization of~\cite[Theorem 3.1]{aHLRS} has the same scalar ratio under $n e^{-\beta}=1/\rho$, or $\beta=\ln(n^2\lambda)$. This correspondence does not identify the operator representations or recover the full graph-algebra theorem: its generators have full source and deficient ranges, unlike~\eqref{eq:ladder-relations}.
+
+For perspective, the geometric oscillator density $(1-q)\diag(1,q,q^2,\ldots)$ has a $(1,1/q)$ ladder given by the backward shift and vacuum boundary. A boundaryless $(n,1/n)$ ladder instead gives the dimension-changing isomorphism $x\mapsto[u_i^*xu_j]$ from $M$ to $M_n(M)$, with inverse $[x_{ij}]\mapsto\sum u_i x_{ij}u_j^*$. The modular KMS identity gives $\varphi(u_i x u_j^*)=\varphi(xu_j^*u_i)/n=\delta_{ij}\varphi(x)/n$, splitting off a maximally mixed $n$-level marginal. This is algebraic state splitting, not fixed-pure-ancilla unitary extraction from a faithful state; that convention has a support obstruction. The known semifinite embezzlement obstruction is credited in Section~\ref{sec:semifinite}. No assertion that all ladder resources diverge near criticality is needed: at $n=1$ the mean and variance contributions both tend to one.
+
+\subsection{The graded hosting criterion}\label{sec:graded}
+A \emph{graded $(4,2)$ ladder} for a semifinite density $h$ consists of orthogonal centralizer projections $F,P,B$ summing to its support and partial isometries $w_i,v_i$, $1\le i\le4$, with
+\begin{align}\label{eq:graded-relations}
+ w_i^*w_j&=\delta_{ij}F,&\sum_iw_iw_i^*&=P+B,\nonumber\\
+ v_i^*v_j&=\delta_{ij}P,&\sum_iv_iv_i^*&=F,
+ \qquad hw_i=2w_i h,\quad hv_i=2v_i h.
+\end{align}
+The equations for unbounded $h$ mean bounded spectral intertwining, as above.
+
+\begin{theorem}[Hosting perfect play]\label{thm:graded-hosting}
+A normal semifinite Alice marginal admits perfect $\Gamma$ play with a suitable commuting partner if and only if its support corner carries a graded $(4,2)$ ladder. This is an existence criterion for measurements, not a claim that arbitrary measurements on the state win.
+\end{theorem}
+\begin{proof}
+For necessity apply the standard-partner reduction of Lemma~\ref{lem:standard-reduction}. Zero probabilities give $E h^{1/2}Q=0$. The internal sector argument of Lemma~\ref{lem:density-sector}, including its support-cutoff cancellations, supplies a flag $f$, four magic corners with internal matrix units commuting with $h$, and $\beta$ such that $\beta^*\beta=f$, $\beta\beta^*=q$, and $d\beta=2\beta h_f$. Thus the four maps $e_{i1}\beta$ from the flag to magic pieces satisfy $hw_i=2w_i h$. Apply this to both copies. The links identify first flag with second magic, $F_1=M_2$, and first magic with second flag plus boundary, $M_1=P+B$. These are exactly~\eqref{eq:graded-relations}. The argument uses internal partial isometries, not just equal Hilbert multiplicities, and remains valid at infinite support trace.
+
+Conversely the first five equivalent corners $\{F,w_iw_i^*\}$ have square-root density
+\[
+ \diag(1,\sqrt2,\sqrt2,\sqrt2,\sqrt2)\otimes h_F^{1/2}
+\]
+in their matrix-unit representation. Put the ideal FMS PVMs there. Every forbidden product is the corresponding zero five-dimensional product tensored with $h_F^{1/2}$. Do the same on $\{P,v_iv_i^*\}$ for copy two and give $B$ its boundary answer. Right-hand measurements give the standard commuting partner. Bob's label is $(P+B,F)$; both checked links identify these same centralizer projections and win. The sum of each PVM is identity on support; complete it off support arbitrarily. The square-root matrix, rather than the density itself, has ratio $\sqrt2$.
+\end{proof}
+
+Putting $u_i=w_i+v_i$ gives an ungraded $(4,2)$ ladder: all cross terms vanish because sources and ranges lie in the orthogonal grading. Its $\rho=8$ law has $\Pr(J=j)=(7/8)8^{-j}$. This is exactly the law written as $2G+Q$ in Theorem~\ref{thm:fingerprint}. Also $\Delta(4,2)=\ln(7/6)-\ln2/7$. The ladder packages their common algebraic mechanism; Section~\ref{sec:semifinite} gives direct game-specific proofs. The extra constraint in type I is integer spectral multiplicity.

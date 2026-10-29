@@ -14,6 +14,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, required=True, help='Directory for fresh logs and results')
     args = parser.parse_args()
+    args.output = args.output.resolve()
     args.output.mkdir(parents=True, exist_ok=True)
     for line in (ROOT/'SHA256SUMS').read_text(encoding='utf-8').splitlines():
         expected, name = line.split('  ', 1)
@@ -26,12 +27,16 @@ def main():
     for name in ('BLIS_NUM_THREADS','VECLIB_MAXIMUM_THREADS'):
         env[name] = '1'
     env['TEMP'] = env['TMP'] = str(args.output.resolve())
+    env['GAME_CHECK_OUTPUT'] = str(args.output)
     import psutil
     cases = [('game', ['--output', str(args.output/'game.json')]),
              ('checks', ['--output', str(args.output/'results.json')])]
     cases += [(name, []) for name in ('fms_core', 'check_bridge', 'check_rsl',
                                      'gamma_chain', 'exact_checks',
                                      'check_extraction', 'check_descent')]
+    cases += [(name, []) for name in ('energy_checks', 'field_checks',
+              'faithfulness_checks', 'semifinite_checks',
+              'semifinite_model_checks', 'fingerprint_checks', 'ladder_checks')]
     records = []
     for name, extra in cases:
         command = [sys.executable, '-B', '-u', str(ROOT/(name+'.py')), *extra]

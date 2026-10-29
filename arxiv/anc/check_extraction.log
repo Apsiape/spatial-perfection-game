@@ -1,0 +1,15 @@
+m=1 t=0.1 mirror_error=0.5807 projection_error=0.4247 q/error=0.7315
+m=1 t=0.01 mirror_error=0.06253 projection_error=0.04192 q/error=0.6703
+m=1 t=0.0001 mirror_error=0.0005691 projection_error=0.0004815 q/error=0.8461
+m=2 t=0.1 mirror_error=0.7552 projection_error=0.6404 q/error=0.848
+m=2 t=0.01 mirror_error=0.06376 projection_error=0.06063 q/error=0.9509
+m=2 t=0.0001 mirror_error=0.0007019 projection_error=0.0006715 q/error=0.9568
+m=3 t=0.1 mirror_error=0.7607 projection_error=0.6628 q/error=0.8713
+m=3 t=0.01 mirror_error=0.08163 projection_error=0.06933 q/error=0.8493
+m=3 t=0.0001 mirror_error=0.0008404 projection_error=0.0007925 q/error=0.943
+worst anticommutator/error 1.6041814858354453
+worst normal-form product/error 2.0269964059274828
+worst invariant projection/error 0.9567927173914909
+worst fourfold Schmidt splitting of invariant projection 4.440892098500626e-16
+BLAS pools [('openblas', 1)]
+DONE

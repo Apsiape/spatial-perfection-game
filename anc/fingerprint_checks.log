@@ -1,0 +1,3 @@
+FP_exact {"mean_J": "1/7", "variance_J": "8/49", "variance_boundary": "6800/3969", "variance_release": "152/81", "C_Gamma": 0.07844130839480838, "Delta": 0.055129654032980466, "gap_12": 0.030028154307326457}
+FP_boundary_mixtures {"trials": 400, "violations": 0}
+ALL FINGERPRINT CHECKS PASSED

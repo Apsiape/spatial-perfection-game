@@ -1,0 +1,12 @@
+delta_nats 0.0551296540329804
+delta_bits 0.07953527847930507
+delta_expression ln(7/6)-ln(2)/7
+spatial_entropy_bits 5.362740278498934
+spatial_entropy_nats 3.7171683041167918
+trace_strategy_loss_upper_bound 0.0008248695925663929
+exact_scalar_checks normalization, traces, density ratios, entropy elimination passed
+{'K': 1, 'matrix_dimension': 60, 'retained_trace': 0.9375, 'retained_probability': 0.984375, 'observed_loss': 0.0005341880341880346, 'exact_loss': '1/1872', 'entropy_relative_to_original_trace': -0.09288268339984804, 'max_completeness_error': 2.220446049250313e-16}
+{'K': 2, 'matrix_dimension': 1020, 'retained_trace': 0.99609375, 'retained_probability': 0.999755859375, 'observed_loss': 8.218277449045805e-06, 'exact_loss': '1/121680', 'entropy_relative_to_original_trace': -0.056050891308192054, 'max_completeness_error': 2.220446049250313e-16}
+peak_working_set_bytes 101429248
+peak_commit_bytes 114786304
+ALL TYPE-II CONSTRUCTION CHECKS PASSED

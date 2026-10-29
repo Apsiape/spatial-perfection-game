@@ -1,0 +1,12 @@
+EXACT FMS: 25 pairs, 625 events, 224 forbidden products zero; all POVMs projective and complete
+EXACT overlap: Matrix([[sqrt(2)/2, sqrt(2)/2], [sqrt(2)/2, -sqrt(2)/2]])
+EXACT unweighted last-block loss for coefficient b=1: 1
+{'K': 1, 'dimension': 20, 'loss': 0.0005341880341880336, 'exact': '1/1872', 'max_POVM_error': 0.0, 'min_eigenvalue': -3.248494523541597e-16}
+{'K': 2, 'dimension': 40, 'loss': 0.00010683760683760608, 'exact': '1/9360', 'max_POVM_error': 0.0, 'min_eigenvalue': -3.804722936051133e-16}
+{'K': 3, 'dimension': 60, 'loss': 2.5437525437525443e-05, 'exact': '1/39312', 'max_POVM_error': 0.0, 'min_eigenvalue': -3.7259754416780187e-16}
+{'K': 4, 'dimension': 80, 'loss': 6.284565108093754e-06, 'exact': '1/159120', 'max_POVM_error': 0.0, 'min_eigenvalue': -3.8862378622728845e-16}
+{'K': 5, 'dimension': 100, 'loss': 1.5665338245975788e-06, 'exact': '1/638352', 'max_POVM_error': 0.0, 'min_eigenvalue': -4.332950929942503e-16}
+{'K': 6, 'dimension': 120, 'loss': 3.9134654519270135e-07, 'exact': '1/2555280', 'max_POVM_error': 0.0, 'min_eigenvalue': -4.0734613964152924e-16}
+EXACT normalized infinite state; sector masses: {'copy1_flag': '1/9', 'copy1_MS': '8/9', 'copy2_flag': '1/72', 'copy2_MS': '1/9', 'boundary': '7/8'}
+EXACT rational table: 1547 events on 52 pairs match the reconstructed predicate
+ALL SYMBOLIC AND NUMERICAL CHECKS PASSED

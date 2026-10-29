@@ -1,0 +1,107 @@
+\section{A localized finite-energy field state}\label{sec:field}
+We use the vacuum Fock representation of the free real scalar field of mass $m_0>0$ in $d+1$ Minkowski dimensions, $d\ge1$. The Hamiltonian is $H=\mathrm d\Gamma(h)$, $h=\sqrt{-\Delta+m_0^2}$, with vacuum energy zero. Regions below have a positive spacelike separation collar; in particular their local algebras form a split pair. The split input for this field is standard nuclearity theory~\cite{BW86}. Energy bounds depend on the mass and chosen smearing functions.
+
+\begin{theorem}[Localized perfect play with all energy moments]\label{thm:field}
+For two nonempty strictly spacelike separated bounded open regions there are local PVMs and a normalized pure field vector $\Psi$ winning $\Gamma$ perfectly, with $\Psi\in D(H^s)$ for every $s>0$. There is a bounded containing region $R$ such that the state agrees with the vacuum on its causal exterior. It is obtained by a joint algebra-local isometry in $\mathcal A(R)$, not by a field-only local unitary or a product of independent local operations. Its nonzero L\"uders outcome vectors retain every polynomial energy moment.
+\end{theorem}
+
+\subsection{Local oscillator factors and energy forms}
+Choose small double cones inside the regions with simultaneous interior points, in a fixed Lorentz frame. On that slice choose real smooth compactly supported functions $f_A,f_C$ on disjoint small balls on Alice's side and $f_B$ on Bob's, with $\langle f_i,f_j\rangle=\delta_{ij}$. Fix $\mu>0$ and set
+\[
+ q_i=\sqrt\mu\,\phi_0(f_i),\qquad p_i=\pi_0(f_i)/\sqrt\mu.
+\]
+The regular Weyl relations have $[q_i,p_j]=i\delta_{ij}$, with other commutators zero. Their bounded Weyl operators belong to the indicated local algebras. To justify time-zero localization, approximate $\phi_0(f)$ and $\pi_0(f)$ by spacetime smears $\chi_\eta(t)f(x)$ and $-\chi_\eta'(t)f(x)$, with a smooth shrinking time mollifier. Their one-particle vectors converge, by rapid Fourier decay and dominated convergence, to the time-zero data. The thin supports remain in the chosen cones. Strong continuity of Weyl operators and von Neumann closure prove membership, rather than a formal commutator argument alone.
+
+Write
+\[
+ u_i=\sqrt\mu\,h^{-1/2}f_i,\quad v_i=h^{1/2}f_i/\sqrt\mu,
+ \quad F=\operatorname{span}_{\mathbb C}\{u_i,v_i:i=A,B,C\}.
+\]
+This finite complex space lies in every $D(h^s)$ and has dimension between three and six. Its underlying real phase space contains the three specified nondegenerate canonical pairs. Complete them symplectically: subtract from each candidate its components along these pairs, then pair a nonzero complement vector with one of nonzero symplectic pairing and normalize. Iteration exhausts the finite complement. A finite-dimensional metaplectic implementer~\cite[Section 2.4]{Derezinski} gives a factorization
+\[
+ \mathcal H=\mathcal H_A\otimes\mathcal H_B\otimes\mathcal H_C
+       \otimes\mathcal H_D\otimes\Gamma_s(F^\perp).
+\]
+The first three factors are oscillator spaces, with their full bounded operator algebras in the corresponding local algebras. The completed spectator coordinates need not be local. No entire type-III local algebra is identified with a type-I algebra.
+
+Let $N_F$ be physical particle number in $F$ and $N_c=N_A+N_B+N_C+N_D$ the completed canonical number. For each integer $s\ge1$ put
+\[
+ A_s=\max\{1,\max_{1\le r\le s}\|h^r|_F\|^{1/r}\}.
+\]
+On the $k$-particle space over $F$, expand $H^s=(\sum_{j=1}^k h_j)^s$. There are $k^s$ ordered terms, each a tensor product of maps $h^{r_j}|_F$ of product norm at most $A_s^s$. Their ranges may leave $F$, which causes no problem. Orthogonality of total particle-number sectors gives
+\begin{equation}\label{eq:field-energy-domain}
+ \|H^s\xi\|\le A_s^s\|N_F^s\xi\|.
+\end{equation}
+Finite-sector approximation and closedness extend this to its stated domain on $\Gamma_s(F)\otimes\Omega_{F^\perp}$. This proof does not assume that $F$ is invariant under $h$.
+
+The finite Bogoliubov relations imply, on the oscillator Schwartz core,
+\begin{equation}\label{eq:number-equivalence}
+ \|(N_F+1)^s\xi\|\le C_s\|(N_c+1)^s\xi\|,
+ \qquad \|(N_c+1)^s\xi\|\le C'_s\|(N_F+1)^s\xi\|.
+\end{equation}
+Indeed each number power is a finite sum of words of length at most $2s$ in the other creation and annihilation operators. A word of length $l$ has norm at most a fixed multiple of $(k+1)^{l/2}$ on number sector $k$, and moves it by at most $l$. Squaring and summing the finitely overlapping output sectors proves the bounds. A finite metaplectic transformation preserves Schwartz space; graph-norm approximation and closedness therefore extend the bounds. The physical vacuum has every canonical number moment, since applying a power of the canonical quadratic number operator to it produces a finite polynomial vector. Denote $v_p=\langle\Omega,(N_c+1)^p\Omega\rangle<\infty$.
+
+\begin{proposition}[The sorted-index energy criterion]\label{prop:finite-index}
+A specified pure spatial strategy with decreasing Schmidt probabilities $p_n$, $n\ge0$, has a realization by two oscillator factors of finite total mean occupation if and only if $\sum_n n p_n<\infty$. This condition suffices to transplant it, with the same correlations, into two localized oscillator subfactors of the massive free field with finite mean field energy. This transplantation alone does not assert exterior-vacuum localization.
+\end{proposition}
+\begin{proof}
+Passive rearrangement gives the minimum mean occupation $\sum_nnp_n$ on each side; assigning the Schmidt basis to number states attains it. The necessity also follows by the Ky Fan tail inequality and summation of the oscillator spectral tails. To obtain localized field factors repeat the finite canonical completion with just $A,B$. Put the unused completed modes and $F^\perp$ in their Gaussian vacua. If $b_j$ are canonical and $a_i$ physical annihilators, the finite Bogoliubov relations give the quadratic-form bound
+\[
+ \langle N_F\rangle\le C(1+\sum_j\langle b_j^*b_j\rangle)
+       =C(1+2\sum_nnp_n).
+\]
+The physical one-particle density is supported in $F$. With the finite form matrix $(h_F)_{ij}=\langle h^{1/2}w_i,h^{1/2}w_j\rangle$ in an orthonormal basis of $F$, mean energy is $\operatorname{Tr}(h_F\gamma)\le\|h_F\|\langle N_F\rangle$. This uses a form matrix, not invariance of $F$. All measured operators remain in the localized factors. Infinite Schmidt rank and finite one-particle mode count are compatible: Fock space over one mode is already infinite-dimensional.
+\end{proof}
+
+\subsection{An isometry that stores the original input}
+For $t=a+b+c$ define
+\[
+ J(a,b,c)=\binom{t+2}{3}+a(t+1)-\frac{a(a-1)}2+b.
+\]
+At fixed $t$, the successive runs have lengths $t-a+1$ and cover exactly the integers from $\binom{t+2}{3}$ to $\binom{t+3}{3}-1$. Thus $J$ bijects triples with nonnegative integers. Also $J+1\le\binom{t+3}{3}\le(t+1)^3$.
+On the three specified modes let
+\[
+ V|a,b,c\rangle=|\psi_\Gamma\rangle_{AB}\otimes|J(a,b,c)\rangle_C,
+\]
+where $\psi_\Gamma$ is Theorem~\ref{thm:oscillators}'s vector; let $V$ be the identity on spectators. The images are orthonormal and complete in $\psi_\Gamma\otimes\mathcal H_C$, so $V^*V=I$ and $VV^*=|\psi_\Gamma\rangle\langle\psi_\Gamma|\otimes I$. It lies in the three-factor type-I algebra, hence in the joined laboratory algebra and in $\mathcal A(R)$ for a bounded containing double cone.
+
+Expand the actual vacuum as $\Omega=\sum_{a,b,c}|a,b,c\rangle\xi_{abc}\otimes\Omega_{F^\perp}$. The spectator vectors need not be orthogonal. Then
+\[
+ \Psi=V\Omega=\psi_\Gamma\otimes\chi\otimes\Omega_{F^\perp},
+ \qquad \chi=\sum_{a,b,c}|J(a,b,c)\rangle\xi_{abc}.
+\]
+This keeps the original correlations in storage; it does not assume the vacuum initially factorizes across local modes. For spectator number $u$,
+\[
+ J(a,b,c)+u+1\le(a+b+c+u+1)^3.
+\]
+Orthogonality of storage labels, the spectral resolution of $N_D$ and monotone convergence therefore imply
+\[
+ \langle\chi,(N_C+N_D+1)^p\chi\rangle\le v_{3p}.
+\]
+With $X=N_A+N_B$ and $Y=N_C+N_D+1$ on the product output,
+\[
+ \langle\Psi,(N_c+1)^p\Psi\rangle
+ \le2^{p-1}(\langle\psi_\Gamma,X^p\psi_\Gamma\rangle+v_{3p})<\infty.
+\]
+Take $p=2s$ in~\eqref{eq:number-equivalence} and~\eqref{eq:field-energy-domain}. This proves every required energy domain, including the factor of two between moments and operator norms. For example $\langle X^2\rangle=47530/27$, so the second canonical moment is at most $95060/27+2v_6$, giving an explicit finite geometry-dependent energy bound.
+
+The game PVMs act on the first two factors and give exactly the original perfect correlation. For $A\in\mathcal A(R')$, locality and $V^*V=I$ give $\langle\Psi,A\Psi\rangle=\langle\Omega,A\Omega\rangle$. This is the classical local-isometry mechanism of strict localization~\cite[Theorem I]{Licht}; see also~\cite[Section 4]{DeBievre}. The addition here is its explicit game resource and energy-domain control. A finite Lorentz boost used to choose simultaneous points preserves all moments: the spectrum condition bounds the original energy by a fixed multiple of the chosen-frame energy.
+
+\subsection{Measurements and the meaning of preparation}
+Each copy-one oscillator block has occupation span at most sixteen, and each copy-two block at most four. On a block of span $w$, the largest and smallest values of $n+u+1$ have ratio at most $w+1$, for every spectator occupation $u$. An outcome projection $P$ therefore satisfies
+\[
+ \|(N_c+1)^sP\xi\|\le(w+1)^s\|(N_c+1)^s\xi\|.
+\]
+Square and sum this estimate over the orthogonal blocks; diagonal labels and boundaries have ratio one. Products of Alice and Bob outcomes retain the bound successively. Equations~\eqref{eq:field-energy-domain}--\eqref{eq:number-equivalence} prove the outcome assertion of Theorem~\ref{thm:field}. It concerns finiteness of moments for this smooth finite-span class and L\"uders instruments, not preservation of their numerical values or every possible instrument.
+
+The normal UCP map $A\mapsto V^*AV$ fixes exterior observables and sends the vacuum state to $\Psi$ deterministically. It is a joint entangling operation, not LOCC. An ideal pure ancillary qubit gives a bounded algebra-local dilation: for $\gamma>0$,
+\[
+ G=\gamma(V\otimes|1\rangle\langle0|+V^*\otimes|0\rangle\langle1|)
+\]
+is self-adjoint of norm $\gamma$, and $e^{-itG}\xi|0\rangle=\cos(\gamma t)\xi|0\rangle-i\sin(\gamma t)V\xi|1\rangle$. At $t=\pi/(2\gamma)$ it prepares the isometric output. This ancillary-qubit localization mechanism is known; see~\cite[Section V.2]{GullaSkaar}. With free Hamiltonian $H_0$, the interaction $W(t)=e^{-itH_0}Ge^{itH_0}$ gives propagator $e^{-itH_0}e^{-itG}$; the displayed vacuum trajectory is in every required domain, so differentiating this vector product justifies the evolution without a bounded $[H,V]$ assumption. Finite time translates lie in an enlarged bounded region. Transporting the final measurements absorbs the free evolution. This is an ideal bounded algebra-local control model; no microscopic interaction-density synthesis is asserted.
+
+For fixed split regions let $\delta_0>0$ be their vacuum loss floor proved in Theorem~\ref{thm:faithful-floor}. The mass gap $H\ge m_0(I-|\Omega\rangle\langle\Omega|)$ and the vacuum fidelity bound give, for any normal state of mean energy $E$, half trace distance at most $\sqrt{E/m_0}$. Comparing the same loss effect in that state and the vacuum yields
+\[
+ m_0(\delta_0-\eps)_+^2\le E_\Gamma(\eps)\le E_*<\infty,
+\]
+where $E_*$ is the preceding prepared state's energy. Thus this unrestricted normal-state energy price is bounded above and bounded away from zero near perfect play. This argument asserts no value for its infimum, no field-energy optimizer, and no universal conversion of $275/18$ into physical units.

@@ -1,0 +1,18 @@
+\section{Entropy is different from dimension}\label{sec:entropy}
+\begin{theorem}[Infinite rank and minimum pure entropy]\label{thm:finite-entropy}
+Every perfect pure spatial strategy for $\Gamma$ has infinite Schmidt rank. The displayed perfect strategy attains the minimum pure-state entanglement entropy
+\[
+ H_\Gamma=\log_2 24+\frac79=5.362740278498934\ldots\quad\hbox{ebits}.
+\]
+Finite entropy is attained but not forced on all perfect strategies. The minimum concerns pure-state entanglement; the corresponding lower bound also holds for Alice marginal entropy of normal mixed extensions.
+\end{theorem}
+\begin{proof}
+A finite-Schmidt-rank perfect vector could be compressed to its two finite Schmidt supports, retaining complete POVMs and all correlations. This contradicts Theorem~\ref{thm:main}. Equivalently the exact sector identity forces $s/2$ whenever $s>0$ occurs in its nonempty second flag sector, hence infinitely many nonzero coefficients.
+
+For the displayed state, sum the probabilities in Theorem~\ref{thm:oscillators}. The expected $2k$ contribution is $2/3$, and the extra binary logarithm in the four $B$ probabilities has total weight $1/9$. This gives $\log_2 24+7/9$. The lower bound for every perfect pure strategy follows from Theorem~\ref{thm:renyi-minimum} below.
+
+For a counterexample to universal finite entropy, tensor this state with a countable pure state whose $j$th block has $2^j$ equal probabilities $c/(j^2 2^j)$, $j\ge1$, $c=6/\pi^2$. Its mass is one and its entropy is at least $c\sum_j1/j=\infty$. Tensor every game effect with identity. Correlations remain perfect and the local spaces remain separable, but the entropy is infinite. Thus a large enough ordinary entropy budget admits the exhibited state, whereas every finite dimension budget excludes all perfect states. No area, gravity or control-cost interpretation follows without additional assumptions.
+\end{proof}
+
+\input{ladders}
+\input{spectra}

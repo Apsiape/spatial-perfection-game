@@ -1,0 +1,145 @@
+\section{Prepared play in type II and its spectral fingerprint}\label{sec:semifinite}
+Let $M$ have a faithful normal semifinite trace $\operatorname{Tr}$. A normal Alice state has density $h\ge0$, $\operatorname{Tr}h=1$, support $p$, and square root $K=h^{1/2}\in L^2(M,\operatorname{Tr})$. The standard partner is the full right multiplication commutant on this $L^2$ space. Trace entropy is $S_{\operatorname{Tr}}(h)=-\operatorname{Tr}(h\ln h)$, which can be negative. Support trace is not Hilbert-space dimension. Existence statements below specify the standard partner; the necessary bounds permit arbitrary commuting extensions with the given normal Alice marginal.
+
+\subsection{Compression to the standard partner}
+\begin{lemma}[Marginal reduction and the tracial obstruction]\label{lem:standard-reduction}
+Every commuting strategy with Alice marginal $a\mapsto\operatorname{Tr}(ha)$ has the same correlations as left and right POVMs on $L^2(pMp,\operatorname{Tr})$, with vector $K$. If $h=p/T$, $T=\operatorname{Tr}p<\infty$, its $\Gamma$ loss is at least $(25/52)\delta_{\rm FMS}>0$, where $\delta_{\rm FMS}=1-\omega_{\rm tr}(\FMS)$.
+\end{lemma}
+\begin{proof}
+In the strategy's GNS representation define $V(aK)=\pi(a)\xi$. Equality of the two squared norms proves this map is isometric. Its initial closure is $L^2(M)p$: spectral cutoffs $e_n=1_{[1/n,n]}(K)$ and bounded inverses on $e_n$ approximate bounded square-integrable elements of that right support. The range reduces Alice's algebra. Compress a commuting Bob effect by $V$; the compression is a positive contraction commuting with left multiplication, and the finite sum of compressed effects is identity. The commutant on $L^2(M)p$ is right $pMp$, giving
+\[
+ p(a,b|x,y)=\operatorname{Tr}(K E_a^x K F_b^y).
+\]
+Replace Alice effects by $pE_a^xp$ and work in $pMp$. This uses compression, not invariance of Bob's original effects on Alice's cyclic subspace. The standard density realization is established background~\cite[Section 2]{CKLT}.
+
+For $h=p/T$ the correlation is tracial in the normalized corner. Man\v{c}inska's strict tracial FMS gap~\cite[Theorem 3]{Mancinska} gives $\delta_{\rm FMS}>0$; discarding all losses except copy one's twenty-five equally weighted pairs proves the claimed floor. Compactness of the universal tracial POVM class ensures the strict gap: the tracial states of the universal finite-POVM $C^*$-algebra form a weak-star compact set, and the score is continuous. Thus this is stronger than nonattainment by finite maximally entangled vectors.
+\end{proof}
+
+\begin{lemma}[The internal density-sector law]\label{lem:density-sector}
+In a perfect FMS strategy after this reduction, the magic corner consists of four internally equivalent copies of a flag corner with doubled density. In particular, for flag $f$ and magic $m$,
+\begin{align}\label{eq:density-law}
+ \operatorname{Tr}m&=4\operatorname{Tr}f,&
+ \operatorname{Tr}(h_m)&=8\operatorname{Tr}(h_f),\nonumber\\
+ \operatorname{Tr}(h_m\ln h_m)&=8\operatorname{Tr}(h_f\ln h_f)
+                 +8\ln2\operatorname{Tr}(h_f).
+\end{align}
+The spectral-measure version requires no entropy moment or finite support trace.
+\end{lemma}
+\begin{proof}
+Compress to the faithful support of $h$. For positive effects, zero correlation is $\|E^{1/2}KF^{1/2}\|_2^2=0$, hence $EKF=0$. Checked matching classes give $E_cK=KF_c$ by summing zero cross terms. Orthogonality gives $E_cE_dK=0$ for $c\ne d$, so the class effects are projections. Cancellation is valid even for unbounded $K$: if bounded $AK=0$, then $Ae_n=0$ on the spectral cutoffs above, whence $A=0$. Taking adjoints and products in $L^1$ gives $E_ch=hE_c$, and thus $E_c=F_c$.
+
+The checked magic-square reflections commute with $h$. Their elementary algebra from Lemma~\ref{lem:ms} generates matrix units of an internal $M_4\subset mMm$: two anticommuting reflection pairs commute with each other. Let $q$ be a minimal diagonal corner of this matrix algebra and $d=qhq$. The magic density is four equivalent copies of $d$. The distinguished column and row isometries from $q$ have overlaps $\sigma_{xy}q/\sqrt2$. Pulling the calibrated sign supports back to $f+q$ gives
+\[
+ W_{xy}=K_f+\sigma_{xy}\sqrt d/\sqrt2.
+\]
+The two forbidden sign equations yield both $X_xW_{xy}=\sigma_{xy}W_{xy}Y_y$ and $X_xW_{xy}Y_y=\sigma_{xy}W_{xy}$. Full-support cancellation makes these sign differences reflections. With $H=K_f+\sqrt d/\sqrt2$ and $Z=f-q$, the three positive cells identify $X_0=X_1=X$, and the frustrated cell gives $X=-ZXZ$. Its off-diagonal block $\beta\in qMf$ satisfies $\beta^*\beta=f$, $\beta\beta^*=q$. From $XH=HY_0$ and its adjoint one gets $XH^2=H^2X$, hence
+\[
+ d=2\beta h_f\beta^*.
+\]
+These are internal partial isometries, so they preserve the trace and spectral calculus. They prove the trace, probability and logarithmic identities, and the corresponding bounded-Borel functional identities. If either sector vanishes, the equivalence forces both to vanish. For affiliated unbounded densities the same cutoff cancellation and $L^2\cdot L^2\subset L^1$ justify all products used. One does not truncate the full strategy and assume it remains perfect. On finite support, the negative part of $u\ln u$ is bounded and a finite total entropy makes all corner moments finite; otherwise the entropy upper inequality below is trivial at $-\infty$.
+\end{proof}
+
+\subsection{A perfect density in every finite factor}
+\begin{theorem}[Prepared type-II play and a sharp entropy deficit]\label{thm:type-two}
+Every $\mathrm{II}_1$ factor with its standard partner admits perfect $\Gamma$ play in a bounded faithful normal density. For every perfect normal semifinite strategy with support trace $T<\infty$,
+\[
+ S_{\operatorname{Tr}}(h)\le\ln T-\Delta_* ,\qquad
+ \Delta_*=\ln(7/6)-\frac{\ln2}{7}=0.05512965403298\ldots.
+\]
+Equality is attained in every type-II finite corner of trace $T$. In a $\mathrm{II}_1$ factor the normalized trace has a positive loss floor, whereas a full-support prepared density attains trace entropy $-\Delta_*$ and wins perfectly.
+\end{theorem}
+\begin{proof}
+In a $\mathrm{II}_1$ factor use continuous projection dimension and equivalence of equal-trace projections to choose orthogonal $U_k,V_k$, $k\ge0$, with
+\[
+ \tau(U_k)=\tfrac34 16^{-k},\quad\tau(V_k)=\tfrac3{16}16^{-k},
+ \quad h=\sum_{k\ge0}\left(\tfrac76 4^{-k}U_k+\tfrac7{12}4^{-k}V_k\right).
+\]
+Their traces sum to one, as does $\tau(h)$. The density is bounded by $7/6$ and has support one, though no bounded inverse. Split $U_k$ into four pieces equivalent to $V_k$ and use the ideal FMS PVMs with flag $V_k$. For copy two split $V_k$ into four pieces equivalent to $U_{k+1}$ and use flag $U_{k+1}$. Indeed their traces satisfy $\tau(U_k)=4\tau(V_k)$ and $\tau(V_k)=4\tau(U_{k+1})$, while the paired density ratios are two. Use boundary answer on $U_0$. All ideal blocks have the required square-root coefficient ratio. Direct sums give bounded complete PVMs; cross-copy compatibility is not required by unsupported question pairs. Bob labels $U=\sum U_k$ and $V=\sum V_k$. Both linked Alice projections are $U$, commuting with $h$, so every supported pair wins. The level state masses are $(7/8)64^{-k}$ and $(7/64)64^{-k}$, which sum to one. Direct summation gives $\tau(h\ln h)=\Delta_*$.
+
+For the universal bound denote copy-one flag and magic by $F_1,M_1$, and copy-two flag, magic and boundary by $P,M_2,B$. Connected matching and the two links give $F_1=M_2$ and $M_1=P+B$. Two applications of~\eqref{eq:density-law} imply
+\[
+ \operatorname{Tr}P=T/20,\quad\operatorname{Tr}B=3T/4,
+ \qquad\operatorname{Tr}(hP)=1/72,\quad\operatorname{Tr}(hB)=7/8.
+\]
+The nonboundary sector cannot vanish, by the same linked-sector argument as before. Write $A=\operatorname{Tr}(h_P\ln h_P)$, $J=\operatorname{Tr}(h_B\ln h_B)$ and $D=\operatorname{Tr}(h\ln h)$. The logarithmic sector identities give
+\[
+ D=72A+\tfrac{17}{9}\ln2,\qquad
+ J=63A+\tfrac{16}{9}\ln2,\qquad
+ D=\tfrac87J-\tfrac17\ln2.
+\]
+Jensen on the spectral trace measure of the boundary gives $J\ge(7/8)\ln(7/(6T))$, proving the bound. More precisely, set $g_B=(6T/7)h_B$ and $\tau_B=\operatorname{Tr}/(3T/4)$ on $BMB$. Then
+\[
+ \ln T-\Delta_*-S_{\operatorname{Tr}}(h)=\tau_B(g_B\ln g_B)\ge0.
+\]
+Equality is exactly a scalar boundary density $h_B=7B/(6T)$. In any finite type-II corner perform the preceding construction with its normalized trace and divide the resulting density by $T$ relative to $\operatorname{Tr}$. Its boundary is scalar, attaining equality. Completion of measurements off the support changes no correlation. The trace-floor assertion is Lemma~\ref{lem:standard-reduction}.
+\end{proof}
+
+\begin{corollary}[Infinite semifinite support and finite entropies]\label{cor:infinite-type-two}
+A $\mathrm{II}_\infty$ factor with its standard partner admits perfect play at every finite real value of trace entropy. If it is countably decomposable, these values also have bounded faithful witnesses.
+\end{corollary}
+\begin{proof}
+Choose a finite corner of trace $T=\exp(s+\Delta_*)$. Theorem~\ref{thm:type-two} gives entropy $s$. For the faithful version partition identity into countably many equal-trace projections of trace $T_0$, put the normalized-corner equality density $h_{0,j}$ in each, and set $h=\sum_{j\ge0}2^{-j-1}h_{0,j}/T_0$. Its direct-sum measurements are perfect, its support is identity, and its entropy is $2\ln2+\ln T_0-\Delta_*$. Vary $T_0$. Countable decomposability is needed for this full-support normal-state assertion, not the finite-corner one.
+\end{proof}
+
+For the displayed finite-factor density, retaining $0\le k<K$ discards trace $16^{-K}$ and probability $64^{-K}$. The only incomplete block is the final $V_{K-1}$ block. The ideal coefficient matrix $\operatorname{diag}(0,b,b,b,b)$ loses unweighted probability $b^2$ in its four sign pairs, so the normalized loss is
+\[
+ \ell_K=\frac{7}{208(64^K-1)}.
+\]
+The retained corners have integral ranks at trace denominator $4\,16^K$ and yield matrix strategies of dimension $d_K=4(16^K-1)$. These are finite approximants of the trace construction, with compressed POVMs at the last block. They do not improve the dimension tradeoff: the original compression with $L=3K-2$ has smaller dimension $20(3K-2)$ and no greater loss. Indeed with $X=64^K\ge64$, $16/(X-16)\le21/(X-1)$ is equivalent to $X\ge64$, comparing the two exact losses, and $20(3K-2)<4(16^K-1)$ holds at one and increases thereafter. Entropy relative to a rescaled trace must also be rescaled; approximate strategies are not subject to the exact-perfect entropy inequality.
+
+\subsection{A necessary modular spectral law}
+Put $K_h=-\ln h$ on its support, and define its state-weighted spectral law $\mu(g)=\operatorname{Tr}(h g(K_h))$. When defined, write $S_0=\ln\operatorname{Tr}p$, $S_1=\mu(K_h)$, $S_2=-\ln\operatorname{Tr}h^2$ and $C_E=\operatorname{Var}_\mu K_h$. This capacity is established terminology~\cite[Sections 2--3]{Capacity}. Trace rescaling shifts the entropies and $K_h$ together and leaves gaps and variance unchanged.
+
+\begin{theorem}[A logarithm-of-two fingerprint]\label{thm:fingerprint}
+For every normal semifinite perfect strategy there is a boundary law $\nu_B$ such that
+\[
+ \mu=\nu_B*\operatorname{law}((\ln2)J),\qquad
+ \Pr(J=2k)=\tfrac78 64^{-k},\quad
+ \Pr(J=2k+1)=\tfrac7{64}64^{-k}\quad(k\ge0).
+\]
+If the modular mean and variance are finite,
+\[
+ C_E\ge\tfrac8{49}(\ln2)^2.
+\]
+Whenever the entropy differences are defined, without subtracting two infinities,
+\[
+ S_0-S_1\ge\Delta_*,\qquad
+ S_1-S_2\ge\frac{\ln2}{7}+\ln(14/15).
+\]
+The three constants are sharp in type II, attained simultaneously by Theorem~\ref{thm:type-two}'s scalar-boundary witness. This is a necessary scalar spectral law, not a sufficient condition for perfect play or a physical tensor decomposition.
+\end{theorem}
+\begin{proof}
+For a density-reducing projection $e$, let $\mu_e(g)=\operatorname{Tr}(he g(K_h))$, and let $S_t$ translate measures by $t$. The internal sector law gives, for bounded Borel functions and $a=\ln2$,
+\[
+ \mu_m=8S_{-a}\mu_f.
+\]
+The proof of Lemma~\ref{lem:density-sector} used no finite-support-trace assumption before its entropy estimate, so this measure identity also holds at infinite support trace. The links imply
+\[
+ \mu_P+\mu_B=64S_{-2a}\mu_P,
+ \quad\mu_P=\sum_{k\ge1}64^{-k}S_{2ka}\mu_B,
+ \quad\mu_{M_2}=\sum_{k\ge1}8\,64^{-k}S_{(2k-1)a}\mu_B.
+\]
+Iterate the first equation to prove the second; its remaining positive measure has mass $64^{-n}\mu_P(\mathbb R)\to0$. The full measure is $\mu_B+\mu_P+\mu_{M_2}$, of mass $(8/7)\mu_B(\mathbb R)=1$. Hence $\nu_B=(8/7)\mu_B$ is a probability law and gives the stated convolution.
+
+Realize its two summands as independent classical random variables. Here $J=2G+Q$, with $G$ geometric of ratio $1/64$ and $Q$ Bernoulli of probability $1/9$. Elementary sums give
+\[
+ \mathbb EJ=1/7,\quad\operatorname{Var}J=8/49,
+ \quad\mathbb E2^J=7/6,\quad\mathbb E2^{-J}=14/15.
+\]
+Variance adds. Also $\operatorname{Tr}p=\mathbb E_\mu e^{K_h}$ and $\operatorname{Tr}h^2=\mathbb E_\mu e^{-K_h}$. Independence and scalar Jensen give
+\begin{align*}
+ S_0-S_1&=\ln\mathbb E_{\nu_B}e^X-\mathbb E_{\nu_B}X+\Delta_*,\\
+ S_1-S_2&=\mathbb E_{\nu_B}X+\ln\mathbb E_{\nu_B}e^{-X}
+                         +\tfrac17\ln2+\ln(14/15).
+\end{align*}
+These identities prove the inequalities in their defined ranges and the unambiguous extended cases. With finite terms equality means $\nu_B$ is a point mass; the same condition minimizes variance. The type-II witness has constant boundary density, and therefore attains all three bounds. No finite-matrix perfect witness is claimed.
+\end{proof}
+
+For comparison the explicit oscillator state's actual boundary has sixteen $A$ vectors at level zero and fifteen at every later level. Its conditional modular law is
+\[
+ \Pr(K_B=\ln24)=16/21,\qquad
+ \Pr(K_B=\ln24+2k\ln2)=\tfrac57 4^{-k}\ (k\ge1).
+\]
+Convolution gives its full sixteen/four level law; exact moments give $\operatorname{Var}((K_h-\ln24)/\ln2)=152/81=8/49+6800/3969$. Its capacity is thus strictly above the type-II minimum. The fingerprint alone omits the internal measurement algebra: perfect play also requires nonzero matrix corners in the density centralizer.
+
+Normal semifinite algebras have no normal universal embezzling states~\cite[Corollary 54, arXiv version 4]{vLSWWembezzle}. This known obstruction concerns an entanglement-transformation task, and does not forbid the prepared strategies for one fixed game constructed here. The stronger quoted invariant assertion uses a separable-predual hypothesis~\cite[Corollary 55]{vLSWWembezzle}. No gravity or conserved-charge interpretation is part of the preceding theorems.

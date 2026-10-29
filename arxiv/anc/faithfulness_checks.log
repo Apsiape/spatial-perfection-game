@@ -1,0 +1,106 @@
+{
+  "predicate_crosscheck": {
+    "supported_pairs": 52,
+    "answer_events": 1547,
+    "canonical_game_sha256": "4ea2ae1ba2efe228996830d8cef39a62ffe67a2eeb27990d67b20a88a0c2530e"
+  },
+  "full_Gamma_exhaustion": {
+    "copies": {
+      "1": {
+        "alice_assignments": 3125,
+        "best_internal": 24,
+        "best_with_label_A_B": [
+          25,
+          25
+        ]
+      },
+      "2": {
+        "alice_assignments": 7776,
+        "best_internal": 25,
+        "best_with_label_A_B": [
+          26,
+          25
+        ]
+      }
+    },
+    "best_score": [
+      51,
+      52
+    ],
+    "exact_loss": "1/52",
+    "method": "Exact integer optimization of both copies and the shared label"
+  },
+  "local_faithfulness_counterexample": {
+    "ideal_FMS_loss_roundoff": 0.0,
+    "reduced_state_eigenvalues": [
+      0.1111111111111111,
+      0.2222222222222222,
+      0.2222222222222222,
+      0.2222222222222222,
+      0.2222222222222222
+    ],
+    "forbidden_operator_product_nonzero_trace": 1.0,
+    "PVM_completeness_max_error": 2.220446049250313e-16,
+    "meaning": "Perfect nonclassical play and faithful marginals coexist; the joint state is not faithful."
+  },
+  "zero_mismatch_identity": {
+    "nonprojective_effects": true,
+    "max_error": 2.7755575615628914e-17
+  },
+  "E1_self_adjointness_boundary": {
+    "mirror_error": 0.0,
+    "B_adjoint_error": 0.7071067811865477,
+    "A_reduced_density_commutator_max": 0.3333333333333333
+  },
+  "finite_Alice_compression": {
+    "original_dimensions": [
+      2,
+      5
+    ],
+    "compressed_dimensions": [
+      2,
+      2
+    ],
+    "probabilities_compared": 40,
+    "max_error": 4.442485595199336e-16
+  },
+  "exact_commuting_testing_problems": [
+    {
+      "noise_weight": "1/1000",
+      "t": "1/25",
+      "beta": "1/25000"
+    },
+    {
+      "noise_weight": "1/10",
+      "t": "1/25",
+      "beta": "1/250"
+    },
+    {
+      "noise_weight": "1",
+      "t": "1/25",
+      "beta": "1/25"
+    }
+  ],
+  "rapidity_box_approximate_invariants": [
+    {
+      "R": 1,
+      "unit_shift_overlap": 0.5
+    },
+    {
+      "R": 10,
+      "unit_shift_overlap": 0.95
+    },
+    {
+      "R": 100,
+      "unit_shift_overlap": 0.995
+    },
+    {
+      "R": 1000,
+      "unit_shift_overlap": 0.9995
+    }
+  ],
+  "elapsed_seconds": 0.33020789991132915,
+  "peak_working_set_bytes": 19906560,
+  "status": "PASS",
+  "limitations": "Finite checks do not prove infinite-dimensional structural or modular theorems."
+}

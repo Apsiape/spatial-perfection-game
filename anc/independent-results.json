@@ -1,0 +1,139 @@
+{
+  "event_count": 1547,
+  "exact_forbidden_ideal_products": 224,
+  "primary_FMS_convention_conjugacy": "Hadamard tensor Hadamard; all square and distinguished-vector labels checked exactly",
+  "exact_last_block_unweighted_loss": "1",
+  "last_block_cells": {
+    "T0,U0": "1/4",
+    "T0,U1": "1/4",
+    "T1,U0": "1/4",
+    "T1,U1": "1/4"
+  },
+  "exact_flat_block_loss": "3 - 2*sqrt(2)",
+  "trace_loss_upper_bound": "3/208 - sqrt(2)/104",
+  "delta_nats_60_digits": "0.0551296540329804029475565105684522329033083039188200177296329",
+  "delta_bits_60_digits": "0.0795352784793050688453732304268714427383550754165168660786819",
+  "nonuniform_boundary_trials": 1000,
+  "minimum_sampled_entropy_excess": 0.0007858473455931367,
+  "exact_entropy_identity": "D + ln(T) - Delta = relative_entropy(normalized_boundary || uniform_boundary)",
+  "finite_models": [
+    {
+      "K": 1,
+      "dimension": 60,
+      "loss": 0.000534188034188034,
+      "exact_loss": "1/1872",
+      "max_probability_normalization_error": 4.440892098500626e-16,
+      "max_completeness_error": 0.0,
+      "max_sqrt_error": 5.551115123125783e-17,
+      "nonzero_losing_cells": {
+        "2:T0,2:U0": 0.006944444444444442,
+        "2:T0,2:U1": 0.006944444444444442,
+        "2:T1,2:U0": 0.006944444444444442,
+        "2:T1,2:U1": 0.006944444444444442
+      }
+    },
+    {
+      "K": 2,
+      "dimension": 1020,
+      "loss": 8.218277449046678e-06,
+      "exact_loss": "1/121680",
+      "max_probability_normalization_error": 4.440892098500626e-16,
+      "max_completeness_error": 0.0,
+      "max_sqrt_error": 5.551115123125783e-17,
+      "nonzero_losing_cells": {
+        "2:T0,2:U0": 0.00010683760683760681,
+        "2:T0,2:U1": 0.00010683760683760681,
+        "2:T1,2:U0": 0.00010683760683760681,
+        "2:T1,2:U1": 0.00010683760683760681
+      }
+    }
+  ],
+  "dimension_comparisons": [
+    {
+      "K": 1,
+      "new_dimension": 60,
+      "new_loss": "1/1872",
+      "release_index": 1,
+      "release_dimension": 20,
+      "release_loss": "1/1872"
+    },
+    {
+      "K": 2,
+      "new_dimension": 1020,
+      "new_loss": "1/121680",
+      "release_index": 4,
+      "release_dimension": 80,
+      "release_loss": "1/159120"
+    },
+    {
+      "K": 3,
+      "new_dimension": 16380,
+      "new_loss": "1/7789392",
+      "release_index": 7,
+      "release_dimension": 140,
+      "release_loss": "1/10222992"
+    },
+    {
+      "K": 4,
+      "new_dimension": 262140,
+      "new_loss": "1/498522960",
+      "release_index": 10,
+      "release_dimension": 200,
+      "release_loss": "1/654310800"
+    },
+    {
+      "K": 5,
+      "new_dimension": 4194300,
+      "new_loss": "1/31905471312",
+      "release_index": 13,
+      "release_dimension": 260,
+      "release_loss": "1/41875930512"
+    },
+    {
+      "K": 6,
+      "new_dimension": 67108860,
+      "new_loss": "1/2041950165840",
+      "release_index": 16,
+      "release_dimension": 320,
+      "release_loss": "1/2680059592080"
+    },
+    {
+      "K": 7,
+      "new_dimension": 1073741820,
+      "new_loss": "1/130684810615632",
+      "release_index": 19,
+      "release_dimension": 380,
+      "release_loss": "1/171523813932432"
+    },
+    {
+      "K": 8,
+      "new_dimension": 17179869180,
+      "new_loss": "1/8363827879402320",
+      "release_index": 22,
+      "release_dimension": 440,
+      "release_loss": "1/10977524091714960"
+    },
+    {
+      "K": 9,
+      "new_dimension": 274877906940,
+      "new_loss": "1/535284984281750352",
+      "release_index": 25,
+      "release_dimension": 500,
+      "release_loss": "1/702561541869796752"
+    },
+    {
+      "K": 10,
+      "new_dimension": 4398046511100,
+      "new_loss": "1/34258238994032024400",
+      "release_index": 28,
+      "release_dimension": 560,
+      "release_loss": "1/44963938679667031440"
+    }
+  ],
+  "source_sha256": {
+    "main.tex": "c8f1a3020a079b3f918f2243d6aaa01845e3958bf70321b6a378ae4f194544a1",
+    "anc\\game.json": "4ea2ae1ba2efe228996830d8cef39a62ffe67a2eeb27990d67b20a88a0c2530e"
+  },
+  "peak_working_set_bytes": 105164800,
+  "peak_commit_bytes": 118902784
+}

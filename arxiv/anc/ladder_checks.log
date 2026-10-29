@@ -1,0 +1,10 @@
+INDEPENDENT: infinite tails normalized exactly; no finite truncation normalization
+Cases: 329 ; exact Ky Fan comparisons: 112485
+Strict energy inequalities for 328 nonoptimal cases
+Minimum entropy bits: 5.362740278498924 ; exact minimum energy: 275/18
+Renyi orders 0.1, 0.5, 2, 3, 10: all comparisons passed
+Exact capacity sequence N=0..12: [1.876543209876543, 0.2772095988811246, 0.1667912541274298, 0.1633569646046323, 0.16326745851231964, 0.16326535333532946, 0.16326530710874546, 0.1632653061423126, 0.1632653061228378, 0.16326530612245643, 0.16326530612244913, 0.163265306122449, 0.16326530612244897]
+General II_1 ladders and KL deficit: 36 exact normalizations passed
+TMSV backward-shift density intertwining: 90 exact checks passed
+Critical identity-ladder boundary check: {'n': 1, 'lambda': 1, 'B': 0, 'u': 1, 'density_eigenvalues': ['1/3', '2/3'], 'state_law_mass': 1, 'claimed_boundary_series_mass': 0}
+ALL INDEPENDENT CHECKS PASSED

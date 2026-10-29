@@ -1,0 +1,57 @@
+cupy\_environment.py:275: UserWarning: CUDA path could not be detected. Set CUDA_PATH environment variable if CuPy fails to load.
+  warnings.warn(
+IDEAL (all should be ~0):
+   zeta00 vs S_xH_y psi                     7.85e-17
+   zeta00 vs Bt_yG_x psi                    2.36e-16
+   P zeta00                                 0.00e+00
+   Q zeta00                                 0.00e+00
+   zeta01 vs S_xH_y psi                     7.85e-17
+   zeta01 vs Bt_yG_x psi                    2.36e-16
+   P zeta01                                 0.00e+00
+   Q zeta01                                 0.00e+00
+   zeta10 vs S_xH_y psi                     7.85e-17
+   zeta10 vs Bt_yG_x psi                    2.36e-16
+   P zeta10                                 0.00e+00
+   Q zeta10                                 0.00e+00
+   zeta11 vs S_xH_y psi                     7.85e-17
+   zeta11 vs Bt_yG_x psi                    2.36e-16
+   P zeta11                                 0.00e+00
+   Q zeta11                                 0.00e+00
+   (4a) zeta10 vs A12 zeta00                0.00e+00
+   (4b) zeta11 vs -A12 zeta01               0.00e+00
+   (4c) zeta01 vs B21 zeta00                0.00e+00
+   (W1)                                     0.00e+00
+   (W2)                                     0.00e+00
+   (W3)                                     0.00e+00
+   (F6a) X0Y0 f vs zeta00                   3.93e-17
+   (F6b) X0Y0 zeta00 vs f                   3.33e-16
+   Sch(f) vs Sch(zeta00)                    2.22e-16
+   Sch(psi_m) vs 4x sqrt2 Sch(zeta00)       6.66e-16
+PERTURBED: worst defect / sqrt(loss) over 60 instances (m = 1,2,3; t = 3e-2..1e-3):
+   zeta00 vs S_xH_y psi                     0.82
+   zeta00 vs Bt_yG_x psi                    1.11
+   P zeta00                                 0.38
+   Q zeta00                                 0.63
+   zeta01 vs S_xH_y psi                     0.90
+   zeta01 vs Bt_yG_x psi                    1.05
+   P zeta01                                 0.36
+   Q zeta01                                 0.55
+   zeta10 vs S_xH_y psi                     0.82
+   zeta10 vs Bt_yG_x psi                    1.24
+   P zeta10                                 0.45
+   Q zeta10                                 0.75
+   zeta11 vs S_xH_y psi                     0.90
+   zeta11 vs Bt_yG_x psi                    1.08
+   P zeta11                                 0.41
+   Q zeta11                                 0.66
+   (4a) zeta10 vs A12 zeta00                1.42
+   (4b) zeta11 vs -A12 zeta01               1.47
+   (4c) zeta01 vs B21 zeta00                1.31
+   (W1)                                     1.04
+   (W2)                                     1.03
+   (W3)                                     1.04
+   (F6a) X0Y0 f vs zeta00                   1.29
+   (F6b) X0Y0 zeta00 vs f                   1.49
+   Sch(f) vs Sch(zeta00)                    0.70
+   Sch(psi_m) vs 4x sqrt2 Sch(zeta00)       1.21
+DONE

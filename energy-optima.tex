@@ -1,0 +1,48 @@
+\subsection{Global oscillator optima and small-loss limits}\label{sec:energy-optima}
+Let $\Lambda_*=(p_0^*,p_1^*,\ldots)$ be the decreasing probabilities of Theorem~\ref{thm:oscillators}: sixteen copies of $4^{-k}/24$, then four of $4^{-k}/48$, at every level. Section~\ref{sec:spectra} proves that this is the unique majorization maximum among perfect type-I marginal spectra.
+
+\begin{theorem}[The least oscillator occupation]\label{thm:energy-minimum}
+For any perfect strategy with a normal type-I Alice marginal and any nonnegative compact-resolvent local Hamiltonian with ordered eigenvalues $e_0\le e_1\le\cdots$,
+\[
+ \langle H_A\rangle\ge\sum_{i\ge0}e_i p_i^*.
+\]
+When the series is finite it is attained by preparing the displayed strategy in the ordered energy eigenbasis. If the series is infinite, every perfect strategy has infinite energy on that platform. In particular $\langle N_A\rangle\ge275/18$. Equality for the oscillator requires spectrum $\Lambda_*$ and passive placement. For pure spatial strategies, each side has mean occupation at least $275/18$, and the total at least $275/9$, all attained by the displayed strategy.
+\end{theorem}
+\begin{proof}
+For a rank-$r$ projection, the variational principle bounds its probability by the sum of the first $r$ marginal eigenvalues. Expand the Hamiltonian as a monotone sum of positive steps at its energy-prefix projections. With $p$ the ordered marginal spectrum this gives
+\[
+ \langle H_A\rangle\ge e_0+\sum_{r\ge1}(e_r-e_{r-1})T_r(p)
+          \ge e_0+\sum_{r\ge1}(e_r-e_{r-1})T_r(\Lambda_*)
+          =\sum_i e_i p_i^*.
+\]
+Theorem~\ref{thm:majorization} proves the second inequality. All sums are nonnegative, so no finite-expectation assumption is needed. Ordered preparation attains the expression. For $N_A$ every increment is one. Equality forces every spectral tail to equal the released tail, hence $p=\Lambda_*$; equality in the energy-prefix inequalities is passive placement. The computed value is $275/18$. Pure strategies have the same nonzero Schmidt spectrum on Bob, giving the other side and the total.
+\end{proof}
+
+Attainment here permits preparation and transport on the Schmidt support. It is not an assertion that every entire-space unitary orbit reaches a passive minimum: a prescribed marginal with an extra kernel retains it on its unitary orbit, while the oscillator's full-support passive optimum has none. Nor does compact resolvent imply a finite bound; for instance $e_i=2^i-1$ makes the displayed series infinite. The pure Bob-side conclusion is the only Bob-side energy assertion used here.
+
+Define $E_{A,\Gamma}(\eps)$ as the infimum of Alice's mean oscillator occupation over normal spatial strategies of loss at most $\eps$, allowing mixed states and unrestricted Bob dimension and POVMs. The entropy price $S_\Gamma$ retains the pure spatial convention above. Finite-only prices at positive loss are defined by the same infima restricted to finite-dimensional strategies.
+
+\begin{samepage}
+\begin{theorem}[Exact limiting resource prices]\label{thm:price-limits}
+\[
+ \lim_{\eps\downarrow0}S_\Gamma(\eps)=\log_2 24+7/9,
+ \qquad \lim_{\eps\downarrow0}E_{A,\Gamma}(\eps)=275/18.
+\]
+The same limits hold for the finite-only prices at positive loss. These are limits, not quantitative convergence rates; the finite-only feasible set at zero loss is empty.
+\end{theorem}
+\end{samepage}
+\begin{proof}
+Monotonicity and the perfect released strategy give finite upper limits. The entropy compactness argument in Theorem~\ref{thm:attainment} produces a perfect pure limit at the limiting entropy. Theorem~\ref{thm:renyi-minimum} bounds that entropy below by $H_\Gamma$, so equality follows.
+
+For one-sided energy, purify any mixed strategy into Bob without changing Alice's marginal, cost or correlations. Order its Schmidt probabilities $p_i$ and transport both Schmidt supports to the canonical vector $\sum_{i\ge0}\sqrt{p_i}|ii\rangle$, placing Alice passively. Her new mean $\sum_i i p_i$ is no greater than the original energy, and Bob is unconstrained. Along a sequence approaching a finite limiting cost $e$,
+\[
+ \sum_{i\ge r}p_i\le(e+o(1))/r.
+\]
+Coordinatewise subselection and this tightness give $\ell^1$ convergence of the lists and norm convergence of canonical pure vectors. Simultaneous ultraweak subsequences of the finitely many local effects remain POVMs. Product effects converge weakly first on product vectors and then by density, so the limiting loss is zero. Fatou bounds its Alice occupation by $e$. Theorem~\ref{thm:energy-minimum} forces $e\ge275/18$. This controls Bob by Schmidt transport, without applying two-sided Hamiltonian compactness to an unconstrained Bob system.
+
+For finite-only prices the original $K$-level compressions have loss $1/[624(4^K-1)]$, energy tending to $275/18$ and entropy
+\[
+ H_K=H_\Gamma-\frac{2K}{4^K-1}+\log_2(1-4^{-K})\longrightarrow H_\Gamma.
+\]
+They supply the upper limits. Restriction to a smaller feasible class supplies the lower limits already proved.
+\end{proof}

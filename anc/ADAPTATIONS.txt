@@ -1,0 +1,18 @@
+The resource checks retain the supplied independent finite algorithms.
+Field, faithfulness and semifinite scripts use the adjacent rational game
+instead of an absolute release path. Outputs use the runner's chosen directory.
+Input-hash staging attachments are replaced by the executed script; keys are
+relative filenames. Field memory measurement uses psutil in place of a
+Windows-only interface. The other optional platform measurements are retained.
+The fingerprint script contains only the supplied fingerprint calculations:
+the later unrelated optimization and resource models are omitted.
+The energy script independently evaluates the exact formulas in this paper.
+Descriptive comments and variable names were adjusted for standalone use.
+These changes do not change the finite mathematical algorithms or tolerances.
+The runner enforces one numerical thread and an 850 MB sampled memory ceiling.
+Recorded outputs are evidence of finite assertions, not universal proofs.
+Recorded optional package warnings retain their message and module-relative
+filename; the local Python installation prefix is removed.
+The ladder check retains the supplied independent infinite-tail algorithm;
+only its output location, filename and descriptive boundary labels change.
+The energy check also verifies the normalized compression entropy formula.

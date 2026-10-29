@@ -1,0 +1,8 @@
+Independent infinite-row PVM tests: 21 questions, rows 0..59 passed
+Independent table-to-PVM check: 1547 events; 709 losing events; 16152 nontrivial zero-amplitude checks on all 52 pairs
+Mutation checks: wrong Schmidt ratio and missing offset flag both detected
+Storage inverse and spectator bound: 91881 triples passed
+Non-invariant-span energy stress test: 16 sector/power inequalities passed
+Finite canonical-completion stress test error: 2.220446049250313e-15
+Peak working set / commit: 84357120 100241408
+ALL INDEPENDENT CHECKS PASSED

@@ -1,0 +1,85 @@
+\section{Faithful states, the vacuum, and preparation}\label{sec:faithfulness}
+The mechanisms in this section are established operator-algebraic background. Joint faithfulness and independent local algebras already exclude perfect nontrivial correlations in the work of R\'edei--Summers~\cite[proof of Lemma 3, equations (18)--(19)]{RedeiSummers}. Summers--Werner's faithful-state argument~\cite[Theorem 2.1]{SW88} supplies the uniform-gap mechanism for CHSH. We give their finite-game formulations and the explicit consequences for $\Gamma$. Local faithfulness of the two marginals alone is insufficient: the ideal entangled gadget has faithful marginals and a nonfaithful joint state.
+
+\begin{theorem}[Faithfulness and a uniform fixed-state floor]\label{thm:faithful-floor}
+Let $M,N$ commute and satisfy Schlieder independence: the product of nonzero positive local operators is nonzero. In a state faithful on $M\vee N$, perfect finite-game play exists exactly when the game has a classical perfect strategy. If the state $\omega$ is normal and faithful and there is a normal product state $\sigma$ on $M\vee N$, every classically imperfect finite game has a positive loss floor in this fixed state, uniform over local POVMs.
+
+More generally, a faithful state on a commuting pair admitting a product state cannot attain a commuting Bell maximum strictly above its classical maximum. For a split pair, the analogous statement applies to its spatial maximum.
+\end{theorem}
+\begin{proof}
+Every supported losing product $E_a^xF_b^y$ is positive. Zero total loss and faithfulness make each such product zero. Independence then makes one factor zero. Choose a nonzero answer effect for each question; completeness ensures that one exists. Every supported pair of selected effects is nonzero, hence winning. These choices give a deterministic classical perfect strategy. The converse uses effects zero and identity.
+
+For the uniform assertion, write $\delta_{\rm cl}=1-\omega_{\rm cl}(G)>0$ and define, for $0<t\le1$,
+\[
+ \beta_t(\sigma\Vert\omega)=\min\{\omega(T):0\le T\le I,\ \sigma(T)\ge t\}.
+\]
+The feasible effect set is ultraweakly compact, and both functionals are continuous. Its minimum is positive: a zero minimizer would vanish by faithfulness, contradicting its $\sigma$ value. The game loss effect $L$ is a positive contraction and $\sigma(L)\ge\delta_{\rm cl}$, because product responses are classical. Thus $\omega(L)\ge\beta_{\delta_{\rm cl}}(\sigma\Vert\omega)>0$. The floor is for the specified state and pair, not uniform over varying faithful states.
+
+For a Bell operator $B$ with universal commuting upper bound $\beta_{qc}$, the operator $\beta_{qc}I-B$ is positive, since every vector with those measurements is a commuting strategy. Faithful equality forces $B=\beta_{qc}I$. Its expectation in the product state is classical, contradicting $\beta_{qc}>\beta_{\rm cl}$. On a split pair the same argument uses its tensor factorization and the spatial upper bound. Normality of the product state is needed for the uniform argument, not this qualitative one.
+\end{proof}
+
+\begin{proposition}[The classical gap and a testing price]\label{prop:testing-price}
+The classical value of $\Gamma$ is $51/52$. For a fixed faithful normal split state put
+\[
+ I_t=\inf_{\sigma\ {\rm normal\ product}}[-\ln\beta_t(\sigma\Vert\omega)].
+\]
+Then $-\ln t\le I_t<\infty$ and every $\Gamma$ strategy in that state has loss at least $e^{-I_{1/52}}>0$. A family attaining loss at most $\eps$ must have $I_{1/52}\ge\ln(1/\eps)$. This is a testing quantity, not an energy or geometric rate.
+\end{proposition}
+\begin{proof}
+A deterministic perfect first FMS copy is impossible. Row/column flag consistency would make all six flag statuses the same. All flags force four inconsistent sign parities. No flags force the magic-square row/column parity contradiction. Thus at least one of the fifty-two pairs loses. For attainment of this bound choose in copy one Alice's rows all $(+++)$, $T_0=+$, $T_1=(+++)$; Bob's first two columns $(+++)$, third $(++-)$, $U_0=+$, $U_1=(+++)$. Choose boundary answers throughout copy two and Bob's label $A$. Exactly $(R_3,C_3)$ of copy one loses. This proves the value.
+
+The testing minimum is positive by Theorem~\ref{thm:faithful-floor} and at most $t$, using $T=tI$. One normal product comparison gives a finite upper bound on the infimum. Taking the supremum of the individual testing lower bounds gives the stated exponential expression, with no optimizer assumption. An algebra-pair isomorphism transports all states and effects, so the quantity is invariant under such transport. If reverse relative entropy is finite, data processing under the binary measurement $\{L,I-L\}$ also gives
+\[
+ \omega(L)\ge\exp[-(S(\sigma\Vert\omega)+\ln2)/\delta_{\rm cl}],
+\]
+since $S(\sigma\Vert\omega)\ge\delta_{\rm cl}\ln(1/\omega(L))-\ln2$. This uses the reverse order shown, rather than ordinary mutual information~\cite{Araki}.
+\end{proof}
+
+\subsection{Correlation closures and the full commutant}
+\begin{proposition}[Normal approximation and fixed-vector access]\label{prop:normal-closures}
+If one local algebra is the strong closure of increasing finite-dimensional unital algebras, all normal finite correlations lie in $C_{qa}$. Normal split correlations are spatial. For a type $\mathrm{III}_1$ factor $M$ on a separable Hilbert space with Bob's full commutant $M'$, the closure of the correlations of any fixed unit vector contains $C_{qa}$; it equals $C_{qa}$ if $M$ is hyperfinite.
+\end{proposition}
+\begin{proof}
+For each Alice POVM form the column $(\sqrt{E_a})_a$, a contraction column. Matrix-amplified Kaplansky density gives contraction columns in a common finite-dimensional approximating algebra, converging strongly-star. Their squared entries sum to at most identity; add the positive deficit to the first answer. These are exact POVMs and converge strongly. Normality makes their finitely many correlations with fixed Bob effects converge. A representation of $\bigoplus_k M_{n_k}$ decomposes into $\bigoplus_k(\mathbb C^{n_k}\otimes K_k)$, with commuting Bob acting on the multiplicity spaces. Purify the state and compress Bob in each block to Schmidt rank at most $n_k$. A shared direct-sum label realizes the full correlation with finite local dimension at most $\sum_k n_k$. This proves approximation; it is the standard hyperfinite mechanism~\cite[Section 4]{ScholzWerner}. A split tensor factorization directly gives the spatial statement.
+
+For the last assertion, proper infiniteness embeds normally represented unital copies of $B(\ell^2)$ in $M$ and $M'$. Splitting off these commuting type-I subfactors gives $\ell^2\otimes\ell^2\otimes K$, in which every finite target strategy can be represented. The local-unitary clause of~\cite[Theorem 51, equation (97), arXiv version 2]{vLSWWpure} approximates any target vector by $uv\Omega$, $u\in M$, $v\in M'$. Transport the measurements by these unitaries. Every effect probability changes by at most twice the vector error. This gives the inclusion; hyperfinite approximation gives the reverse. The full commutant hypothesis is essential: it cannot be replaced by a strictly separated bounded Bob region, where the faithful-vacuum floor applies.
+\end{proof}
+
+\subsection{Wedge supremum one without attainment}
+\begin{theorem}[The massive wedge vacuum]\label{thm:wedge}
+For complementary wedges in the massive free scalar field, the vacuum has $\Gamma$ supremum one but no perfect strategy, even with local POVMs.
+\end{theorem}
+\begin{proof}
+The modular group of a wedge vacuum is the boost group, and wedge duality identifies the opposite algebra with the full commutant~\cite[Theorem 4]{BW75}. Its centralizer is scalar. Here is the latter step explicitly. On the positive mass shell use longitudinal rapidity $\theta$, with $p_0=m_\perp\cosh\theta$, $p_1=m_\perp\sinh\theta$; invariant measure is $(1/2)d\theta\,d^{d-1}p_\perp$. On an $n$-particle sector a boost translates all rapidities together. Taking $u=\theta_1$ and $v_j=\theta_j-\theta_1$ gives an $L^2(\mathbb R,du)$ regular-translation factor. No nonzero vector in it is invariant: Fourier support would lie at a measure-zero point. Symmetrization adds no invariant vectors, and the Fock direct sum leaves only the vacuum. If $A$ is in the vacuum centralizer, modular invariance makes $A\Omega$ boost-invariant, hence scalar times $\Omega$; separatingness gives $A\in\mathbb CI$.
+
+If self-adjoint $A\in M$, $B\in M'$ satisfy $A\Omega=B\Omega$, then for $x\in M$,
+$\omega(Ax)=\langle B\Omega,x\Omega\rangle=\omega(xA)$. Thus $A$ lies in the centralizer, the doubles mechanism of Werner~\cite[Section II]{WernerDoubles}. Self-adjointness, or both adjoint mirror identities, matters here.
+
+For commuting effects $P,Q$, binary mismatch equals
+\[
+ P(I-Q)+(I-P)Q=(P-Q)^2+(P-P^2)+(Q-Q^2).
+\]
+Zero expectation makes each positive summand vanish on $\Omega$. Local separatingness gives projections $P,Q$ and the mirror identity. Apply this to first-copy flag checks: all flag projections coincide on the vacuum and hence locally, and their self-adjoint mirrors put them in the scalar centralizer. They are either all zero or all identity.
+
+If identity, calibration eliminates all triples at the four bridge questions. Their binary sign reflections satisfy $X_0\Omega=Y_0\Omega=Y_1\Omega$ and $X_1\Omega=Y_0\Omega=-Y_1\Omega$, impossible for a reflection. If zero, every magic-square cell marginal has a self-adjoint mirror and is a scalar projection. Their deterministic signs would have row products $+1$ and column products $+1,+1,-1$, again impossible. Thus the first FMS copy, and hence $\Gamma$, cannot be perfect.
+
+Massive free wedge algebras are hyperfinite type $\mathrm{III}_1$ in this separable vacuum representation~\cite{BDF87,Haagerup}. Proposition~\ref{prop:normal-closures}, applied to the finite compressions of Theorem~\ref{thm:main}, gives vacuum strategies approaching one. This proves the supremum assertion without importing a spatial Schmidt decomposition into the wedge. Summers--Werner already discuss wedge CHSH nonattainment via trivial centralizers~\cite[p. 221]{SW88}; the addition here is the explicit FMS/$\Gamma$ consequence.
+\end{proof}
+
+\subsection{Analytic energy and restricted preparation}
+\begin{theorem}[What cannot prepare perfect play]\label{thm:preparation-obstruction}
+In the massive free-field vacuum representation, no nonzero vector with bounded spectral energy support, or in $D(e^{aH})$ for some $a>0$, wins $\Gamma$ perfectly in two bounded strictly separated regions. Every perfect normal state therefore has infinite positive exponential energy moments. No bounded-region invertible field operation, in particular no such unitary, prepares perfect play from the vacuum. Nor does a finite LOCC protocol or normal operation with a product-Kraus decomposition across the laboratories.
+\end{theorem}
+\begin{proof}
+The energy-analytic Reeh--Schlieder theorem, with locality, positive-energy covariance and weak additivity, makes these vectors cyclic for every nonempty open local algebra~\cite[Section 3]{CliftonHalvorson},~\cite[Section 3]{SummersReview}. An open region in the common causal complement is therefore cyclic; commutation makes the vector separating for the joined game algebra. Theorem~\ref{thm:faithful-floor} excludes perfection. If $\langle e^{tH}\rangle<\infty$, the vector belongs to $D(e^{tH/2})$. For a normal mixed state with finite exponential moment, every positive-weight vector in its spectral decomposition has that property and its mixture is locally faithful. Thus mixed states are excluded too. Finite mean energy is not bounded spectral support: Theorem~\ref{thm:field} exhibits the difference. The assertion concerns moments, not a pointwise regular form of spectral tails.
+
+Enlarge a bounded region to contain both the preparation and game algebras. If $U$ is invertible there and $AU\Omega=0$, then $(U^{-1}AU)\Omega=0$; vacuum separatingness gives $A=0$. Thus the output is still separating for the game algebra. Covariant time translations obey the same argument in transported regions.
+
+For a nonzero product branch $AB$, a losing event of zero conditional probability gives
+\[
+ \omega_\Omega((A^*E_a^xA)(B^*F_b^yB))=0.
+\]
+Vacuum faithfulness and independence force one filtered factor to vanish. Their local sums are $A^*A$ and $B^*B$, both nonzero. Selecting nonzero filtered answers for every question therefore gives a classical perfect strategy, a contradiction. A sum or integral of branches with zero total loss has zero loss in each positive-weight branch, almost everywhere in an integral. This proves the stated class, not an unspecified closure of infinite protocols. The isometry in Theorem~\ref{thm:field} is joint and noninvertible, so it avoids both obstructions.
+\end{proof}
+
+Faithfulness, analytic-vector cyclicity and their preservation are known mechanisms, not new principles about all possible physical preparations. Halvorson--Clifton~\cite{HalvorsonClifton} establish generic Bell correlation, which is compatible with failure of perfect attainment. Neither a marginal's faithfulness nor the type-III label alone fixes the answer. Our claims concern the finite-game formulations and these specified vacuum and preparation classes.

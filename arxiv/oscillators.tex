@@ -1,0 +1,63 @@
+\section{Two oscillators and finite energy}\label{sec:oscillators}
+All logarithms in entanglement entropies are base two; trace entropies and modular variables below use natural logarithms. Oscillator energies are occupation numbers, with the zero point omitted. Arbitrary bounded local measurements are allowed. In particular, these statements impose no Gaussian restriction or finite control-time bound.
+
+\begin{theorem}[An explicit finite-energy perfect strategy]\label{thm:oscillators}
+The perfect strategy of~\eqref{eq:spatialstate} is a strategy on two harmonic oscillators with
+\[
+ \langle N_A\rangle=\langle N_B\rangle=\frac{275}{18},\qquad
+ \langle N_A+N_B\rangle=\frac{275}{9}.
+\]
+Every polynomial number moment is finite. These are the least possible occupations among perfect pure spatial strategies on two oscillators, and the passive minima for the displayed Schmidt spectrum. Retaining $K$ levels gives the loss~\eqref{eq:exactloss} and mean occupation per side
+\[
+ \langle N\rangle_K=\frac{275}{18}-\frac{20K}{4^K-1}.
+\]
+\end{theorem}
+\begin{proof}
+Identify $A(i,j,k)$ with $|20k+4j+i\rangle$ and $B(j,k)$ with $|20k+16+j\rangle$. This is a bijection onto the oscillator basis. The probabilities, in decreasing order, are sixteen copies of $4^{-k}/24$ and then four of $4^{-k}/48$, at each $k\ge0$. They are decreasing even across adjacent levels. Their level mass is $(3/4)4^{-k}$, with expected level $1/3$. The unnormalized mean offset in a level is
+\[
+ \frac{0+\cdots+15}{24}+\frac{16+\cdots+19}{48}=\frac{155}{24}.
+\]
+Hence the mean is $20/3+(155/24)(4/3)=275/18$. Decreasing probabilities assigned to increasing energies minimize their mean: finite-dimensional rearrangement, followed by spectral cutoffs and monotone convergence, gives this passive lower bound for every placement. The displayed placement attains it. Global optimality over perfect pure strategies follows from the integer-spectrum argument in Theorem~\ref{thm:energy-minimum}.
+
+The generating function is
+\[
+ \langle z^N\rangle=
+ \frac{\sum_{r=0}^{15}z^r/24+\sum_{r=16}^{19}z^r/48}{1-z^{20}/4}.
+\]
+Its radius exceeds one, giving every polynomial moment. The local measurements are the orthogonal direct sums of the finite ideal PVMs already described in Section~\ref{sec:strategy}, plus the boundary and label projections. They are everywhere-defined projections of norm at most one, and their finite outcome sums are the identity in the strong topology. Thus the oscillator identification introduces no unbounded measurement-domain assumption. The block and link proof of Theorem~\ref{thm:main} verifies all fifty-two pairs. Finally, conditioning the geometric level distribution on $k<K$ gives mean level $1/3-K/(4^K-1)$; the offset distribution is unchanged, proving the truncation formula.
+\end{proof}
+
+\subsection{Attainment of bounded resource prices}
+For a game $G$, let $S_G(\eps)$ be the infimum of pure-state entanglement entropy among spatial strategies of loss at most $\eps$. Let $E_G(\eps)$ be the corresponding total mean energy on a specified pair of nonnegative local Hamiltonians, allowing normal mixed states and arbitrary POVMs. Empty infima are infinite. These definitions specify the state domain; a finite-dimensional infimum at loss zero would be a different quantity.
+
+\begin{theorem}[Three compactness criteria]\label{thm:attainment}
+For a finite game, bounded dimension as loss tends to zero is equivalent to finite-dimensional perfect attainment. A finite limit $s=\lim_{\eps\downarrow0}S_G(\eps)$ is attained by a perfect spatial pure strategy of entropy $s$. If both local Hamiltonians have compact resolvent, a finite limit $e=\lim_{\eps\downarrow0}E_G(\eps)$ is attained by a perfect strategy, and a perfect pure strategy has energy $e$ as well.
+\end{theorem}
+\begin{proof}
+In a fixed finite dimension, density operators and the finitely many POVMs form compact sets and the loss is continuous. A convergent subsequence proves the dimension statement.
+
+For entropy choose pure strategies with losses tending to zero and entropies tending to $s$. Transport their Schmidt supports to one common countable basis, with decreasing probabilities $p_i^{(n)}$. Since $p_i^{(n)}\le1/i$, their tails past $r>1$ are at most $(s+1)/\log_2r$, after discarding a finite prefix. Coordinatewise subselection and this tightness give convergence in $\ell^1$ to a probability vector $p$. The canonical pure vectors converge in norm because $(\sqrt x-\sqrt y)^2\le|x-y|$. Extract simultaneous ultraweakly convergent subsequences of all local effects. Positivity and completeness persist. Tensor products converge weakly: verify matrix elements on product vectors, then finite sums, and use uniform operator bounds and density. Combining this with norm convergence of vectors makes the limiting loss zero. Fatou gives $S(p)\le s$. Every perfect strategy bounds every approximate price from above, so equality holds. Transport to Schmidt supports avoids an unjustified extension of an infinite-dimensional basis map to a unitary on its original kernel.
+
+For energy put $H=h_A\otimes I+I\otimes h_B$. Its bounded-energy spectral projections have finite rank. If $\operatorname{tr}(\rho H)\le e+1$, then $\operatorname{tr}(\rho1_{(R,\infty)}(H))\le(e+1)/R$. Finite-rank compression and the square-root tail estimate give trace-norm precompactness of these density operators. Extract a trace-norm limit and weak limits of the measurements as above. The limit is perfect, and lower semicontinuity of energy, obtained by bounded spectral cutoffs, gives energy at most $e$; it must equal $e$. In a pure decomposition of this state, positivity of the loss makes every positive-weight component perfect. Each has energy at least $e$, so some, indeed almost every component of finite weight, has energy $e$. This proves the pure assertion without assuming the minimizing state was pure.
+\end{proof}
+
+These criteria separate attainment from computation. For $\Gamma$, the exact entropy and one-sided oscillator endpoints are computed in Theorem~\ref{thm:price-limits}, using the spectral classification of Section~\ref{sec:spectra}.
+
+\begin{proposition}[A comparison with matched logarithmic games]\label{prop:oscillator-exponent}
+Suppose a rational value-one game has matched finite-dimensional laws with $\alpha>0$:
+\[
+ \log_2D_G(\eps)=\alpha\log_2(1/\eps)+o(\log(1/\eps)),\qquad
+ d_G^\to(\eps)=\alpha\log_2(1/\eps)+o(\log(1/\eps)),
+\]
+where $d_G^\to$ is the original-state one-way distillable-entanglement demand, and maximally entangled states attain the dimension upper law. With $m$ oscillator modes per party its optimal energy has exponent $\alpha/m$:
+\[
+ E_G(\eps)=\eps^{-\alpha/m+o(1)}.
+\]
+\end{proposition}
+\begin{proof}
+The maximum entropy of $m$ oscillators at total mean occupation $E$ is $m g(E/m)$, where $g(x)=(x+1)\log_2(x+1)-x\log_2x$. Relative entropy against the product thermal state proves this bound, and $g(x)\le\log_2(\mathrm e(x+1))$. Since directional distillation is at most either marginal entropy, each mean occupation is at least $m(2^{d_G^\to(\eps)/m}/\mathrm e-1)$. For normal spatial strategies, finite local truncations approximate their correlations with arbitrarily small relative loss slack; local monotonicity of distillation gives the same lower bound with $\eps$ replaced by $(1+o(1))\eps$.
+
+A rank-$D$ upper strategy fits into the $m$-mode grid with each coordinate less than $\lceil D^{1/m}\rceil$. Its mean occupation is at most $m\lceil D^{1/m}\rceil$. The two laws squeeze the exponent. The matched games in~\cite{DMprice} supply examples. This proposition uses both matched laws; entropy divergence alone does not imply this power law, and $\Gamma$ has the separate bounded-energy behavior above.
+\end{proof}
+
+\input{energy-optima}

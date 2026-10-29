@@ -1,0 +1,129 @@
+\subsection{Integer spectra and the majorization maximum}\label{sec:spectra}
+For a positive summable multiset $\sigma$, write $m_\sigma(y)$ for the multiplicity of $y$, and let
+\[
+ \Lambda(\sigma)=\mult{16}{(4\sigma)}\sq\mult4{(2\sigma)}.
+\]
+Call $\sigma$ admissible if its multiplicities are nonnegative integers,
+\begin{equation}\label{eq:admissible-spectrum}
+ \sum_{\mu\in\sigma}\mu=1/72,\qquad
+ m_\sigma(\mu)\le16m_\sigma(\mu/4)\quad(\mu>0).
+\end{equation}
+Multiplicity is included in the sum. Each positive value has finite multiplicity by summability.
+
+\begin{theorem}[Classification of perfect type-I marginals]\label{thm:spectrum-classification}
+A prescribed trace-class Alice marginal on a type-I factor admits perfect $\Gamma$ play, with arbitrary POVMs and a suitable commuting partner, exactly when its nonzero spectrum is $\Lambda(\sigma)$ for an admissible $\sigma$. Zero eigenvalues on the ambient Hilbert space are irrelevant. The criterion covers initially mixed commuting extensions; sufficiency can be realized by a pure spatial strategy.
+\end{theorem}
+\begin{proof}
+Theorem~\ref{thm:graded-hosting} gives a graded ladder on support. Count eigenvalues on $P$ by $\sigma$. Its four density-doubling equivalences give
+\[
+ \eta_F=4(D_2)_*\sigma,\qquad
+ \eta_{P+B}=16(D_4)_*\sigma,\qquad
+ \eta_B=16(D_4)_*\sigma-\sigma\ge0.
+\]
+Thus the full spectrum is $\Lambda(\sigma)$, its total is $72\sum\sigma=1$, and the last positive measure is precisely the multiplicity inequality.
+
+Conversely construct a magic space of spectrum $16(D_4)_*\sigma$. The inequality chooses within each eigenspace a subspace $P$ of spectrum $\sigma$; let the remainder be $B$. On an orthogonal space $F$ put spectrum $4(D_2)_*\sigma$. Eigenbasis bijections define four maps $P\to F$ and four maps $F\to P+B$, each doubling density, with the required common sources and orthogonal ranges. They give the graded ladder and hence perfect play. Purifying the type-I density gives a spatial pure realization. Transport on the prescribed marginal's support and complete measurements on its kernel.
+\end{proof}
+
+For a decreasing nonnegative list $x$, put $\operatorname{KF}_r(x)=\sum_{i=1}^r x_i$, $T_r(x)=\sum_{i>r}x_i$, and $G_x(t)=\sum_i(x_i-t)_+$. Set
+\[
+ \sigma_* =\{4^{-k}/96:k\ge0\},\qquad \Lambda_* =\Lambda(\sigma_*).
+\]
+This is the displayed sixteen/four spectrum of Theorem~\ref{thm:oscillators}.
+
+\begin{theorem}[A unique majorization maximum spectrum]\label{thm:majorization}
+For every admissible $\sigma$ and every rank $r$,
+\[
+ \operatorname{KF}_r(\Lambda(\sigma))\le\operatorname{KF}_r(\Lambda_*).
+\]
+Equality at all ranks holds exactly when $\sigma=\sigma_*$. Uniqueness concerns the spectrum, not the measurements or the whole strategy.
+\end{theorem}
+\begin{proof}
+Integrality in~\eqref{eq:admissible-spectrum} forces $\mu/4^k$ for every $k\ge1$ whenever $\mu$ occurs. Order $\sigma_1\ge\sigma_2\ge\cdots$. The distinct forced values $\sigma_j/4,\sigma_j/16,\ldots$ are strictly smaller than $\sigma_j$ and hence occur after position $j$, also in the presence of ties. Therefore
+\[
+ T_j(\sigma)\ge\sigma_j/3,\quad
+ T_{j-1}(\sigma)=\sigma_j+T_j(\sigma)\le4T_j(\sigma),\quad
+ T_j(\sigma)\ge4^{-j}/72.
+\]
+These are the tails of $\sigma_*$, proving its Ky Fan domination. Equality at every rank forces the same decreasing list.
+
+To transfer the order without assumptions about interlacing, use
+\[
+ G_x(t)=\sup_r[\operatorname{KF}_r(x)-rt],\qquad
+ \operatorname{KF}_r(x)=\inf_{t\ge0}[G_x(t)+rt].
+\]
+The first crossing index and $t=x_r$ prove these identities; at $t>0$ summability leaves finitely many positive terms. The transform satisfies
+\[
+ G_{\Lambda(\sigma)}(t)=64G_\sigma(t/4)+8G_\sigma(t/2).
+\]
+Both coefficients are positive, so the Ky Fan order of $\sigma$ transfers to $\Lambda$. If both Lambda spectra agree, the two nonnegative $G$ gaps in this formula have zero sum for every $t$. Each vanishes, whence $G_\sigma=G_{\sigma_*}$ and $\sigma=\sigma_*$. This proves the stated uniqueness.
+\end{proof}
+
+\subsection{Entropy and every truncation rank}\label{sec:optimal-entropies}
+Majorization is an established entanglement ordering~\cite{Nielsen}. Here the game-specific content is the admissible integer multiset and its forced quarter-chain. The following infinite-list argument supplies the required entropy conclusions directly.
+
+\begin{theorem}[Sharp positive-order entropy bounds]\label{thm:renyi-minimum}
+Every normal perfect type-I marginal has von Neumann entropy at least $H_\Gamma$. For $0<\alpha<1$ or $1<\alpha<\infty$, its R\'enyi entropy obeys
+\[
+ H_\alpha\ge\frac1{1-\alpha}\log_2
+       \frac{16\,24^{-\alpha}+4\,48^{-\alpha}}{1-4^{-\alpha}}.
+\]
+Equality in the von Neumann bound or at any such finite positive order holds exactly for spectrum $\Lambda_*$. Every bound is attained by the displayed pure strategy. For pure strategies these are entanglement entropies; for initially mixed extensions the assertion concerns Alice's marginal entropy.
+\end{theorem}
+\begin{proof}
+Let $x$ be the marginal spectrum, $y=\Lambda_*$, and $D(t)=G_y(t)-G_x(t)\ge0$. Both lists have mass one and entries at most one. Integrating the identity
+\[
+ \int_0^1\frac{x-(x-t)_+}{t}\,dt=x-x\ln x
+\]
+and using cutoffs gives $S(x)-S(y)=\int_0^1D(t)\,dt/t\ge0$ in nats, with a well-defined extended value because $S(y)<\infty$.
+For $\alpha>1$, nonnegative integration of
+\[
+ x^\alpha=\alpha(\alpha-1)\int_0^1t^{\alpha-2}(x-t)_+\,dt
+\]
+gives $\sum x_i^\alpha\le\sum y_i^\alpha$. For $0<\alpha<1$, use instead
+\[
+ x^\alpha=\alpha(1-\alpha)\int_0^\infty
+                 t^{\alpha-2}\min(x,t)\,dt,
+ \qquad \sum_i\min(x_i,t)=1-G_x(t).
+\]
+This reverses the power-sum inequality. The definition of R\'enyi entropy gives the claimed directions. If the spectra differ, some continuous $G$ gap is positive on an interval; each strictly positive integration kernel makes its finite equality impossible. Thus equality is precisely $x=y$. Summing the sixteen/four geometric probabilities gives the displayed power sum, and the order-one value is $\log_2 24+7/9$.
+\end{proof}
+
+\begin{corollary}[The sharp discarded-mass profile]\label{cor:optimal-tails}
+For a perfect type-I marginal and any rank-$r$ projection $Q$, $\operatorname{tr}(h(I-Q))\ge T_r(\Lambda_*)$. With $r=20k+j$, $0\le j<20$,
+\[
+ T_r(\Lambda_*)=4^{-k}
+ \begin{cases}
+ 1-j/24,&0\le j\le16,\\
+ 1/3-(j-16)/48,&16\le j<20.
+ \end{cases}
+\]
+In particular $T_{20k}=4^{-k}$. No perfect pure strategy discards less Schmidt probability at a fixed truncation rank. This is not an optimal game-loss assertion for the compressed measurements.
+\end{corollary}
+\begin{proof}
+The Ky Fan variational principle bounds $\operatorname{tr}(hQ)$ by the first $r$ eigenvalues, and Theorem~\ref{thm:majorization} bounds those by the released prefix. Sum the remaining sixteen/four level probabilities to obtain the formula. The displayed strategy attains each retained-weight bound.
+\end{proof}
+
+\subsection{A capacity infimum attained only beyond type I}\label{sec:capacity-infimum}
+\begin{theorem}[Sharp but unattained type-I capacity]\label{thm:capacity-infimum}
+Among perfect normal type-I marginals with finite second modular moment,
+\[
+ \inf C_E=\frac8{49}(\ln2)^2,
+\]
+and no such marginal attains it. The same bound is attained by the scalar-boundary $\mathrm{II}_1$ witness of Theorem~\ref{thm:type-two}.
+\end{theorem}
+\begin{proof}
+The graded criterion and Theorem~\ref{thm:ladder} give the lower bound. Equality would make the boundary density scalar, $h_B=bB$. In type I its counting measure is $m\delta_b$ for a finite positive integer $m$: its probability mass bounds $mb$ by one. The ungraded trace renewal would then put multiplicity $m/4^j$ at $b/2^j$ for every $j$. Eventually this lies strictly between zero and one, contrary to integer multiplicity.
+
+For an explicit approach choose admissible values $\mu_k=c_N4^{-k}$ with multiplicities
+\[
+ m_k=\begin{cases}16^{N-k},&0\le k\le N,\\1,&k>N,\end{cases}
+ \qquad c_N=\left(72\sum_{k\ge0}m_k4^{-k}\right)^{-1}.
+\]
+Each inequality $m_k\le16m_{k+1}$ holds, so Theorem~\ref{thm:spectrum-classification} gives a perfect infinite-rank strategy. Its boundary consists of $16^{N+1}$ copies at $4c_N$ and fifteen copies at $c_N4^{-k}$ for every $k\ge N$. The normalized off-top boundary mass is $t_N=5/(16\,64^N+5)$. Conditional on this tail its modular displacement, in units of $\ln2$, is $2(N+1+G)$ with $G$ geometric of ratio $1/4$. Its mean is $2N+8/3$ and variance $16/9$. Consequently
+\begin{equation}\label{eq:capacity-approach}
+ \frac{C_E}{(\ln2)^2}=\frac8{49}+\frac{16}{9}t_N+
+                    t_N(1-t_N)(2N+8/3)^2.
+\end{equation}
+The positive excess is $O(N^2 64^{-N})$ and tends to zero. At $N=0$ the expression is $152/81$, the released state's value. These are actual perfect infinite strategies, not finite approximants confused with perfect ones. The type-II scalar boundary attains equality by the internal construction in Section~\ref{sec:semifinite}.
+\end{proof}

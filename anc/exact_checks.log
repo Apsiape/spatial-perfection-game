@@ -1,0 +1,21 @@
+EXACT ideal completeness, PVM and forbidden amplitude checks: 324
+EXACT W1,W2,W3 and signed overlaps: PASS
+EXACT wrong-ratio loss = (rho-sqrt(2))^2 / [25(1+4 rho^2)]
+EXACT wrong-ratio sector defect squared = 100 * mean loss
+EXACT classical FMS value: 24/25 Alice assignments: 3125
+EXACT real Pauli group: 32 distinct elements; 1024 products closed
+CS Appendix A.3 counterexample (C trivial):
+  projector defect^2=1.0e-02, trace distance=0.2, alleged bound=0.06
+  projector defect^2=1.0e-04, trace distance=0.02, alleged bound=0.0006
+  projector defect^2=1.0e-06, trace distance=0.002, alleged bound=6e-06
+Entropy infinite chain: 5.362740278498934
+  K=1: rank=20, exact loss=1/1872, loss*4^K=0.002136752137, H=4.281036113
+  K=2: rank=40, exact loss=1/9360, loss*4^K=0.001709401709, H=5.002964207
+  K=3: rank=60, exact loss=1/39312, loss*4^K=0.001628001628, H=5.244782107
+  K=4: rank=80, exact loss=1/159120, loss*4^K=0.001608848668, H=5.325721166
+  K=5: rank=100, exact loss=1/638352, loss*4^K=0.001604130636, H=5.351555537
+  K=6: rank=120, exact loss=1/2555280, loss*4^K=0.001602955449, H=5.359457612
+Pure-state entropy floor for eps <= 1/104: 0.00013339143284330865
+EXACT formal diagonal model: T^2 S multiplicities [256,224,225,225,...] nonnegative
+EXACT product simplex counts and negative-binomial tails: PASS
+DONE

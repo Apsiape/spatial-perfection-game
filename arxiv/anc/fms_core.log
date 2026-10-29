@@ -1,0 +1,13 @@
+ideal loss -2.3401728392728455e-18
+norm 1.0
+('R', 0) POVM err 0.0
+('R', 1) POVM err 0.0
+('R', 2) POVM err 0.0
+('T', 0) POVM err 3.3306690738754696e-16
+('T', 1) POVM err 3.3306690738754696e-16
+('C', 0) POVM err 0.0
+('C', 1) POVM err 0.0
+('C', 2) POVM err 0.0
+('U', 0) POVM err 4.440892098500626e-16
+('U', 1) POVM err 4.440892098500626e-16
+sector defect 1.1102230246251565e-16

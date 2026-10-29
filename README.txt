@@ -1,18 +1,9 @@
-Perfect play in a binary-scoring nonlocal game requires infinite dimension
+Perfect play in a binary-scoring nonlocal game requires infinite dimension but only finite energy
 Seth Douglas and Nidhal Mghirbi.
-Version 1.1.0, October 2026. A preprint; it has not been peer reviewed.
+Version 2.0.0, October 2026. A preprint; it has not been peer reviewed.
 
-main.tex, lower-bound.tex and references.bib are the manuscript sources.
-paper.pdf is the compiled manuscript (in the full working copy).
-anc/ contains the rational game and reproducible finite checks.
-arxiv/ is a standalone source package (in the full working copy).
+A finite rational binary-scoring game can require infinite dimension for perfect play while admitting finite energy and finite entanglement entropy. Our game has ten Alice questions, eleven Bob questions, at most six answers, and 52 uniform question pairs. It is spatially perfect and never finitely perfect, with sharp dimension profile $D_\Gamma(\varepsilon)=10\log_2(1/\varepsilon)+O(\log\log(1/\varepsilon))$. Among pure perfect strategies, the displayed strategy attains the least entanglement entropy, $5.362740278498934$ ebits, and least mean occupation, $275/18$ per oscillator. We classify all perfect normal type-I marginal spectra and prove that this spectrum is the unique majorization maximum. These constants are also the small-loss limits of the entropy and one-sided oscillator energy prices. In the massive free scalar field we construct a pure perfect state in two strictly separated bounded regions, equal to the vacuum outside a bounded containing region and with every polynomial energy moment finite. In contrast, every fixed faithful split state has a positive loss floor; the complementary-wedge vacuum has supremum one without attainment. Energy-analytic states, bounded-region invertible vacuum preparations and product-Kraus preparations cannot be perfect. Every perfect pure spatial strategy has infinite Schmidt rank; finite entropy is attained but not forced. In every type-II$_1$ factor the normalized trace has a loss floor, while bounded faithful prepared densities win perfectly with sharp trace-entropy deficit $\Delta_* = \ln(7/6)-\ln(2)/7$. Type-II$_\infty$ permits every finite trace entropy. A graded modular ladder gives a normal semifinite hosting criterion. Its scalar fingerprint has sharp capacity and entropy-gap bounds; the capacity floor is approached but not attained in type I, and attained in type II.
 
-Build in a clean copy:
-  pdflatex main
-  bibtex main
-  pdflatex main
-  pdflatex main
+Sources, standalone package and finite-check instructions are in README.md.
 
-The dimension profile for arbitrary POVMs and mixed states is
-D_Gamma(epsilon) = 10 log2(1/epsilon) + O(log log(1/epsilon)).
-The lower bound is 10 log2(1/epsilon) - 10 log2 log2(1/epsilon) - O(1).
+The exact type-I spectral classification and majorization theorem prove the global pure-state entropy and oscillator optima. The small-loss one-sided energy proof permits an unrestricted Bob system. The general ladder law retains its critical exception, moment conditions and support-transport convention. The capacity floor is an unattained type-I infimum and a type-II minimum.

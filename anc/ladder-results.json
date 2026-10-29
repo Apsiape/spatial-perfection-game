@@ -1,0 +1,99 @@
+{
+  "cases": 329,
+  "exact_Ky_Fan_comparisons": 112485,
+  "exact_minimum_energy": "275/18",
+  "minimum_entropy_bits": 5.362740278498924,
+  "exact_capacity_sequence": [
+    {
+      "N": 0,
+      "tail_boundary_probability": "5/21",
+      "variance_over_ln2_squared": "152/81",
+      "numeric": 1.876543209876543
+    },
+    {
+      "N": 1,
+      "tail_boundary_probability": "5/1029",
+      "variance_over_ln2_squared": "53912/194481",
+      "numeric": 0.2772095988811246
+    },
+    {
+      "N": 2,
+      "tail_boundary_probability": "5/65541",
+      "variance_over_ln2_squared": "131596952/788991921",
+      "numeric": 0.1667912541274298
+    },
+    {
+      "N": 3,
+      "tail_boundary_probability": "5/4194309",
+      "variance_over_ln2_squared": "527843197592/3231225548721",
+      "numeric": 0.1633569646046323
+    },
+    {
+      "N": 4,
+      "tail_boundary_probability": "5/268435461",
+      "variance_over_ln2_squared": "2160856043881112/13235068785725361",
+      "numeric": 0.16326745851231964
+    },
+    {
+      "N": 5,
+      "tail_boundary_probability": "5/17179869189",
+      "variance_over_ln2_squared": "8850751907755983512/54210839758374768561",
+      "numeric": 0.16326535333532946
+    },
+    {
+      "N": 6,
+      "tail_boundary_probability": "5/1099511627781",
+      "variance_over_ln2_squared": "36252669528894373102232/222047599523073849364401",
+      "numeric": 0.16326530710874546
+    },
+    {
+      "N": 7,
+      "tail_boundary_probability": "5/70368744177669",
+      "variance_over_ln2_squared": "148490933510044517264786072/909506967638367818027438001",
+      "numeric": 0.1632653061423126
+    },
+    {
+      "N": 8,
+      "tail_boundary_probability": "5/4503599627370501",
+      "variance_over_ln2_squared": "608218863584507027443637813912/3725340539446233451826361733041",
+      "numeric": 0.1632653061228378
+    },
+    {
+      "N": 9,
+      "tail_boundary_probability": "5/288230376151711749",
+      "variance_over_ln2_squared": "2491264465236315791361819772715672/15258994849571738866308680103301041",
+      "numeric": 0.16326530612245643
+    },
+    {
+      "N": 10,
+      "tail_boundary_probability": "5/18446744073709551621",
+      "variance_over_ln2_squared": "10204219249607492858352057668128473752/62500842903845840261848539459587215281",
+      "numeric": 0.16326530612244913
+    },
+    {
+      "N": 11,
+      "tail_boundary_probability": "5/1180591620717411303429",
+      "variance_over_ln2_squared": "41796482046392255612783843204473039618712/256003452534152561575920301514883068661681",
+      "numeric": 0.163265306122449
+    },
+    {
+      "N": 12,
+      "tail_boundary_probability": "5/75557863725914323419141",
+      "variance_over_ln2_squared": "171198390462022676328034851316691587197043352/1048590141579888892206226430773819534671155121",
+      "numeric": 0.16326530612244897
+    }
+  ],
+  "general_ladder_cases": 36,
+  "critical_identity_ladder": {
+    "n": 1,
+    "lambda": 1,
+    "B": 0,
+    "u": 1,
+    "density_eigenvalues": [
+      "1/3",
+      "2/3"
+    ],
+    "state_law_mass": 1,
+    "claimed_boundary_series_mass": 0
+  }
+}

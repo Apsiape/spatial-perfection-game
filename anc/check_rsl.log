@@ -1,0 +1,40 @@
+cupy\_environment.py:275: UserWarning: CUDA path could not be detected. Set CUDA_PATH environment variable if CuPy fails to load.
+  warnings.warn(
+perturbation_cases: perturbations of ideal (x) junk
+  m=1 trial=0: last t=3e-03 loss=3.64e-05 defect=1.83e-03 ratio=0.30
+  m=1 trial=1: last t=3e-03 loss=3.88e-05 defect=2.60e-03 ratio=0.42
+  m=1 trial=2: last t=3e-03 loss=4.15e-05 defect=1.84e-03 ratio=0.29
+  m=1 trial=3: last t=3e-03 loss=4.31e-05 defect=2.65e-03 ratio=0.40
+  m=1 trial=4: last t=3e-03 loss=4.27e-05 defect=3.49e-03 ratio=0.53
+  m=1 trial=5: last t=3e-03 loss=3.98e-05 defect=4.13e-03 ratio=0.65
+  m=2 trial=0: last t=3e-03 loss=6.98e-05 defect=1.82e-03 ratio=0.22
+  m=2 trial=1: last t=3e-03 loss=5.97e-05 defect=1.90e-03 ratio=0.25
+  m=2 trial=2: last t=3e-03 loss=7.24e-05 defect=1.99e-03 ratio=0.23
+  m=2 trial=3: last t=3e-03 loss=6.89e-05 defect=1.73e-03 ratio=0.21
+  m=2 trial=4: last t=3e-03 loss=7.23e-05 defect=2.10e-03 ratio=0.25
+  m=2 trial=5: last t=3e-03 loss=6.48e-05 defect=1.85e-03 ratio=0.23
+  m=3 trial=0: last t=3e-03 loss=1.01e-04 defect=1.26e-03 ratio=0.13
+  m=3 trial=1: last t=3e-03 loss=1.00e-04 defect=1.63e-03 ratio=0.16
+  m=3 trial=2: last t=3e-03 loss=9.62e-05 defect=1.54e-03 ratio=0.16
+  m=3 trial=3: last t=3e-03 loss=9.59e-05 defect=1.45e-03 ratio=0.15
+  m=3 trial=4: last t=3e-03 loss=9.73e-05 defect=1.79e-03 ratio=0.18
+  m=3 trial=5: last t=3e-03 loss=9.36e-05 defect=1.60e-03 ratio=0.17
+perturbation_cases worst defect/sqrt(loss) = 0.862
+optimized_cases: law-violating states, see-saw optimized measurements
+  MS/flag ratio 1.000: seesaw loss 1.373e-03  defect 3.705e-01  defect/sqrt(loss) 10.00
+  MS/flag ratio 1.200: seesaw loss 2.715e-04  defect 1.648e-01  defect/sqrt(loss) 10.00
+  MS/flag ratio 1.350: seesaw loss 1.990e-05  defect 4.460e-02  defect/sqrt(loss) 10.00
+  MS/flag ratio 1.400: seesaw loss 9.153e-07  defect 9.561e-03  defect/sqrt(loss) 9.99
+  MS/flag ratio 1.414: seesaw loss 1.467e-09  defect 1.495e-04  defect/sqrt(loss) 3.90
+  MS/flag ratio 1.430: seesaw loss 1.087e-06  defect 1.042e-02  defect/sqrt(loss) 9.99
+  MS/flag ratio 1.500: seesaw loss 2.944e-05  defect 5.426e-02  defect/sqrt(loss) 10.00
+  MS/flag ratio 1.700: seesaw loss 2.601e-04  defect 1.613e-01  defect/sqrt(loss) 10.00
+  MS/flag ratio 2.000: seesaw loss 8.074e-04  defect 2.841e-01  defect/sqrt(loss) 10.00
+  junk (1,1.0)/(1,1.0): seesaw loss 3.636e-09  defect 7.390e-05  defect/sqrt(loss) 1.23
+  junk (1,0.5)/(1,0.5): seesaw loss 4.227e-09  defect 4.560e-05  defect/sqrt(loss) 0.70
+  junk (1,0.5)/(1,0.45): seesaw loss 1.479e-05  defect 3.846e-02  defect/sqrt(loss) 10.00
+  junk (1,0.5)/(1,0.3): seesaw loss 2.629e-04  defect 1.621e-01  defect/sqrt(loss) 10.00
+  junk (1,0.5)/(1,0.0): seesaw loss 1.877e-03  defect 4.332e-01  defect/sqrt(loss) 10.00
+  junk (1,1.0)/(1,0.5): seesaw loss 9.123e-04  defect 3.020e-01  defect/sqrt(loss) 10.00
+optimized_cases worst defect/sqrt(loss) = 10.000
+DONE 0.861799467863845 9.999999092561652

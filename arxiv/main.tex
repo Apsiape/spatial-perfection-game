@@ -1,11 +1,12 @@
 \documentclass[11pt]{article}
+\newcommand{\DoNotLoadEpstopdf}{}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{microtype,booktabs}
 \usepackage[hidelinks,hyperfootnotes=false]{hyperref}
-\hypersetup{pdftitle={Perfect play in a binary-scoring nonlocal game requires infinite dimension},pdfauthor={Seth Douglas and Nidhal Mghirbi}}
+\hypersetup{pdftitle={Perfect play in a binary-scoring nonlocal game requires infinite dimension but only finite energy},pdfauthor={Seth Douglas and Nidhal Mghirbi}}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -19,20 +20,22 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\sq}{\sqcup}
 \newcommand{\mult}[2]{#1\mathbin{\cdot}#2}
-\title{Perfect play in a binary-scoring nonlocal game\\requires infinite dimension}
+\title{Perfect play in a binary-scoring nonlocal game\\requires infinite dimension but only finite energy}
 \author{Seth Douglas \and Nidhal Mghirbi}
-\date{Version 1.1.0, October 2026}
+\date{Version 2.0.0, October 2026}
 \begin{document}
 \maketitle
 \begingroup\renewcommand{\thefootnote}{}\footnotetext{The authors developed this work with AI models from more than one developer and take responsibility for every claim. How the work was done, and what the machine checks cover, is described at the end of the paper.}\endgroup
 \begin{abstract}
-We construct a finite rational two-player nonlocal game with a binary winning predicate that has a perfect strategy on $\ell^2\otimes\ell^2$ and no perfect finite-dimensional strategy. The game has ten questions for Alice, eleven for Bob, at most six answers per question, and a uniform distribution on fifty-two question pairs. Two copies of the Flagged Magic-Square game are glued along complementary labels, with a boundary answer in the second copy. We prove the sharp dimension profile $D_\Gamma(\eps)=10\log_2(1/\eps)+O(\log\log(1/\eps))$ for arbitrary finite-dimensional local POVMs and mixed states. The lower bound is $10\log_2(1/\eps)-10\log_2\log_2(1/\eps)-O(1)$. A dimension-independent square-root magic-square extraction gives a robust flagged sector law; the gluing then forces twenty Schmidt coefficients at every appreciable level of an approximate halving chain. The argument tracks Schmidt rank through measurement dilation. An explicit normalized spatial strategy has twenty coefficients at each geometric level. Its compression to $20K$ dimensions has loss exactly $1/[624(4^K-1)]$, giving $D_\Gamma(\eps)\leq10\log_2(1/\eps)+20$ for $0<\eps<1$. Thus the finite-dimensional and spatial values are both one, but only the spatial value is attained.
+A finite rational binary-scoring game can require infinite dimension for perfect play while admitting finite energy and finite entanglement entropy. Our game has ten Alice questions, eleven Bob questions, at most six answers, and 52 uniform question pairs. It is spatially perfect and never finitely perfect, with sharp dimension profile $D_\Gamma(\eps)=10\log_2(1/\eps)+O(\log\log(1/\eps))$. Among pure perfect strategies, the displayed strategy attains the least entanglement entropy, $5.362740278498934$ ebits, and least mean occupation, $275/18$ per oscillator. We classify all perfect normal type-I marginal spectra and prove that this spectrum is the unique majorization maximum. These constants are also the small-loss limits of the entropy and one-sided oscillator energy prices. In the massive free scalar field we construct a pure perfect state in two strictly separated bounded regions, equal to the vacuum outside a bounded containing region and with every polynomial energy moment finite. In contrast, every fixed faithful split state has a positive loss floor; the complementary-wedge vacuum has supremum one without attainment. Energy-analytic states, bounded-region invertible vacuum preparations and product-Kraus preparations cannot be perfect. Every perfect pure spatial strategy has infinite Schmidt rank; finite entropy is attained but not forced. In every type-II$_1$ factor the normalized trace has a loss floor, while bounded faithful prepared densities win perfectly with sharp trace-entropy deficit $\Delta_* = \ln(7/6)-\ln(2)/7$. Type-II$_\infty$ permits every finite trace entropy. A graded modular ladder gives a normal semifinite hosting criterion. Its scalar fingerprint has sharp capacity and entropy-gap bounds; the capacity floor is approached but not attained in type I, and attained in type II.
 \end{abstract}
 
 \section{The separation}
 A finite nonlocal game is specified by finite question and answer sets, a probability distribution $\pi$ on question pairs, and a predicate $V$ taking values in $\{0,1\}$. A pure strategy consists of a unit vector $\psi\in H_A\otimes H_B$ and local positive operator-valued measurements (POVMs). It is \emph{perfect} if its winning probability is one. We call it finite-dimensional when both local spaces are finite-dimensional, and spatial when they may be separable infinite-dimensional Hilbert spaces. The associated correlation sets are $C_q$ and $C_{qs}$, respectively. Answer sets may depend on the question; padding by zero effects puts them in the usual fixed-alphabet convention.
 
 Let $D_G(\eps)$ be the least integer $d$ for which a strategy on $\mathbb C^d\otimes\mathbb C^d$ with arbitrary POVMs has loss at most $\eps$. Smaller spaces can be padded. Mixed shared states are also allowed in this definition. Throughout, dimension refers to this POVM convention.
+
+For this game finite dimension cannot pay for perfection, whereas finite oscillator energy and finite ordinary entanglement entropy suffice. Among perfect pure spatial strategies, the displayed strategy minimizes entanglement entropy at $\log_2 24+7/9$ ebits and mean oscillator occupation at $275/18$ per side. The reason is an integer spectral classification with a unique majorization maximum, not merely passivity at a fixed spectrum. Diffuse type-II algebras permit perfect prepared play, although their normalized trace states cannot win. The field construction uses arbitrary bounded local PVMs and an ideal joint preparation, with energy depending on the chosen field modes.
 
 \begin{theorem}\label{thm:main}
 There is a rational binary-scoring game $\Gamma$ with ten Alice questions, eleven Bob questions, at most six answers per question, and a uniform distribution on fifty-two supported pairs, such that:
@@ -335,7 +338,7 @@ The full Schmidt multiset contains sixteen copies of $2s_02^{-k}$ from copy one'
 
 No nonzero finite-rank projection can commute with every Alice effect in a perfect full-support strategy. Projecting the vector onto it preserves all losing zeros and gives a nonzero finite-Schmidt-rank perfect vector. Bob can then be compressed to its finite Schmidt support, contradicting Theorem~\ref{thm:main}.
 
-Proposition~\ref{prop:tails} concerns exact perfect states. It does not compare arbitrary approximate strategies with truncations of perfect states or prove extremality of~\eqref{eq:spatialstate} for truncation. Such a comparison requires a separate argument.
+Proposition~\ref{prop:tails} concerns exact perfect states. Corollary~\ref{cor:optimal-tails} below determines the least discarded mass among perfect spectra. Neither tail statement identifies optimal game loss at a fixed finite dimension or compares every approximate strategy with a truncation of a perfect one.
 
 \begin{corollary}[Profile at dyadic accuracy]\label{cor:profile}
 For $A_\Gamma(n)=\log_2D_\Gamma(2^{-n})$ one has
@@ -349,19 +352,30 @@ Theorems~\ref{thm:main} and~\ref{thm:sharp} give
 $D_\Gamma(2^{-n})=10n+O(\log n)$. Take logarithms.
 \end{proof}
 
-\paragraph{Remaining questions.}
-The logarithmic dimension law is established. It remains open whether
-the $O(\log\log(1/\eps))$ remainder in~\eqref{eq:sharpdimension} can
-be replaced by $O(1)$, and whether the specified compressions are
-optimal at their finite dimensions. More generally, which finite
-spatially perfect games admit matching quantitative sector laws?
-The exact tail result alone does not answer these approximation questions.
+\clearpage
+\part*{Finite energy and operator-algebraic play}
+\input{oscillators}
+\input{field}
+\input{faithfulness}
+\input{entropy}
+\input{semifinite}
+
+\section*{Remaining questions}
+The leading logarithmic dimension law and the exact limiting entropy and oscillator prices are established. What are the quantitative rates at which the resource prices approach their limits? Can the dimension law's $O(\log\log(1/\eps))$ remainder be reduced to $O(1)$, and which finite strategies minimize loss at each dimension? The sharp discarded-mass profile of perfect spectra does not settle optimal loss after compression. The unique maximizing spectrum does not assert uniqueness of measurements or of the whole strategy. Quantitative stability of the exact integer, density and fingerprint laws remains open. The field construction also leaves microscopic implementation costs unresolved; its field-energy optimum is not fixed by the oscillator number $275/18$.
 
 \section*{How this work was done}
 The authors developed the construction and proofs with AI models from more than one developer. The proofs were checked against the cited primary statements and by finite symbolic and numerical calculations. The square-root word extraction is proved here directly, with its norm convention, constant and row/column hypotheses stated explicitly. Nonexistence in finite dimension follows from the sector-and-minimum proof; numerical optimization is not a certificate of nonexistence.
 
 The ancillary package contains the rational predicate, a deterministic generator, symbolic checks, finite compression checks, recorded outputs, a sequential runner, and SHA-256 checksums. The symbolic checks verify all forbidden gadget products exactly, projectivity, completeness, overlap signs, normalization and the incomplete-block loss. Numerical checks cover every supported pair for the specified compressions and compare their loss with~\eqref{eq:exactloss}. Positivity tolerances are supplemental; positivity follows analytically by compression of projections. Additional exact checks cover the three bridge words, the order-32 real Pauli group and the trace-norm counterexample. Numerical checks test regular-representation extraction, complex local perturbations and sector defects, with one solver thread. A separate descent check verifies thresholds and multiplicities. These finite tests do not establish a uniform lower bound; the analytic sector, gluing and rank proofs do. The infinite strategy is justified by the normalized direct-sum construction. No proof-assistant certification or exhaustive historical-priority search is claimed.
 
+The finite-energy checks recompute geometric occupation and entropy sums, passive truncations, exact storage enumeration and moment inequalities, local infinite-matrix rows, finite symplectic completion and noninvariant smooth-mode energy bounds. The vacuum checks independently reconstruct the classical value, testing inequalities and finite-algebra compression. The type-II checks reconstruct its matrix models, internal trace ratios, sharp boundary entropy identity and fingerprint convolution. All are finite checks of the stated interfaces; none is a continuum field simulation, a proof of a universal optimum, or a substitute for the written domain and operator-algebra arguments. The external faithfulness, localization and approximation inputs are credited where used. All numerical-library thread counts are one; recorded outputs, source adaptations and hash manifests accompany the runner.
+
+The ladder checks represent infinite admissible multisets by finite integer data and an exact geometric tail. They compare 329 spectra using exact rational Ky Fan sums and full-tail passive energies, and test logarithmic entropy and positive-order R\'enyi evaluations separately. Exact rational capacity gaps test the perfect infinite approach sequence, and boundary checks retain the exceptional critical identity ladder. These computations supplement the classification, majorization and one-sided compactness proofs; they do not optimize arbitrary approximate strategies or prove a convergence rate.
+
 \bibliographystyle{plain}
-\bibliography{references}
+\begingroup\footnotesize
+\let\originalthebibliography\thebibliography
+\renewcommand{\thebibliography}[1]{\originalthebibliography{#1}\setlength{\itemsep}{0pt}\raggedright}
+\bibliography{references,references-energy}
+\endgroup
 \end{document}

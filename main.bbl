@@ -1,0 +1,218 @@
+\begin{thebibliography}{10}
+
+\bibitem{aHLRS}
+Astrid an~Huef, Marcelo Laca, Iain Raeburn, and Aidan Sims.
+\newblock {KMS} states on the {$C^*$}-algebras of finite graphs.
+\newblock \url{https://arxiv.org/abs/1205.2194v1}, 2012.
+\newblock arXiv:1205.2194v1.
+
+\bibitem{Araki}
+Huzihiro Araki.
+\newblock Relative entropy of states of von {Neumann} algebras.
+\newblock {\em Publications of the Research Institute for Mathematical
+  Sciences}, 11:809--833, 1976.
+
+\bibitem{Beigi}
+Salman Beigi.
+\newblock Separation of quantum, spatial quantum, and approximate quantum
+  correlations.
+\newblock {\em Quantum}, 5:389, 2021.
+\newblock arXiv:2004.11103.
+
+\bibitem{DeBievre}
+Stephan~De Bi{\`e}vre.
+\newblock Local states of free bose fields.
+\newblock \url{https://arxiv.org/abs/math-ph/0511037}, 2005.
+\newblock arXiv:math-ph/0511037.
+
+\bibitem{BW75}
+Joseph~J. Bisognano and Eyvind~H. Wichmann.
+\newblock On the duality condition for a {Hermitian} scalar field.
+\newblock {\em Journal of Mathematical Physics}, 16:985--1007, 1975.
+
+\bibitem{BDF87}
+Detlev Buchholz, Claudio D'Antoni, and Klaus Fredenhagen.
+\newblock The universal structure of local algebras.
+\newblock {\em Communications in Mathematical Physics}, 111:123--135, 1987.
+
+\bibitem{BW86}
+Detlev Buchholz and Eyvind~H. Wichmann.
+\newblock Causal independence and the energy-level density of states in local
+  quantum field theory.
+\newblock {\em Communications in Mathematical Physics}, 106:321--344, 1986.
+
+\bibitem{CliftonHalvorson}
+Rob Clifton and Hans Halvorson.
+\newblock Entanglement and open systems in algebraic quantum field theory.
+\newblock {\em Studies in History and Philosophy of Modern Physics}, 32:1--31,
+  2001.
+\newblock arXiv:quant-ph/0001107.
+
+\bibitem{CS17}
+Andrea Coladangelo and Jalex Stark.
+\newblock Separation of finite and infinite-dimensional quantum correlations,
+  with infinite question or answer sets.
+\newblock \url{https://arxiv.org/abs/1708.06522}, 2017.
+\newblock arXiv:1708.06522.
+
+\bibitem{CS18}
+Andrea Coladangelo and Jalex Stark.
+\newblock Unconditional separation of finite and infinite-dimensional quantum
+  correlations.
+\newblock \url{https://arxiv.org/abs/1804.05116}, 2018.
+\newblock arXiv:1804.05116.
+
+\bibitem{CSrobust}
+Andrea Coladangelo and Jalex Stark.
+\newblock Robust self-testing for linear constraint system games.
+\newblock \url{https://arxiv.org/abs/1709.09267v2}, 2019.
+\newblock arXiv:1709.09267v2.
+
+\bibitem{CKLT}
+Jason Crann, David~W. Kribs, Rupert~H. Levene, and Ivan~G. Todorov.
+\newblock State convertibility in the von {Neumann} algebra framework.
+\newblock \url{https://arxiv.org/abs/1904.12664}, 2019.
+\newblock arXiv:1904.12664.
+
+\bibitem{Capacity}
+Jan de~Boer, Jarkko J{\"a}rvel{\"a}, and Esko Keski-Vakkuri.
+\newblock Aspects of capacity of entanglement.
+\newblock {\em Physical Review D}, 99:066012, 2019.
+\newblock arXiv:1807.07357.
+
+\bibitem{Derezinski}
+Jan Derezi{\'n}ski.
+\newblock Bosonic quadratic {Hamiltonians}.
+\newblock \url{https://arxiv.org/abs/1608.03289v2}, 2017.
+\newblock arXiv:1608.03289v2.
+
+\bibitem{DouglasRate}
+Seth Douglas.
+\newblock The {$I_{3322}$} quantum value is attained spatially but not in
+  finite dimension.
+\newblock \url{https://arxiv.org/abs/2609.05555v2}, 2026.
+\newblock arXiv:2609.05555v2.
+
+\bibitem{DMprice}
+Seth Douglas and Nidhal Mghirbi.
+\newblock The uncomputable price of precision.
+\newblock \url{https://doi.org/10.5281/zenodo.23753741}, 2026.
+\newblock Version 4.0.0. Preprint.
+
+\bibitem{GullaSkaar}
+Jan Gulla and Johannes Skaar.
+\newblock Photon localization: Local measurements, localized states, and
+  causality.
+\newblock \url{https://arxiv.org/abs/2610.30473v1}, 2026.
+\newblock arXiv:2610.30473v1.
+
+\bibitem{Haagerup}
+Uffe Haagerup.
+\newblock Connes' bicentralizer problem and uniqueness of the injective factor
+  of type {III}$_1$.
+\newblock {\em Acta Mathematica}, 158:95--148, 1987.
+
+\bibitem{HalvorsonClifton}
+Hans Halvorson and Rob Clifton.
+\newblock Generic {Bell} correlation between arbitrary local algebras in
+  quantum field theory.
+\newblock {\em Journal of Mathematical Physics}, 41:1711--1717, 2000.
+\newblock arXiv:math-ph/9909013.
+
+\bibitem{KPS}
+Se-Jin Kim, Vern~I. Paulsen, and Christopher Schafhauser.
+\newblock A synchronous game for binary constraint systems.
+\newblock \url{https://arxiv.org/abs/1707.01016}, 2017.
+\newblock arXiv:1707.01016.
+
+\bibitem{Lalonde}
+Olivier Lalonde.
+\newblock Maximally entangled states are not complete for pseudo-telepathy.
+\newblock \url{https://arxiv.org/abs/2608.05378}, 2026.
+\newblock arXiv:2608.05378.
+
+\bibitem{Licht}
+A.~L. Licht.
+\newblock Strict localization.
+\newblock {\em Journal of Mathematical Physics}, 4:1443--1447, 1963.
+
+\bibitem{Mancinska}
+Laura Man{\v c}inska.
+\newblock The right entanglement for perfect nonlocality and zero-error
+  communication.
+\newblock \url{https://arxiv.org/abs/2610.06512}, 2026.
+\newblock arXiv:2610.06512v1.
+
+\bibitem{Nielsen}
+Michael~A. Nielsen.
+\newblock Conditions for a class of entanglement transformations.
+\newblock {\em Physical Review Letters}, 83:436--439, 1999.
+\newblock arXiv:quant-ph/9811053.
+
+\bibitem{RedeiSummers}
+Mikl{\'o}s R{\'e}dei and Stephen~J. Summers.
+\newblock Local primitive causality and the common cause principle in quantum
+  field theory.
+\newblock {\em Foundations of Physics}, 32:335--355, 2002.
+\newblock arXiv:quant-ph/0108023v1.
+
+\bibitem{ScholzWerner}
+Volkher~B. Scholz and Reinhard~F. Werner.
+\newblock Tsirelson's problem.
+\newblock \url{https://arxiv.org/abs/0812.4305v1}, 2008.
+\newblock arXiv:0812.4305v1.
+
+\bibitem{Slofstra}
+William Slofstra.
+\newblock The set of quantum correlations is not closed.
+\newblock \url{https://arxiv.org/abs/1703.08618}, 2017.
+\newblock arXiv:1703.08618v2.
+
+\bibitem{SV}
+William Slofstra and Thomas Vidick.
+\newblock Entanglement in non-local games and the hyperlinear profile of
+  groups.
+\newblock \url{https://arxiv.org/abs/1711.10676v2}, 2018.
+\newblock arXiv:1711.10676v2.
+
+\bibitem{SummersReview}
+Stephen~J. Summers.
+\newblock Yet more ado about nothing: the remarkable relativistic vacuum state.
+\newblock \url{https://arxiv.org/abs/0802.1854v2}, 2009.
+\newblock arXiv:0802.1854v2.
+
+\bibitem{SW88}
+Stephen~J. Summers and Reinhard Werner.
+\newblock Maximal violation of {Bell}'s inequalities for algebras of
+  observables in tangent spacetime regions.
+\newblock {\em Annales de l'Institut Henri Poincar{\'e}, Physique
+  Th{\'e}orique}, 49(2):215--243, 1988.
+
+\bibitem{vLSWWembezzle}
+Lauritz van Luijk, Alexander Stottmeister, Reinhard~F. Werner, and Henrik
+  Wilming.
+\newblock Embezzlement of entanglement, quantum fields, and the classification
+  of von {Neumann} algebras.
+\newblock \url{https://arxiv.org/abs/2401.07299v4}, 2025.
+\newblock arXiv:2401.07299v4.
+
+\bibitem{vLSWWpure}
+Lauritz van Luijk, Alexander Stottmeister, Reinhard~F. Werner, and Henrik
+  Wilming.
+\newblock Pure state entanglement and von {Neumann} algebras.
+\newblock {\em Communications in Mathematical Physics}, 406:296, 2025.
+\newblock Numbered references use arXiv:2409.17739v2.
+
+\bibitem{WernerDoubles}
+Reinhard~F. Werner.
+\newblock {EPR} states for von {Neumann} algebras.
+\newblock \url{https://arxiv.org/abs/quant-ph/9910077v1}, 1999.
+\newblock arXiv:quant-ph/9910077v1.
+
+\bibitem{WBMS}
+Xingyao Wu, Jean-Daniel Bancal, Matthew McKague, and Valerio Scarani.
+\newblock Device-independent parallel self-testing of two singlets.
+\newblock {\em Physical Review A}, 93:062121, 2016.
+\newblock arXiv:1512.02074v2.
+
+\end{thebibliography}
