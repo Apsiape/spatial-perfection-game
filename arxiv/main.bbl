@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Beigi}
 Salman Beigi.
@@ -21,12 +21,18 @@ Andrea Coladangelo and Jalex Stark.
 \newblock \url{https://arxiv.org/abs/1804.05116}, 2018.
 \newblock arXiv:1804.05116.
 
-\bibitem{JPT}
-Gabriela Jeronimo, Daniel Perrucci, and Elias Tsigaridas.
-\newblock On the minimum of a polynomial function on a basic closed
-  semialgebraic set and applications.
-\newblock \url{https://arxiv.org/abs/1112.0544}, 2011.
-\newblock arXiv:1112.0544.
+\bibitem{CSrobust}
+Andrea Coladangelo and Jalex Stark.
+\newblock Robust self-testing for linear constraint system games.
+\newblock \url{https://arxiv.org/abs/1709.09267v2}, 2019.
+\newblock arXiv:1709.09267v2.
+
+\bibitem{DouglasRate}
+Seth Douglas.
+\newblock The {$I_{3322}$} quantum value is attained spatially but not in
+  finite dimension.
+\newblock \url{https://arxiv.org/abs/2609.05555v2}, 2026.
+\newblock arXiv:2609.05555v2.
 
 \bibitem{KPS}
 Se-Jin Kim, Vern~I. Paulsen, and Christopher Schafhauser.
@@ -52,5 +58,18 @@ William Slofstra.
 \newblock The set of quantum correlations is not closed.
 \newblock \url{https://arxiv.org/abs/1703.08618}, 2017.
 \newblock arXiv:1703.08618v2.
+
+\bibitem{SV}
+William Slofstra and Thomas Vidick.
+\newblock Entanglement in non-local games and the hyperlinear profile of
+  groups.
+\newblock \url{https://arxiv.org/abs/1711.10676v2}, 2018.
+\newblock arXiv:1711.10676v2.
+
+\bibitem{WBMS}
+Xingyao Wu, Jean-Daniel Bancal, Matthew McKague, and Valerio Scarani.
+\newblock Device-independent parallel self-testing of two singlets.
+\newblock {\em Physical Review A}, 93:062121, 2016.
+\newblock arXiv:1512.02074v2.
 
 \end{thebibliography}

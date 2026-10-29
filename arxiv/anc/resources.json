@@ -1,0 +1,65 @@
+[
+  {
+    "script": "game.py",
+    "exit_code": 0,
+    "sampled_peak_combined_rss_MB": 34.98,
+    "seconds": 0.152,
+    "memory_ceiling_triggered": false
+  },
+  {
+    "script": "checks.py",
+    "exit_code": 0,
+    "sampled_peak_combined_rss_MB": 107.508,
+    "seconds": 2.048,
+    "memory_ceiling_triggered": false
+  },
+  {
+    "script": "fms_core.py",
+    "exit_code": 0,
+    "sampled_peak_combined_rss_MB": 46.117,
+    "seconds": 0.36,
+    "memory_ceiling_triggered": false
+  },
+  {
+    "script": "check_bridge.py",
+    "exit_code": 0,
+    "sampled_peak_combined_rss_MB": 298.742,
+    "seconds": 3.465,
+    "memory_ceiling_triggered": false
+  },
+  {
+    "script": "check_rsl.py",
+    "exit_code": 0,
+    "sampled_peak_combined_rss_MB": 323.219,
+    "seconds": 18.832,
+    "memory_ceiling_triggered": false
+  },
+  {
+    "script": "gamma_chain.py",
+    "exit_code": 0,
+    "sampled_peak_combined_rss_MB": 88.31,
+    "seconds": 2.162,
+    "memory_ceiling_triggered": false
+  },
+  {
+    "script": "exact_checks.py",
+    "exit_code": 0,
+    "sampled_peak_combined_rss_MB": 89.158,
+    "seconds": 1.698,
+    "memory_ceiling_triggered": false
+  },
+  {
+    "script": "check_extraction.py",
+    "exit_code": 0,
+    "sampled_peak_combined_rss_MB": 63.369,
+    "seconds": 0.76,
+    "memory_ceiling_triggered": false
+  },
+  {
+    "script": "check_descent.py",
+    "exit_code": 0,
+    "sampled_peak_combined_rss_MB": 49.701,
+    "seconds": 0.368,
+    "memory_ceiling_triggered": false
+  }
+]

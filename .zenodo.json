@@ -2,7 +2,7 @@
   "title": "Perfect play in a binary-scoring nonlocal game requires infinite dimension",
   "upload_type": "publication",
   "publication_type": "preprint",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "creators": [
     {
       "name": "Douglas, Seth"
@@ -11,7 +11,7 @@
       "name": "Mghirbi, Nidhal"
     }
   ],
-  "description": "<p>We construct a finite rational two-player nonlocal game with a binary winning predicate that has a perfect strategy on ℓ²⊗ℓ² and no perfect finite-dimensional strategy. The game has ten questions for Alice, eleven for Bob, at most six answers per question, and a uniform distribution on fifty-two question pairs. We glue two copies of Mančinska's Flagged Magic-Square game along complementary labels, adding a boundary answer to the second copy. An inverse-free sector argument forces every perfect strategy to contain a Schmidt-coefficient chain closed under halving, which rules out finite rank. An explicit normalized spatial strategy has twenty coefficients at each geometric level. Its compression to 20K dimensions has loss exactly 1/[624(4^K−1)], giving D(ε) ≤ 10 log2(1/ε) + 20 for general local POVMs and 0 < ε < 1. We prove a weaker algebraic lower bound and state a matching logarithmic lower bound as an open problem. Thus a binary-scoring game distinguishes spatial from finite-dimensional perfect attainment even though both values are one.</p>",
+  "description": "<p>We construct a finite rational two-player nonlocal game with ten Alice questions, eleven Bob questions, at most six answers per question and 52 equally likely supported pairs. It has a perfect spatial strategy and no perfect finite-dimensional strategy. For arbitrary finite-dimensional local POVMs and mixed states, its dimension profile is D_Gamma(epsilon) = 10 log2(1/epsilon) + O(log log(1/epsilon)). The lower bound is 10 log2(1/epsilon) - 10 log2 log2(1/epsilon) - O(1). A direct square-root magic-square extraction, robust flagged sector law and approximate gluing force twenty Schmidt coefficients per appreciable halving level. The explicit strategy compressed to 20K dimensions has loss exactly 1/[624(4^K-1)], yielding the matching leading upper coefficient 10.</p>",
   "keywords": [
     "nonlocal games",
     "quantum correlations",

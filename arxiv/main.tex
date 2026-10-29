@@ -21,18 +21,18 @@
 \newcommand{\mult}[2]{#1\mathbin{\cdot}#2}
 \title{Perfect play in a binary-scoring nonlocal game\\requires infinite dimension}
 \author{Seth Douglas \and Nidhal Mghirbi}
-\date{Version 1.0.0, October 2026}
+\date{Version 1.1.0, October 2026}
 \begin{document}
 \maketitle
 \begingroup\renewcommand{\thefootnote}{}\footnotetext{The authors developed this work with AI models from more than one developer and take responsibility for every claim. How the work was done, and what the machine checks cover, is described at the end of the paper.}\endgroup
 \begin{abstract}
-We construct a finite rational two-player nonlocal game with a binary winning predicate that has a perfect strategy on $\ell^2\otimes\ell^2$ and no perfect finite-dimensional strategy. The game has ten questions for Alice, eleven for Bob, at most six answers per question, and a uniform distribution on fifty-two question pairs. We glue two copies of Man\v{c}inska's Flagged Magic-Square game along complementary labels, adding a boundary answer to the second copy. An inverse-free sector argument forces every perfect strategy to contain a Schmidt-coefficient chain closed under halving, which rules out finite rank. An explicit normalized spatial strategy has twenty coefficients at each geometric level. Its compression to $20K$ dimensions has loss exactly $1/[624(4^K-1)]$, giving $D(\eps)\leq10\log_2(1/\eps)+20$ for general local POVMs and $0<\eps<1$. We prove a weaker algebraic lower bound and state a matching logarithmic lower bound as an open problem. Thus a binary-scoring game distinguishes spatial from finite-dimensional perfect attainment even though both values are one.
+We construct a finite rational two-player nonlocal game with a binary winning predicate that has a perfect strategy on $\ell^2\otimes\ell^2$ and no perfect finite-dimensional strategy. The game has ten questions for Alice, eleven for Bob, at most six answers per question, and a uniform distribution on fifty-two question pairs. Two copies of the Flagged Magic-Square game are glued along complementary labels, with a boundary answer in the second copy. We prove the sharp dimension profile $D_\Gamma(\eps)=10\log_2(1/\eps)+O(\log\log(1/\eps))$ for arbitrary finite-dimensional local POVMs and mixed states. The lower bound is $10\log_2(1/\eps)-10\log_2\log_2(1/\eps)-O(1)$. A dimension-independent square-root magic-square extraction gives a robust flagged sector law; the gluing then forces twenty Schmidt coefficients at every appreciable level of an approximate halving chain. The argument tracks Schmidt rank through measurement dilation. An explicit normalized spatial strategy has twenty coefficients at each geometric level. Its compression to $20K$ dimensions has loss exactly $1/[624(4^K-1)]$, giving $D_\Gamma(\eps)\leq10\log_2(1/\eps)+20$ for $0<\eps<1$. Thus the finite-dimensional and spatial values are both one, but only the spatial value is attained.
 \end{abstract}
 
 \section{The separation}
-A finite nonlocal game is specified by finite question and answer sets, a probability distribution $\pi$ on question pairs, and a predicate $V$ taking values in $\{0,1\}$. A strategy consists of a unit vector $\psi\in H_A\otimes H_B$ and local positive operator-valued measurements (POVMs). It is \emph{perfect} if its winning probability is one. We call it finite-dimensional when both local spaces are finite-dimensional, and spatial when they may be separable infinite-dimensional Hilbert spaces. The associated correlation sets are $C_q$ and $C_{qs}$, respectively. Answer sets may depend on the question; padding by zero effects puts them in the usual fixed-alphabet convention.
+A finite nonlocal game is specified by finite question and answer sets, a probability distribution $\pi$ on question pairs, and a predicate $V$ taking values in $\{0,1\}$. A pure strategy consists of a unit vector $\psi\in H_A\otimes H_B$ and local positive operator-valued measurements (POVMs). It is \emph{perfect} if its winning probability is one. We call it finite-dimensional when both local spaces are finite-dimensional, and spatial when they may be separable infinite-dimensional Hilbert spaces. The associated correlation sets are $C_q$ and $C_{qs}$, respectively. Answer sets may depend on the question; padding by zero effects puts them in the usual fixed-alphabet convention.
 
-Let $D_G(\eps)$ be the least integer $d$ for which a strategy on $\mathbb C^d\otimes\mathbb C^d$ with arbitrary POVMs has loss at most $\eps$. Smaller spaces can be padded. Throughout, dimension refers to this POVM convention.
+Let $D_G(\eps)$ be the least integer $d$ for which a strategy on $\mathbb C^d\otimes\mathbb C^d$ with arbitrary POVMs has loss at most $\eps$. Smaller spaces can be padded. Mixed shared states are also allowed in this definition. Throughout, dimension refers to this POVM convention.
 
 \begin{theorem}\label{thm:main}
 There is a rational binary-scoring game $\Gamma$ with ten Alice questions, eleven Bob questions, at most six answers per question, and a uniform distribution on fifty-two supported pairs, such that:
@@ -51,6 +51,31 @@ D_\Gamma(\eps)\leq20\left\lceil\log_4\left(1+\frac{1}{624\eps}\right)\right\rcei
 For $0<\eps<1$ one also has $D_\Gamma(\eps)\leq10\log_2(1/\eps)+20$.
 \end{theorem}
 
+
+\begin{theorem}[Sharp dimension profile]\label{thm:sharp}
+There are constants $C>0$ and $0<\eps_0<1/2$ such that every
+finite-dimensional strategy for $\Gamma$ with loss at most $\eps$,
+$0<\eps\leq\eps_0$, using arbitrary local POVMs and a mixed or pure
+shared state, has each local dimension at least
+\begin{equation}\label{eq:sharplower}
+10\log_2(1/\eps)-10\log_2\log_2(1/\eps)-C.
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:sharpdimension}
+D_\Gamma(\eps)=10\log_2(1/\eps)+O\bigl(\log\log(1/\eps)\bigr)
+\qquad(\eps\downarrow0).
+\end{equation}
+\end{theorem}
+
+The lower bound controls all approximate strategies, through a robust
+sector law and a count of Schmidt multiplicities. The key analytic input
+is a dimension-independent square-root extraction for the row/column
+magic-square game, proved in Section~\ref{sec:extraction}. Sections
+\ref{sec:robustsector} and~\ref{sec:rank} establish the robust sector law,
+gluing estimates and rank count. Local measurement dilation preserves
+the Schmidt rank used in this count, even when it enlarges the ambient
+Hilbert spaces.
+
 \paragraph{Context and credit.}
 Coladangelo and Stark separated finite-dimensional from spatial correlations with finite question and answer sets~\cite{CS18}, using offset decompositions and Schmidt multisets. Beigi obtained such a separation with four binary measurements per party~\cite{Beigi}. These are separations of exact correlations. Here every spatial correlation winning $\Gamma$ perfectly lies outside $C_q$, so a finite game with a $0/1$ winning predicate detects the distinction at perfect attainment. This answers the possibility raised in the second-page remark of Coladangelo--Stark~\cite{CS17} that a binary or integer-valued game score might not witness the separation. Binary scoring refers to the predicate, not to the number of answers.
 
@@ -58,7 +83,14 @@ Slofstra's nonclosure game~\cite{Slofstra} has a perfect approximate correlation
 
 Our building block is Man\v{c}inska's Flagged Magic-Square game~\cite{Mancinska}, including its calibrated frustrated bridge. Her Theorem~11 is a finite-dimensional exact self-test. We prove the sector identity on arbitrary Schmidt supports without appealing to a spatial extension of that theorem. The exact magic-square rigidity used below is Proposition~2 and Appendix~A.2 of that paper, also proved here in the operator form we need. Lalonde's earlier game~\cite{Lalonde} requires nonmaximal entanglement for perfect play, but has a perfect strategy in local dimension six. The additional step here is the offset gluing that rules out every finite dimension.
 
-No earlier example with this perfect-spatial/no-perfect-finite property was found in the bounded literature search underlying this work; absolute historical priority is not established. The mathematical claim is the explicit separation in Theorem~\ref{thm:main}.
+Quantitative dimension witnesses predate this construction; for example,
+Slofstra--Vidick~\cite{SV} prove polynomial dimension lower bounds for
+finite games. Douglas~\cite[Theorem 6]{DouglasRate} states a matching
+logarithmic law for the optimal-value deficit of $I_{3322}$. We do not
+use that paper's lower-bound certificates. The present theorem gives
+the sharp leading coefficient for this explicit spatially perfect,
+non-finitely-perfect game of value one. No absolute historical-priority
+claim is made.
 
 \section{The game and its finite building block}\label{sec:game}
 \subsection{The flagged magic square}
@@ -285,7 +317,9 @@ Each of four pairs has two forbidden sign choices, giving total unweighted mass 
 \]
 Solving for $K$ gives~\eqref{eq:dimension} and completes Theorem~\ref{thm:main}. This is the loss of the specified compression; no optimality among all strategies of dimension $20K$ is asserted.
 
-\section{What the chain does and does not imply}\label{sec:profile}
+\input{lower-bound}
+
+\section{Exact tails and remaining questions}\label{sec:profile}
 \begin{proposition}[Exact perfect-state tails]\label{prop:tails}
 Every normalized perfect spatial strategy has a nonempty sector multiset $S_2$ closed under halving. If $s_0=\max S_2$, its Schmidt tail after deleting the $r$ largest coefficients satisfies
 \begin{equation}\label{eq:taillower}
@@ -303,36 +337,30 @@ No nonzero finite-rank projection can commute with every Alice effect in a perfe
 
 Proposition~\ref{prop:tails} concerns exact perfect states. It does not compare arbitrary approximate strategies with truncations of perfect states or prove extremality of~\eqref{eq:spatialstate} for truncation. Such a comparison requires a separate argument.
 
-\begin{proposition}[Profile bracket]\label{prop:profile}
-Let $A_\Gamma(n)=\log_2D_\Gamma(2^{-n})$. As $n\to\infty$,
-\begin{equation}\label{eq:profile}
-\tfrac12\log_2\log_2 n-O(1)\leq A_\Gamma(n)\leq\log_2n+O(1).
-\end{equation}
-More precisely its lower bound is
+\begin{corollary}[Profile at dyadic accuracy]\label{cor:profile}
+For $A_\Gamma(n)=\log_2D_\Gamma(2^{-n})$ one has
 \[
-A_\Gamma(n)\geq\tfrac12\log_2\log_2 n
--\tfrac12\log_2(226\log_2 12)-o(1).
+A_\Gamma(n)=\log_2 n+\log_2 10+O\bigl((\log n)/n\bigr)
+\qquad(n\to\infty).
 \]
-\end{proposition}
+\end{corollary}
 \begin{proof}
-There are $e=112$ local effects: $25+30$ on Alice's copies and $25+30+2$ on Bob's. Write every effect as $TT^*$ for a complex $d\times d$ matrix $T$, and represent the pure state by a complex $d\times d$ matrix $C$. Real and imaginary parts give $N=2(e+1)d^2=226d^2$ real variables. Completeness and $\|C\|_F^2=1$ are integer quadratic equations. Their feasible set is compact: every effect is at most $I$, bounding its factor's Frobenius norm. These parameters cover all pure-state strategies in dimension $d$. For fixed measurements a mixed state cannot improve the minimum below a pure state.
-
-Multiplying the loss by $52$ gives an integer polynomial of degree at most six. Constraint counts and coefficient heights are polynomially bounded in $d$. The minimum $\ell_d$ is positive by compactness and finite impossibility. Apply Jeronimo--Perrucci--Tsigaridas~\cite[Theorem~1]{JPT} to a compact connected component containing a minimizer, with even degree bound six. Its positive-minimum estimate yields
-\begin{equation}\label{eq:jpt}
-\log_2\log_2(1/\ell_d)\leq226d^2\log_2 12+O(\log d).
-\end{equation}
-The factor $52$ affects only lower-order terms. For $d=D_\Gamma(2^{-n})$, $\ell_d\leq2^{-n}$. Insert this into~\eqref{eq:jpt} and solve for $\log_2d$. Since $D_\Gamma(2^{-n})\to\infty$, this gives the stated lower bound. The upper bound is Theorem~\ref{thm:main}.
+Theorems~\ref{thm:main} and~\ref{thm:sharp} give
+$D_\Gamma(2^{-n})=10n+O(\log n)$. Take logarithms.
 \end{proof}
 
-\begin{problem}\label{prob:logarithmic}
-Does $D_\Gamma(\eps)=\Theta(\log(1/\eps))$ as $\eps\downarrow0$?
-\end{problem}
-Only the upper bound of this asymptotic equivalence is proved here. The missing step is quantitative control of the sector and gluing identities for arbitrary nearly perfect strategies, particularly on Schmidt directions of appreciable weight. The exact chain alone gives no uniform comparison. No universal logarithmic lower bound for games is asserted.
+\paragraph{Remaining questions.}
+The logarithmic dimension law is established. It remains open whether
+the $O(\log\log(1/\eps))$ remainder in~\eqref{eq:sharpdimension} can
+be replaced by $O(1)$, and whether the specified compressions are
+optimal at their finite dimensions. More generally, which finite
+spatially perfect games admit matching quantitative sector laws?
+The exact tail result alone does not answer these approximation questions.
 
 \section*{How this work was done}
-The authors developed the construction and proofs with AI models from more than one developer. The argument was checked against the cited primary statements and by finite symbolic and numerical calculations. Nonexistence in finite dimension follows from the sector-and-minimum proof; numerical optimization is not a certificate of nonexistence.
+The authors developed the construction and proofs with AI models from more than one developer. The proofs were checked against the cited primary statements and by finite symbolic and numerical calculations. The square-root word extraction is proved here directly, with its norm convention, constant and row/column hypotheses stated explicitly. Nonexistence in finite dimension follows from the sector-and-minimum proof; numerical optimization is not a certificate of nonexistence.
 
-The ancillary package contains the rational predicate, a deterministic generator, symbolic checks, finite compression checks, recorded outputs, a sequential runner, and SHA-256 checksums. The symbolic checks verify all forbidden gadget products exactly, projectivity, completeness, overlap signs, normalization and the incomplete-block loss. Numerical checks cover every supported pair for the specified compressions and compare their loss with~\eqref{eq:exactloss}. Positivity tolerances are supplemental; positivity follows analytically by compression of projections. The infinite strategy is justified by the normalized direct-sum construction, not extrapolation from finite numerical checks. No proof-assistant certification or exhaustive historical-priority search is claimed.
+The ancillary package contains the rational predicate, a deterministic generator, symbolic checks, finite compression checks, recorded outputs, a sequential runner, and SHA-256 checksums. The symbolic checks verify all forbidden gadget products exactly, projectivity, completeness, overlap signs, normalization and the incomplete-block loss. Numerical checks cover every supported pair for the specified compressions and compare their loss with~\eqref{eq:exactloss}. Positivity tolerances are supplemental; positivity follows analytically by compression of projections. Additional exact checks cover the three bridge words, the order-32 real Pauli group and the trace-norm counterexample. Numerical checks test regular-representation extraction, complex local perturbations and sector defects, with one solver thread. A separate descent check verifies thresholds and multiplicities. These finite tests do not establish a uniform lower bound; the analytic sector, gluing and rank proofs do. The infinite strategy is justified by the normalized direct-sum construction. No proof-assistant certification or exhaustive historical-priority search is claimed.
 
 \bibliographystyle{plain}
 \bibliography{references}

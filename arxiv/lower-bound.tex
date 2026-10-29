@@ -1,0 +1,503 @@
+\section{Quantitative consistency and magic-square extraction}\label{sec:extraction}
+In this and the next section Bob's operators are the physical operators on
+$H_B$, without transposition. Operators on opposite parties commute. For a
+vector $v$, $\Sch(v)$ now denotes its nonincreasing Schmidt sequence, padded
+with zeros. Multiset unions are sorted before comparison. All vectors other
+than the original strategy vector may be unnormalized. Singular-value
+perturbation gives
+\begin{equation}\label{eq:singularperturbation}
+\|\Sch(v)-\Sch(w)\|_2\leq\|v-w\|.
+\end{equation}
+Indeed, the matrix singular-value inequality follows by applying the
+Hermitian eigenvalue inequality to the self-adjoint block matrices with
+off-diagonal blocks $K,K^*$; finite-rank approximation gives the compact
+Hilbert--Schmidt case. Sorting nonnegative sequences also cannot increase
+their Euclidean distance.
+
+\begin{lemma}[Approximate checked classes]\label{lem:consistency}
+For projective measurements, suppose mismatched answer classes at a pair
+always lose, with absolute losing mass at most $\eta$ on a vector $v$.
+Their class projections satisfy $\|(E_c-F_c)v\|\leq\sqrt\eta$.
+For the sign tests of $\FMS$, writing $S_x=E^{T_x}_++E^{T_x}_-$,
+$X_x=E^{T_x}_+-E^{T_x}_-$ and similarly $S'_y,Y_y$ for Bob, one has
+\[
+\|(X_xY_y-\sigma_{xy}S_xS'_y)v\|\leq2\sqrt\eta.
+\]
+\end{lemma}
+\begin{proof}
+The squared norm of $(E_c-F_c)v$ is the sum of the probabilities of the
+disjoint mismatched-class events involving $c$. For signs, expand in the
+orthogonal vectors $E^{T_x}_aF^{U_y}_bv$ with $a,b\in\{+,-\}$.
+The coefficient $ab-\sigma_{xy}$ is zero on winning events and has magnitude
+two on losing events.
+\end{proof}
+
+Left multiplication by a contraction preserves a vector estimate. Right
+multiplication needs additional control. The following rule will provide it.
+If $s$ are Alice reflections with Bob mirrors $\bar s$ satisfying
+$\|(s-\bar s)v\|\leq e$, then a word $w$ of length $l$ mirrors to the
+reversed Bob word with error at most $le$. Consequently, for an Alice
+operator $R$ with $\|R\|\leq2$ and $\|Rv\|\leq re$,
+\begin{equation}\label{eq:context}
+\|Rwv\|\leq(r+2l)e.
+\end{equation}
+To see this, replace the rightmost letter by its mirror, commute that
+mirror past the remaining Alice letters, and continue. The resulting Bob
+word commutes with $R$ and is unitary. The rule holds with the parties
+interchanged; the mirroring assertion also holds for contractions.
+
+\begin{theorem}[Square-root word extraction]\label{thm:wordextraction}
+Let $\|\phi\|\leq1$ and let local PVMs have valid magic-square row and column
+answers, with absolute losing mass at most $\eta$ on each of the nine pairs.
+There are local isometries $V=V_A\otimes V_B$ and an auxiliary vector $j$
+such that, for every word $w$ of length at most six in Bob's cell reflections
+and cell projections, including the empty word,
+\begin{equation}\label{eq:wordextraction}
+\bigl\|Vw\phi-(I\otimes\widehat w)(\Phi_4\otimes j)\bigr\|
+\leq C_{\rm MS}\sqrt\eta,\qquad C_{\rm MS}=2^{24}.
+\end{equation}
+Here $\Phi_4=\frac12\sum_{z=0}^3|zz\rangle$, and $\widehat w$ uses the
+ideal cells in~\eqref{eq:square}, in the same order. The vector $j$ need not
+be normalized. The constant is independent of dimension, also on separable
+Hilbert spaces.
+\end{theorem}
+
+This statement is proved below for the actual row/column game. For comparison,
+the analytic estimate of Wu et al.~\cite[Appendix C, (124)]{WBMS} has a
+fourth-root rate in a correlation-error parameter; per-pair loss $\eta$
+gives checked correlation errors at most $2\eta$. Coladangelo--Stark's
+magic-square statement is~\cite[Theorem 6.9]{CSrobust}, applying their general
+Theorem 4.16 to an equation/variable game. Their Definition 4.14 uses trace
+norm for the state and squared state-dependent operator distance. We do not
+use its asserted linear trace-norm rate: Lemma A.3 there fails already for
+$v_t=\sqrt{1-t}|0\rangle+\sqrt t|1\rangle$ and $P=|0\rangle\langle0|$,
+since the squared projector defect is $t$ but
+$\||v_t\rangle\langle v_t|-P\|_1=2\sqrt t>6t$ for $0<t<1/9$.
+
+\begin{proof}[Proof of Theorem~\ref{thm:wordextraction}]
+Let $A_{ij},B_{ij}$ be the cell reflections and put $e=2\sqrt\eta$.
+Consistency gives $\|(A_{ij}-B_{ij})\phi\|\leq e$. Alice's rows commute
+and have product $I$; Bob's columns commute and have products $I,I,-I$.
+Write $T\simeq_r U$ for $\|(T-U)\phi\|\leq re$. Put
+\[
+a=A_{11},\quad b=A_{12},\quad c=A_{21},\quad d=A_{22},\quad
+g=A_{31},\quad h=A_{32},\quad i=A_{33}.
+\]
+Mirroring two letters to a Bob column, using its parity and mirroring back,
+gives
+\begin{gather*}
+[a,c]\simeq_4 0,\qquad [b,d]\simeq_4 0,\\
+g\simeq_3 ac,\qquad h\simeq_3 bd,\qquad i\simeq_3-abcd.
+\end{gather*}
+Also $[a,b]=[c,d]=[g,h]=0$ and $gh=i$ exactly. Substitution of $h$ on
+the right, then of $g$ through its two-letter suffix using~\eqref{eq:context},
+gives $gh\simeq_{10}acbd$. Thus $acbd\simeq_{13}-abcd$.
+Remove the left $a$ and the right $d$, the latter by~\eqref{eq:context},
+to obtain $\{b,c\}\simeq_{15}0$.
+
+Similarly $hg\simeq_{10}bdac$, so $acbd\simeq_{20}bdac$.
+Commuting $b,d$ through the suffix $ac$ gives $bdac\simeq_8 dabc$;
+exact $[c,d]=0$ followed by commuting $b,d$ through $c$ gives
+$abcd\simeq_6 adbc$. Combining these with the $13e$ estimate yields
+$(ad+da)bc\simeq_{47}0$. Removing $bc$ costs at most $4e$, so
+$\{a,d\}\simeq_{51}0$. Transferring two-letter relations to Bob costs
+at most $4e$ more. Therefore $55e$ bounds all the corresponding
+commutation and anticommutation defects on both sides.
+
+Consider the order-32 real Pauli group
+\[
+\begin{split}
+G=\langle J,a,b,c,d:\;&J^2=a^2=b^2=c^2=d^2=1,\ J\text{ central},\\
+&ad=Jda,\ bc=Jcb,\text{ all other pairs commute}\rangle.
+\end{split}
+\]
+Every element has a unique form $J^za^ub^vc^wd^x$ with binary exponents.
+Let $f_A,f_B$ evaluate these forms in the physical generators with $J=-I$.
+Sorting a product involves at most eight letters and at most 32 adjacent
+exchanges. Each exchange costs at most $(55+16)e$ by~\eqref{eq:context},
+and cancellations are exact. In particular, on either party,
+\begin{equation}\label{eq:almostrepresentation}
+\|(f(g)f(h)-f(gh))\phi\|\leq4096e\qquad(g,h\in G).
+\end{equation}
+Define isometries
+\[
+W_Av=32^{-1/2}\sum_{g\in G}|g\rangle\otimes f_A(g)v,
+\qquad W_Bv=32^{-1/2}\sum_{g\in G}|g\rangle\otimes f_B(g)v.
+\]
+On the register use the right regular representation
+$(R_hF)(g)=F(gh)$. Squaring and averaging~\eqref{eq:almostrepresentation}
+over $g$ gives
+\begin{equation}\label{eq:regularintertwining}
+\|W_Af_A(h)\phi-R_hW_A\phi\|\leq H,\qquad H=4096e,
+\end{equation}
+and likewise for Bob. An opposite-party isometry preserves these errors.
+
+Since $f(Jg)=-f(g)$ exactly, each isometry has range in the register's
+$J=-1$ subspace. Every representation on this subspace is a multiple of
+the real four-dimensional representation $a=XI,b=IX,c=IZ,d=ZI$.
+For completeness, diagonalize the commuting $c,d$. The involution $a$
+exchanges the two $d$ eigenspaces and preserves $c$; $b$ exchanges the
+two $c$ eigenspaces and preserves $d$. The four joint eigenspaces have
+equal multiplicity, and their identifications by $a,b$ give precisely
+these Pauli actions. This also works for infinite multiplicity.
+Compose $W_A,W_B$ with these identifications and call the result $V$.
+
+Put $v=V\phi$. For each of the four generators, consistency and
+\eqref{eq:regularintertwining} give
+$\|(M_s^A-M_s^B)v\|\leq2H+e$.
+The four involutions $M_s^AM_s^B$ commute, with common $+1$ projection
+$P_0=|\Phi_4\rangle\langle\Phi_4|\otimes I$. Hence
+\[
+\|(I-P_0)v\|^2
+\leq\frac14\sum_s\|(I-M_s^AM_s^B)v\|^2\leq(2H+e)^2.
+\]
+Taking $\Phi_4\otimes j=P_0v$ proves the empty-word bound
+$\|v-\Phi_4\otimes j\|\leq8193e$.
+
+Every other Alice cell equals, or is within $3e$ of, its normal-form word
+of degree at most four. Its extraction error is thus at most
+$H+3e+8193e$. Bob's cells follow from consistency and
+$(M\otimes I)\Phi_4=(I\otimes M^T)\Phi_4$, at a further cost of at most
+$e$. The common bound $2^{14}e$ covers a single reflection or projection
+on either side; a cell projection is $(I\pm M)/2$.
+
+For a Bob word, mirror its last letter to Alice at cost at most $e$,
+commute it past the Bob prefix, apply the prefix estimate, and use the
+Alice single-letter estimate on $\Phi_4\otimes j$. Passing from the
+physical isometric action to that target costs at most another $8193e$.
+Thus each added letter costs at most $e+8193e+2^{14}e$.
+For six letters, including the empty-word error, this is less than
+$2^{18}e$, which is covered by $2^{24}\sqrt\eta$.
+All estimates used absolute losing masses and $\|\phi\|\leq1$ throughout;
+there is no normalization factor or dimension dependence.
+\end{proof}
+
+\section{The robust flagged sector law}\label{sec:robustsector}
+We write $v\approx w$ in this section when
+$\|v-w\|\leq C\sqrt\eta$, for a fixed constant independent of the
+strategy and its dimension. The constant may increase at successive
+steps: only finitely many contractions, bounded sums and words of bounded
+length occur.
+
+\begin{lemma}[Two-way spectral domination]\label{lem:domination}
+Suppose local contractions satisfy
+$\|v-(A\otimes B)w\|\leq d_1$ and
+$\|w-(A'\otimes B')v\|\leq d_2$. Then
+\[
+\|\Sch(v)-\Sch(w)\|_2\leq\sqrt{d_1^2+d_2^2}.
+\]
+\end{lemma}
+\begin{proof}
+Let $u=\Sch(v)$, $t=\Sch(w)$, and let $s,s'$ be the Schmidt sequences
+after the two contractions, respectively. Singular values decrease
+entrywise under contractions, so $s\leq t$, $s'\leq u$.
+Equation~\eqref{eq:singularperturbation} gives
+$\|(u-t)_+\|_2\leq d_1$ and $\|(t-u)_+\|_2\leq d_2$.
+These positive parts have disjoint supports. The same argument for compact
+Hilbert--Schmidt maps follows by finite-rank approximation.
+\end{proof}
+
+\begin{theorem}[Robust flagged sector law]\label{thm:robustsector}
+There is an absolute constant $C_{\rm F}$ such that every projective
+$\FMS$ strategy on a vector $\psi$ of norm at most one, with absolute
+losing mass at most $\eta$ on each of its twenty-five pairs, satisfies
+\begin{equation}\label{eq:robustsector}
+\bigl\|\Sch(m)-\mult{4}{(\sqrt2\Sch(f))}\bigr\|_2
+\leq C_{\rm F}\sqrt\eta,
+\quad f=E_f^{R_1}\psi,\quad m=\psi-f.
+\end{equation}
+This holds in finite dimension and on separable spatial Hilbert spaces.
+\end{theorem}
+\begin{proof}
+Put $P=E_f^{R_1}$, $Q=F_f^{C_1}$, and write $P^i,Q^j$ for the other
+row and column flags. Let $H_y=E_{r_y}^{R_1}$, $G_x=F_{c_x}^{C_1}$.
+Cell projections, denoted $E_{i;j,s},F_{j;i,s}$, sum the nonflag answers
+with cell sign $s$. Lemma~\ref{lem:consistency} gives
+\begin{gather}\label{eq:flagestimates}
+P^i\psi\approx Q^j\psi\approx P\psi,\qquad
+E_{i;j,s}\psi\approx F_{j;i,s}\psi,\nonumber\\
+Qm\approx P^im\approx Q^jm\approx0,\qquad Pm=0.
+\end{gather}
+The calibrations and signs give
+\begin{equation}\label{eq:calibrationestimates}
+S_x\psi\approx(Q+G_x)\psi,\quad
+S'_y\psi\approx(P+H_y)\psi,\quad
+X_xY_y\psi\approx\sigma_{xy}S_xS'_y\psi.
+\end{equation}
+
+\paragraph{Mirrors and the nonflag game.}
+If $L=F_{j;i,s}$ and $M=E_{i;j,s}$, then $L\psi\approx M\psi$.
+Moreover
+\[
+PM\psi\approx PL\psi=LP\psi\approx LQ^j\psi=0,
+\qquad MP\psi\approx MP^i\psi=0.
+\]
+Thus $Lm\approx Mm$. Replacing rightmost letters and commuting the
+opposite-party mirrors proves this assertion for every bounded-length
+Bob word, in reversed Alice order. The corresponding reflection estimate
+follows by bounded linear combinations.
+
+Merge each row or column flag into a fixed valid nonflag answer, with
+the row-one target outside $\{r_0,r_1\}$ and the column-one target outside
+$\{c_0,c_1\}$. The merged measurements are PVMs with valid parities.
+For a nonflag losing event $\Lambda$, its amplitude on $m$ differs from
+its amplitude on $\psi$ by $\Lambda P\psi\approx\Lambda P^i\psi=0$.
+Events involving merged flags have amplitudes $O(\sqrt\eta)$
+by~\eqref{eq:flagestimates}. There are a fixed number of outcomes, so
+the losing \emph{mass} on $m$ is $O(\eta)$ on every pair.
+Theorem~\ref{thm:wordextraction} therefore applies at square-root rate.
+An unmerged word differs from the merged word by a bounded sum of terms
+containing a column flag. Mirror the suffix to Alice, commute it past
+that flag and use $Q^jm\approx0$. Each term is $O(\sqrt\eta)$.
+Consequently the extraction applies to the unmerged words below as well.
+
+\paragraph{The needed ideal words.}
+Let
+\[
+\widetilde B_y=F_{3;1,(r_y)_3}F_{2;1,(r_y)_2}F_{1;1,(r_y)_1}.
+\]
+It mirrors $H_y$ on $m$. Define the physical reflections
+\[
+A=E_{1;2,+}-E_{1;2,-}+P,\quad
+B_{12}=F_{2;1,+}-F_{2;1,-}+Q^2,\quad
+B=F_{1;2,+}-F_{1;2,-}+Q.
+\]
+In the ideal square $A=IX$, $B=IZ$. The exact ideal identities are
+\begin{align}\label{eq:idealwords}
+\widetilde B_0G_1&=\widetilde B_0G_0B_{12},&
+\widetilde B_1G_1&=-\widetilde B_1G_0B_{12},\nonumber\\
+\widetilde B_1G_0&=B\widetilde B_0G_0.&&
+\end{align}
+Indeed, $IXc_0=c_1$, $IXr_y=(-1)^yr_y$, $IZr_0=r_1$ and $IZc_0=c_0$.
+The reversed order under Bob's transposed action on $\Phi_4$ is essential.
+A column answer projector uses two cell projections because of parity,
+so the longest word displayed has length six.
+Theorem~\ref{thm:wordextraction} transports these identities to $m$.
+For its auxiliary vector $j$ the same theorem and singular-value
+perturbation give
+\begin{equation}\label{eq:robustnormalizations}
+\Sch(m)\approx\mult{4}{\bigl(\Sch(j)/2\bigr)},\qquad
+\Sch(\widetilde B_0G_0m)\approx\Sch(j)/(2\sqrt2).
+\end{equation}
+For the second equality, the product of the rank-one row and column
+projections has singular value $|\langle c_0|r_0\rangle|=1/\sqrt2$;
+the factor $1/2$ comes from $\Phi_4$.
+
+\paragraph{Frustration on the sign supports.}
+Put $z_{xy}=S_xS'_ym$, $u=S_0S'_0\psi$ and
+$\Delta_A=2P-I$, $\Delta_B=2Q-I$. Calibration implies
+$S_xf\approx S'_yf\approx f$. For example,
+$S_xP\psi\approx S_xQ\psi=QS_x\psi\approx Q(Q+G_x)\psi\approx f$.
+Using mirrors on $m$ then gives
+\begin{equation}\label{eq:zidentification}
+z_{xy}\approx\widetilde B_yG_xm,\qquad
+Pz_{xy}\approx Qz_{xy}\approx0,\qquad
+S_xS'_y\psi\approx f+z_{xy}.
+\end{equation}
+For $P$ annihilation commute $P$ through the Bob word and use $Pm=0$.
+For $Q$ annihilation first mirror the \emph{whole} Bob word to Alice,
+then commute $Q$ through that word and use $Qm\approx0$.
+The three identities~\eqref{eq:idealwords}, consistency $Am\approx B_{12}m$,
+and $Af=f$, $Bf\approx f$ yield
+\begin{equation}\label{eq:signidentifications}
+S_1S'_0\psi\approx Au,\quad S_0S'_1\psi\approx Bu,\quad
+S_1S'_1\psi\approx AB\Delta_Au.
+\end{equation}
+Here $A$ commutes with $P$ exactly, and
+$\Delta_Au\approx\Delta_Bu$ by both annihilations
+in~\eqref{eq:zidentification}.
+
+Set $X'=AX_1A$, $Y'=BY_1B$. Substituting~\eqref{eq:signidentifications}
+in the four sign tests and conjugating by the indicated reflections gives
+\begin{gather}\label{eq:fourfrustration}
+X_0Y_0u\approx u,\quad X'Y_0u\approx u,\quad X_0Y'u\approx u,
+\quad\Delta_AX'\Delta_AY'u\approx-u.
+\end{gather}
+Subtract the first two equations and apply $Y_0$, using $Y_0^2u=u$,
+to get $(X_0-X')u\approx0$. This also holds on $\Delta_Au$:
+replace $\Delta_Au$ by $\Delta_Bu$ and commute $\Delta_B$ past the
+Alice operators. Replace $X'$ in the fourth equation and add the third.
+To remove $Y'$, note that
+\[
+Y'^2u=BS'_1Bu\approx BS'_1(S_0S'_1\psi)
+=B(S_0S'_1\psi)\approx u.
+\]
+It follows that
+\[
+(X_0+\Delta_AX_0\Delta_A)u
+=2(PX_0P+P^\perp X_0P^\perp)u\approx0.
+\]
+Since $u\approx f+z_{00}$ and $Pz_{00}\approx0$, the two orthogonal
+range blocks imply $PX_0f\approx0$ and $P^\perp X_0z_{00}\approx0$.
+Projecting $X_0Y_0u\approx u$ onto these ranges, and using that $Y_0$
+commutes with $P$, proves the two directions
+\begin{equation}\label{eq:robustbridge}
+X_0Y_0f\approx z_{00},\qquad X_0Y_0z_{00}\approx f.
+\end{equation}
+For example the $P$ projection identifies $PX_0Y_0z_{00}$ with $f$,
+and its complementary component is small by the preceding block estimate;
+the other direction follows from the complementary projection.
+
+\paragraph{Spectra.}
+The operators $X_0,Y_0$ are contractions, so
+Lemma~\ref{lem:domination} gives $\Sch(f)\approx\Sch(z_{00})$.
+Combine~\eqref{eq:zidentification} and~\eqref{eq:robustnormalizations}:
+four copies of $\Sch(j)/2$ are four copies of
+$\sqrt2\,\Sch(j)/(2\sqrt2)$. This proves~\eqref{eq:robustsector}.
+All operations have dimension-independent bounds and bounded word lengths.
+They establish a finite absolute $C_{\rm F}$; no useful numerical value
+for this constant is asserted.
+\end{proof}
+
+\section{Gluing estimates and logarithmic rank}\label{sec:rank}
+\begin{lemma}[Approximate gluing]\label{lem:robustgluing}
+There is a constant $C_{\rm G}$ such that a unit-vector PVM strategy for
+$\Gamma$ of loss at most $\eps$ has the following properties.
+Let $L_A,L_B$ be Bob's two label-answer projections, put
+\[
+\alpha=L_A\psi,\quad\beta=L_B\psi,\quad
+\phi_2=E_f^{(2,R_1)}\psi,\qquad
+c=\Sch(\alpha),\quad b=\Sch(\beta),\quad a=\Sch(\phi_2).
+\]
+The subscripts on $L_A,L_B$ denote answers, not tensor factors.
+With $P_\bot=E_\bot^{(2,R_1)}$, $Q_\bot=F_\bot^{(2,C_1)}$,
+$t=\Sch(P_\bot Q_\bot\psi)$ and $\delta=C_{\rm G}\sqrt\eps$,
+\begin{align}\label{eq:fivegluing}
+\|c-(a\sq t)\|_2&\leq\delta,\tag{i}\\
+\|c-\mult{4}{(\sqrt2 b)}\|_2&\leq\delta,\tag{ii}\\
+\|b-\mult{4}{(\sqrt2 a)}\|_2&\leq\delta,\tag{iii}\\
+\|\Sch(\psi)-(c\sq b)\|_2&\leq\delta,\tag{iv}\\
+\|\alpha\|^2+\|\beta\|^2&=1.\tag{v}
+\end{align}
+\end{lemma}
+\begin{proof}
+Every supported pair has losing mass at most $52\eps$.
+Link one identifies the first-copy magic-square vector with $\alpha$
+and its flag vector with $\beta$, with vector error $O(\sqrt\eps)$.
+Apply Theorem~\ref{thm:robustsector} and singular-value perturbation
+to obtain (ii).
+
+For (iii) remove the boundary coherently: put
+$\psi'=(I-P_\bot)\psi$. Boundary consistency on all twenty-five
+copy-two pairs identifies each boundary vector with $P_\bot\psi$
+within $O(\sqrt\eps)$. In particular every row or column boundary
+projection applied to $\psi'$ is $O(\sqrt\eps)$.
+Merge the boundary into a valid retained answer, choosing a magic-square
+answer at a row or column and an ordinary triple at a sign question.
+For a nonboundary losing projector $\Lambda$,
+$\Lambda P_\bot\psi$ is small: replace $P_\bot$ by the boundary
+projection at the relevant opposite-party question, where its product
+with $\Lambda$ is zero. Thus every losing amplitude on $\psi'$ is
+$O(\sqrt\eps)$ and the merged FMS losing mass is $O(\eps)$.
+At $R_1$ its flag vector is exactly $\phi_2$, and its nonflag vector is
+exactly $E_{\rm MS}^{(2,R_1)}\psi$, which link two identifies with
+$\beta$. The robust sector law proves (iii).
+
+For (i), link two identifies $\alpha$ with
+$(E_f^{(2,R_1)}+P_\bot)\psi$. At the pair $((2,R_1),(2,C_1))$ the
+three classes flag, boundary and magic square are consistent, so this
+vector is within $O(\sqrt\eps)$ of
+\[
+w=E_f^{(2,R_1)}F_f^{(2,C_1)}\psi+P_\bot Q_\bot\psi.
+\]
+Its two summands are orthogonal blocks on \emph{both} parties, hence
+their Schmidt lists form the union $\Sch(w)$. The first block is
+within $O(\sqrt\eps)$ of $\phi_2$. Singular-value perturbation and
+sorting prove (i). For (iv) use the two-sided block vector
+\[
+E_{\rm MS}^{(1,R_1)}L_A\psi+E_f^{(1,R_1)}L_B\psi.
+\]
+Consistency makes this vector close to $\psi$ and its blocks close to
+$\alpha,\beta$, respectively. Finally (v) is exact completeness of
+the label PVM. A single enlarged constant covers all four errors.
+\end{proof}
+
+\begin{lemma}[Descent with multiplicities]\label{lem:descent}
+Suppose finitely supported nonnegative sorted sequences $a,b,c,t$
+satisfy (i)--(iii) in the infinity norm with error at most $\delta>0$.
+Let $\mu_0=\max a$. For every integer $k\geq0$ with
+$\mu_02^{-k}\geq64\delta$ there are distinct positive entries
+$\mu_k=a_{i_k}$ such that
+\begin{equation}\label{eq:descenterror}
+|\mu_k-\mu_02^{-k}|\leq(2+\sqrt2)\delta.
+\end{equation}
+If $K$ is the number of these integers, then
+$K\geq\log_2(\mu_0/(64\delta))$.
+At each index $i_k$, four entries of $b$ are within $\delta$ of
+$\sqrt2\mu_k$ and sixteen entries of $c$ are within
+$(1+\sqrt2)\delta$ of $2\mu_k$. These are disjoint index blocks
+for distinct $k$.
+\end{lemma}
+\begin{proof}
+For a positive entry $\mu$ of $a$, select its occurrence $p$ in the
+sorted union $a\sq t$, retaining occurrences when values coincide.
+Read (i) and (ii) at $p$ to obtain
+$|b_{\lceil p/4\rceil}-\mu/\sqrt2|\leq\sqrt2\delta$.
+Read (iii) at $\lceil p/4\rceil$ to find an entry of the zero-padded
+$a$ within
+$g_0=(1+1/\sqrt2)\delta$ of $\mu/2$.
+Iteration contracts the preceding error by $1/2$, so its total is at
+most $g_1=2g_0=(2+\sqrt2)\delta$.
+Retain exactly the integers in the statement. Their entries are
+positive, so none is a padded zero. Consecutive entries differ by at
+least $\mu_02^{-k}/2-2g_1>0$. Thus their $a$ indices are distinct.
+If $\mu_0\geq64\delta$, the number retained is
+$\lfloor\log_2(\mu_0/(64\delta))\rfloor+1$; if not, take $K=0$.
+Both conventions give the stated inequality.
+
+Relation (iii) supplies the four $b$ indices
+$4(i_k-1)+1,\ldots,4i_k$. Relation (ii) supplies the sixteen $c$
+indices $16(i_k-1)+1,\ldots,16i_k$, with the stated accumulated error.
+Distinct $i_k$ give disjoint blocks, regardless of equal spectral values.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:sharp}]
+First consider a finite-dimensional mixed-state POVM strategy on local
+spaces of dimensions $d_A,d_B$. Loss is linear in the state, so some
+pure component has loss at most $\eps$ using the same measurements.
+Let its Schmidt rank be $r\leq\min(d_A,d_B)$.
+Give the finitely many local POVMs common Naimark dilations with fixed
+pure local ancillas. The resulting PVM strategy preserves the
+correlations and the Schmidt rank $r$. The dilated ambient dimensions
+may be larger and are never used as the original dimensions. Every
+one-sided projection and local contraction used below has Schmidt rank
+at most $r$.
+
+Apply Lemma~\ref{lem:robustgluing}. Write
+$x=\|a\|_2$, $y=\|b\|_2$, $z=\|c\|_2$.
+Its relations give
+\[
+z\leq\sqrt8y+\delta,\quad y\leq\sqrt8x+\delta,\quad y^2+z^2=1.
+\]
+Since $y^2+(\sqrt8y+\delta)^2\leq(3y+\delta)^2$,
+\begin{equation}\label{eq:sectorweight}
+y\geq(1-\delta)/3,\qquad
+x\geq(1-4\delta)/\sqrt{72}.
+\end{equation}
+Choose $\eps_0>0$ so that $C_{\rm G}\sqrt{\eps_0}\leq1/100$.
+Then $x>0.11$. As $\operatorname{rank}(\phi_2)\leq r$,
+$\mu_0=\max a\geq0.11/\sqrt r$.
+
+The 2-norm estimates imply infinity-norm estimates, so
+Lemma~\ref{lem:descent} applies. All its selected $b$ and $c$ entries
+exceed $\delta$: even the smallest chain entry is at least
+$(64-2-\sqrt2)\delta$.
+Relation (iv) then forces at least $20K$ positive entries in
+$\Sch(\psi)$. Indeed, match occurrences in the sorted union
+$c\sq b$; an occurrence larger than $\delta$ cannot match a zero
+with coordinate error at most $\delta$. Multiplicity cannot be lost
+by coincident values. Consequently
+\begin{align}\label{eq:rankimplicit}
+r&\geq20K\geq20\log_2\frac{\mu_0}{64C_{\rm G}\sqrt\eps}\nonumber\\
+&\geq10\log_2(1/\eps)-10\log_2r
+ -20\log_2(64C_{\rm G}/0.11).
+\end{align}
+Put $L=\log_2(1/\eps)$. If $r\geq10L$ the desired lower bound is
+immediate. Otherwise $\log_2r\leq\log_2L+\log_210$ in
+\eqref{eq:rankimplicit}. Absorb the fixed constants to get
+$r\geq10L-10\log_2L-C$. This bounds each original local dimension.
+Together with Theorem~\ref{thm:main} it proves the assertion for
+$D_\Gamma$ and all the stated quantifiers.
+At zero loss the same descent has arbitrarily many positive entries;
+one treats that case directly, without taking a logarithm of zero.
+\end{proof}
