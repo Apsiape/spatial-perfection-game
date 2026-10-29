@@ -2,7 +2,7 @@
 
 Seth Douglas and Nidhal Mghirbi.
 
-Version 1.1.0, October 2026. A preprint; it has not been peer reviewed.
+Version 1.1.0, October 2026. DOI: [10.5281/zenodo.23756753](https://doi.org/10.5281/zenodo.23756753). Concept DOI (all versions): [10.5281/zenodo.23754446](https://doi.org/10.5281/zenodo.23754446). A preprint; it has not been peer reviewed.
 
 We construct a finite rational two-player nonlocal game with ten Alice questions, eleven Bob questions, at most six answers per question and 52 equally likely supported pairs. It has a perfect spatial strategy and no perfect finite-dimensional strategy. For arbitrary finite-dimensional local POVMs and mixed states, its dimension profile is D_Gamma(epsilon) = 10 log2(1/epsilon) + O(log log(1/epsilon)). The lower bound is 10 log2(1/epsilon) - 10 log2 log2(1/epsilon) - O(1). A direct square-root magic-square extraction, robust flagged sector law and approximate gluing force twenty Schmidt coefficients per appreciable halving level. The explicit strategy compressed to 20K dimensions has loss exactly 1/[624(4^K-1)], yielding the matching leading upper coefficient 10.
 
